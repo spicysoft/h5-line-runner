@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CDAF4BA9-0F68-B1DD-A38E-0A06EDFD78AB}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>TypeRegGen</RootNamespace>
+    <AssemblyName>TypeRegGen</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <LangVersion>7.3</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\PackageCache\com.unity.tiny@0.15.3-preview\DotsPlayer\TypeRegGen\FieldInfoGen.cs">
+      <Link>FieldInfoGen.cs</Link>
+    </Compile>
+    <Compile Include="..\PackageCache\com.unity.tiny@0.15.3-preview\DotsPlayer\TypeRegGen\JobsGen.cs">
+      <Link>JobsGen.cs</Link>
+    </Compile>
+    <Compile Include="..\PackageCache\com.unity.tiny@0.15.3-preview\DotsPlayer\TypeRegGen\SystemTypeGen.cs">
+      <Link>SystemTypeGen.cs</Link>
+    </Compile>
+    <Compile Include="..\PackageCache\com.unity.tiny@0.15.3-preview\DotsPlayer\TypeRegGen\TypeRegGen.cs">
+      <Link>TypeRegGen.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>artifacts\Bee.CSharpSupport\TypeRegGen\Release</OutputPath>
+    <DefineConstants>NDESK_OPTIONS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <NoWarn></NoWarn>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+  </PropertyGroup>
+  <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Unity.Cecil">
+      <HintPath>artifacts\Stevedore\unity-cecil\lib\net40\Unity.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Cecil.Rocks">
+      <HintPath>artifacts\Stevedore\unity-cecil\lib\net40\Unity.Cecil.Rocks.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Cecil.Mdb">
+      <HintPath>artifacts\Stevedore\unity-cecil\lib\net40\Unity.Cecil.Mdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Cecil.Pdb">
+      <HintPath>artifacts\Stevedore\unity-cecil\lib\net40\Unity.Cecil.Pdb.dll</HintPath>
+    </Reference>
+    <ProjectReference Include="Unity.Entities.BuildUtilities.csproj">
+      <Project>{42529BFE-C7DC-1D63-1B6F-8F64D2B3E8E5}</Project>
+      <Name>Unity.Entities.BuildUtils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="GenerateTargetFrameworkMonikerAttribute" />
+</Project>
