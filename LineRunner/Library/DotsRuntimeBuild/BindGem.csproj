@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7393908E-3929-C1B7-DBE0-F02C66F8F7A8}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>bindgem</RootNamespace>
+    <AssemblyName>bindgem</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <LangVersion>7.3</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\PackageCache\com.unity.tiny@0.15.3-preview\DotsPlayer\BindGem~\BindingsAttributes.cs">
+      <Link>BindingsAttributes.cs</Link>
+    </Compile>
+    <Compile Include="..\PackageCache\com.unity.tiny@0.15.3-preview\DotsPlayer\BindGem~\CGenerator.cs">
+      <Link>CGenerator.cs</Link>
+    </Compile>
+    <Compile Include="..\PackageCache\com.unity.tiny@0.15.3-preview\DotsPlayer\BindGem~\CppGenerator.cs">
+      <Link>CppGenerator.cs</Link>
+    </Compile>
+    <Compile Include="..\PackageCache\com.unity.tiny@0.15.3-preview\DotsPlayer\BindGem~\CsGenerator.cs">
+      <Link>CsGenerator.cs</Link>
+    </Compile>
+    <Compile Include="..\PackageCache\com.unity.tiny@0.15.3-preview\DotsPlayer\BindGem~\EmscriptenGenerator.cs">
+      <Link>EmscriptenGenerator.cs</Link>
+    </Compile>
+    <Compile Include="..\PackageCache\com.unity.tiny@0.15.3-preview\DotsPlayer\BindGem~\InterfaceReflector.cs">
+      <Link>InterfaceReflector.cs</Link>
+    </Compile>
+    <Compile Include="..\PackageCache\com.unity.tiny@0.15.3-preview\DotsPlayer\BindGem~\JSDocGenerator.cs">
+      <Link>JSDocGenerator.cs</Link>
+    </Compile>
+    <Compile Include="..\PackageCache\com.unity.tiny@0.15.3-preview\DotsPlayer\BindGem~\Program.cs">
+      <Link>Program.cs</Link>
+    </Compile>
+    <Compile Include="..\PackageCache\com.unity.tiny@0.15.3-preview\DotsPlayer\BindGem~\Properties\AssemblyInfo.cs">
+      <Link>Properties\AssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\PackageCache\com.unity.tiny@0.15.3-preview\DotsPlayer\BindGem~\RoslynExtensions.cs">
+      <Link>RoslynExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\PackageCache\com.unity.tiny@0.15.3-preview\DotsPlayer\BindGem~\TypeScriptDefinitionGenerator.cs">
+      <Link>TypeScriptDefinitionGenerator.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>artifacts\Bee.CSharpSupport\bindgem\Release</OutputPath>
+    <DefineConstants></DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <NoWarn></NoWarn>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+  </PropertyGroup>
+  <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Mono.Options">
+      <HintPath>..\PackageCache\com.unity.tiny@0.15.3-preview\DotsPlayer\LowLevelSupport~\UnsafeUtilityPatcher\Mono.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Cecil">
+      <HintPath>artifacts\Stevedore\unity-cecil\lib\net40\Unity.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Cecil.Rocks">
+      <HintPath>artifacts\Stevedore\unity-cecil\lib\net40\Unity.Cecil.Rocks.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Cecil.Mdb">
+      <HintPath>artifacts\Stevedore\unity-cecil\lib\net40\Unity.Cecil.Mdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Cecil.Pdb">
+      <HintPath>artifacts\Stevedore\unity-cecil\lib\net40\Unity.Cecil.Pdb.dll</HintPath>
+    </Reference>
+    <ProjectReference Include="Unity.Entities.BuildUtilities.csproj">
+      <Project>{42529BFE-C7DC-1D63-1B6F-8F64D2B3E8E5}</Project>
+      <Name>Unity.Entities.BuildUtils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="GenerateTargetFrameworkMonikerAttribute" />
+</Project>

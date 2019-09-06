@@ -1,0 +1,1603 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0EC0E788-57F6-019E-24C6-34EB55066ADB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace></RootNamespace>
+    <AssemblyName>LineRunner</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <LangVersion>7.3</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\..\Assets\LineRunner\Components\GameConfig.cs">
+      <Link>Components\GameConfig.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Assets\LineRunner\Components\Player.cs">
+      <Link>Components\Player.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Assets\LineRunner\Scripts\AssemblyInfo.cs">
+      <Link>Scripts\AssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Assets\LineRunner\Scripts\PlayerMovingSystem.cs">
+      <Link>Scripts\PlayerMovingSystem.cs</Link>
+    </Compile>
+    <None Include="..\..\Assets\LineRunner\LineRunner.asmdef">
+      <Link>LineRunner.asmdef</Link>
+    </None>
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'asmjs-debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>artifacts\Bee.CSharpSupport\LineRunner\Debug</OutputPath>
+    <DefineConstants>UNITY_2018_3_OR_NEWER;UNITY_DOTSPLAYER;UNITY_ZEROPLAYER;NET_TINY;NET_DOTS;UNITY_USE_TINYMATH;UNITY_BINDGEM;UNITY_WEBGL;DEBUG;ENABLE_UNITY_COLLECTIONS_CHECKS;UNITY_DOTSPLAYER_IL2CPP</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <NoWarn></NoWarn>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+    <StartAction>URL</StartAction>
+    <StartURL>file:///C:/Users/Katsuya/Documents/UnityProject/h5-line-runner/LineRunner/Library/DotsRuntimeBuild/build/LineRunner/LineRunner-asmjs-debug/LineRunner.html</StartURL>
+    <NoStdLib>true</NoStdLib>
+    <AddAdditionalExplicitAssemblyReferences>false</AddAdditionalExplicitAssemblyReferences>
+    <RuntimeMetadataVersion>v4.0.30319</RuntimeMetadataVersion>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <BEE_USE_EMPTY_BUILD>false</BEE_USE_EMPTY_BUILD>
+    <BEEBUILDCOMMAND>"C:\Users\Katsuya\Documents\UnityProject\h5-line-runner\LineRunner\Library\PackageCache\com.unity.tiny@0.15.3-preview\DotsPlayer\bee~\bee.exe" --no-colors build/LineRunner/LineRunner-asmjs-debug/LineRunner.html</BEEBUILDCOMMAND>
+    <BEEBUILDWORKINGDIR>C:\Users\Katsuya\Documents\UnityProject\h5-line-runner\LineRunner\Library\DotsRuntimeBuild</BEEBUILDWORKINGDIR>
+    <BEEOUTPUTDIRECTORY>artifacts\Bee.CSharpSupport\LineRunner\Debug</BEEOUTPUTDIRECTORY>
+  </PropertyGroup>
+  <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'asmjs-debug|AnyCPU' ">
+    <Reference Include="Unity.ZeroJobs">
+      <HintPath>artifacts\Unity.ZeroJobs.dll\asmjs-debug\Unity.ZeroJobs.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.LowLevel">
+      <HintPath>artifacts\Unity.LowLevel.dll\asmjs-debug\Unity.LowLevel.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Collections">
+      <HintPath>artifacts\Unity.Collections.dll\asmjs-debug\Unity.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Entities">
+      <HintPath>artifacts\Unity.Entities.dll\asmjs-debug\Unity.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics">
+      <HintPath>artifacts\Unity.Mathematics.dll\asmjs-debug\Unity.Mathematics.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Audio">
+      <HintPath>artifacts\Unity.Tiny.Audio.dll\asmjs-debug\Unity.Tiny.Audio.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.AudioHTML">
+      <HintPath>artifacts\Unity.Tiny.AudioHTML.dll\asmjs-debug\Unity.Tiny.AudioHTML.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Core">
+      <HintPath>artifacts\Unity.Tiny.Core.dll\asmjs-debug\Unity.Tiny.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Core2D">
+      <HintPath>artifacts\Unity.Tiny.Core2D.dll\asmjs-debug\Unity.Tiny.Core2D.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Core2DTypes">
+      <HintPath>artifacts\Unity.Tiny.Core2DTypes.dll\asmjs-debug\Unity.Tiny.Core2DTypes.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.EntryPoint">
+      <HintPath>artifacts\Unity.Tiny.EntryPoint.exe\asmjs-debug\Unity.Tiny.EntryPoint.exe</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.HitBox2D">
+      <HintPath>artifacts\Unity.Tiny.HitBox2D.dll\asmjs-debug\Unity.Tiny.HitBox2D.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.HTML">
+      <HintPath>artifacts\Unity.Tiny.HTML.dll\asmjs-debug\Unity.Tiny.HTML.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Image2D">
+      <HintPath>artifacts\Unity.Tiny.Image2D.dll\asmjs-debug\Unity.Tiny.Image2D.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Image2DIOHTML">
+      <HintPath>artifacts\Unity.Tiny.Image2DIOHTML.dll\asmjs-debug\Unity.Tiny.Image2DIOHTML.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Input">
+      <HintPath>artifacts\Unity.Tiny.Input.dll\asmjs-debug\Unity.Tiny.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.InputHTML">
+      <HintPath>artifacts\Unity.Tiny.InputHTML.dll\asmjs-debug\Unity.Tiny.InputHTML.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.IO">
+      <HintPath>artifacts\Unity.Tiny.IO.dll\asmjs-debug\Unity.Tiny.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Particles">
+      <HintPath>artifacts\Unity.Tiny.Particles.dll\asmjs-debug\Unity.Tiny.Particles.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.PointQuery">
+      <HintPath>artifacts\Unity.Tiny.PointQuery.dll\asmjs-debug\Unity.Tiny.PointQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Renderer">
+      <HintPath>artifacts\Unity.Tiny.Renderer.dll\asmjs-debug\Unity.Tiny.Renderer.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.RendererCanvas">
+      <HintPath>artifacts\Unity.Tiny.RendererCanvas.dll\asmjs-debug\Unity.Tiny.RendererCanvas.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.RendererGL">
+      <HintPath>artifacts\Unity.Tiny.RendererGL.dll\asmjs-debug\Unity.Tiny.RendererGL.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.RendererGLES2">
+      <HintPath>artifacts\Unity.Tiny.RendererGLES2.dll\asmjs-debug\Unity.Tiny.RendererGLES2.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Scenes">
+      <HintPath>artifacts\Unity.Tiny.Scenes.dll\asmjs-debug\Unity.Tiny.Scenes.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Sprite2D">
+      <HintPath>artifacts\Unity.Tiny.Sprite2D.dll\asmjs-debug\Unity.Tiny.Sprite2D.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Text">
+      <HintPath>artifacts\Unity.Tiny.Text.dll\asmjs-debug\Unity.Tiny.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.TextHTML">
+      <HintPath>artifacts\Unity.Tiny.TextHTML.dll\asmjs-debug\Unity.Tiny.TextHTML.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Tweens">
+      <HintPath>artifacts\Unity.Tiny.Tweens.dll\asmjs-debug\Unity.Tiny.Tweens.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.UIControls">
+      <HintPath>artifacts\Unity.Tiny.UIControls.dll\asmjs-debug\Unity.Tiny.UIControls.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.UILayout">
+      <HintPath>artifacts\Unity.Tiny.UILayout.dll\asmjs-debug\Unity.Tiny.UILayout.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Video">
+      <HintPath>artifacts\Unity.Tiny.Video.dll\asmjs-debug\Unity.Tiny.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.VideoHTML">
+      <HintPath>artifacts\Unity.Tiny.VideoHTML.dll\asmjs-debug\Unity.Tiny.VideoHTML.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Watchers">
+      <HintPath>artifacts\Unity.Tiny.Watchers.dll\asmjs-debug\Unity.Tiny.Watchers.dll</HintPath>
+    </Reference>
+    <ProjectReference Include="Unity.TinyCorlib.csproj">
+      <Project>{95BE9475-7513-1D77-602F-DE1C691BFC25}</Project>
+      <Name>mscorlib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'asmjs-develop|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>artifacts\Bee.CSharpSupport\LineRunner\Release</OutputPath>
+    <DefineConstants>UNITY_2018_3_OR_NEWER;UNITY_DOTSPLAYER;UNITY_ZEROPLAYER;NET_TINY;NET_DOTS;UNITY_USE_TINYMATH;UNITY_BINDGEM;UNITY_WEBGL;ENABLE_UNITY_COLLECTIONS_CHECKS;UNITY_DOTSPLAYER_IL2CPP</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <NoWarn></NoWarn>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+    <StartAction>URL</StartAction>
+    <StartURL>file:///C:/Users/Katsuya/Documents/UnityProject/h5-line-runner/LineRunner/Library/DotsRuntimeBuild/build/LineRunner/LineRunner-asmjs-develop/LineRunner.html</StartURL>
+    <NoStdLib>true</NoStdLib>
+    <AddAdditionalExplicitAssemblyReferences>false</AddAdditionalExplicitAssemblyReferences>
+    <RuntimeMetadataVersion>v4.0.30319</RuntimeMetadataVersion>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <BEE_USE_EMPTY_BUILD>false</BEE_USE_EMPTY_BUILD>
+    <BEEBUILDCOMMAND>"C:\Users\Katsuya\Documents\UnityProject\h5-line-runner\LineRunner\Library\PackageCache\com.unity.tiny@0.15.3-preview\DotsPlayer\bee~\bee.exe" --no-colors build/LineRunner/LineRunner-asmjs-develop/LineRunner.html</BEEBUILDCOMMAND>
+    <BEEBUILDWORKINGDIR>C:\Users\Katsuya\Documents\UnityProject\h5-line-runner\LineRunner\Library\DotsRuntimeBuild</BEEBUILDWORKINGDIR>
+    <BEEOUTPUTDIRECTORY>artifacts\Bee.CSharpSupport\LineRunner\Release</BEEOUTPUTDIRECTORY>
+  </PropertyGroup>
+  <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'asmjs-develop|AnyCPU' ">
+    <Reference Include="Unity.ZeroJobs">
+      <HintPath>artifacts\Unity.ZeroJobs.dll\asmjs-develop\Unity.ZeroJobs.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.LowLevel">
+      <HintPath>artifacts\Unity.LowLevel.dll\asmjs-develop\Unity.LowLevel.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Collections">
+      <HintPath>artifacts\Unity.Collections.dll\asmjs-develop\Unity.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Entities">
+      <HintPath>artifacts\Unity.Entities.dll\asmjs-develop\Unity.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics">
+      <HintPath>artifacts\Unity.Mathematics.dll\asmjs-develop\Unity.Mathematics.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Audio">
+      <HintPath>artifacts\Unity.Tiny.Audio.dll\asmjs-develop\Unity.Tiny.Audio.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.AudioHTML">
+      <HintPath>artifacts\Unity.Tiny.AudioHTML.dll\asmjs-develop\Unity.Tiny.AudioHTML.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Core">
+      <HintPath>artifacts\Unity.Tiny.Core.dll\asmjs-develop\Unity.Tiny.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Core2D">
+      <HintPath>artifacts\Unity.Tiny.Core2D.dll\asmjs-develop\Unity.Tiny.Core2D.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Core2DTypes">
+      <HintPath>artifacts\Unity.Tiny.Core2DTypes.dll\asmjs-develop\Unity.Tiny.Core2DTypes.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.EntryPoint">
+      <HintPath>artifacts\Unity.Tiny.EntryPoint.exe\asmjs-develop\Unity.Tiny.EntryPoint.exe</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.HitBox2D">
+      <HintPath>artifacts\Unity.Tiny.HitBox2D.dll\asmjs-develop\Unity.Tiny.HitBox2D.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.HTML">
+      <HintPath>artifacts\Unity.Tiny.HTML.dll\asmjs-develop\Unity.Tiny.HTML.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Image2D">
+      <HintPath>artifacts\Unity.Tiny.Image2D.dll\asmjs-develop\Unity.Tiny.Image2D.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Image2DIOHTML">
+      <HintPath>artifacts\Unity.Tiny.Image2DIOHTML.dll\asmjs-develop\Unity.Tiny.Image2DIOHTML.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Input">
+      <HintPath>artifacts\Unity.Tiny.Input.dll\asmjs-develop\Unity.Tiny.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.InputHTML">
+      <HintPath>artifacts\Unity.Tiny.InputHTML.dll\asmjs-develop\Unity.Tiny.InputHTML.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.IO">
+      <HintPath>artifacts\Unity.Tiny.IO.dll\asmjs-develop\Unity.Tiny.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Particles">
+      <HintPath>artifacts\Unity.Tiny.Particles.dll\asmjs-develop\Unity.Tiny.Particles.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.PointQuery">
+      <HintPath>artifacts\Unity.Tiny.PointQuery.dll\asmjs-develop\Unity.Tiny.PointQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Renderer">
+      <HintPath>artifacts\Unity.Tiny.Renderer.dll\asmjs-develop\Unity.Tiny.Renderer.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.RendererCanvas">
+      <HintPath>artifacts\Unity.Tiny.RendererCanvas.dll\asmjs-develop\Unity.Tiny.RendererCanvas.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.RendererGL">
+      <HintPath>artifacts\Unity.Tiny.RendererGL.dll\asmjs-develop\Unity.Tiny.RendererGL.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.RendererGLES2">
+      <HintPath>artifacts\Unity.Tiny.RendererGLES2.dll\asmjs-develop\Unity.Tiny.RendererGLES2.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Scenes">
+      <HintPath>artifacts\Unity.Tiny.Scenes.dll\asmjs-develop\Unity.Tiny.Scenes.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Sprite2D">
+      <HintPath>artifacts\Unity.Tiny.Sprite2D.dll\asmjs-develop\Unity.Tiny.Sprite2D.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Text">
+      <HintPath>artifacts\Unity.Tiny.Text.dll\asmjs-develop\Unity.Tiny.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.TextHTML">
+      <HintPath>artifacts\Unity.Tiny.TextHTML.dll\asmjs-develop\Unity.Tiny.TextHTML.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Tweens">
+      <HintPath>artifacts\Unity.Tiny.Tweens.dll\asmjs-develop\Unity.Tiny.Tweens.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.UIControls">
+      <HintPath>artifacts\Unity.Tiny.UIControls.dll\asmjs-develop\Unity.Tiny.UIControls.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.UILayout">
+      <HintPath>artifacts\Unity.Tiny.UILayout.dll\asmjs-develop\Unity.Tiny.UILayout.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Video">
+      <HintPath>artifacts\Unity.Tiny.Video.dll\asmjs-develop\Unity.Tiny.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.VideoHTML">
+      <HintPath>artifacts\Unity.Tiny.VideoHTML.dll\asmjs-develop\Unity.Tiny.VideoHTML.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Watchers">
+      <HintPath>artifacts\Unity.Tiny.Watchers.dll\asmjs-develop\Unity.Tiny.Watchers.dll</HintPath>
+    </Reference>
+    <ProjectReference Include="Unity.TinyCorlib.csproj">
+      <Project>{95BE9475-7513-1D77-602F-DE1C691BFC25}</Project>
+      <Name>mscorlib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'asmjs-release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>artifacts\Bee.CSharpSupport\LineRunner\Release</OutputPath>
+    <DefineConstants>UNITY_2018_3_OR_NEWER;UNITY_DOTSPLAYER;UNITY_ZEROPLAYER;NET_TINY;NET_DOTS;UNITY_USE_TINYMATH;UNITY_BINDGEM;UNITY_WEBGL;UNITY_DOTSPLAYER_IL2CPP</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <NoWarn></NoWarn>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+    <StartAction>URL</StartAction>
+    <StartURL>file:///C:/Users/Katsuya/Documents/UnityProject/h5-line-runner/LineRunner/Library/DotsRuntimeBuild/build/LineRunner/LineRunner-asmjs-release/LineRunner.html</StartURL>
+    <NoStdLib>true</NoStdLib>
+    <AddAdditionalExplicitAssemblyReferences>false</AddAdditionalExplicitAssemblyReferences>
+    <RuntimeMetadataVersion>v4.0.30319</RuntimeMetadataVersion>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <BEE_USE_EMPTY_BUILD>false</BEE_USE_EMPTY_BUILD>
+    <BEEBUILDCOMMAND>"C:\Users\Katsuya\Documents\UnityProject\h5-line-runner\LineRunner\Library\PackageCache\com.unity.tiny@0.15.3-preview\DotsPlayer\bee~\bee.exe" --no-colors build/LineRunner/LineRunner-asmjs-release/LineRunner.html</BEEBUILDCOMMAND>
+    <BEEBUILDWORKINGDIR>C:\Users\Katsuya\Documents\UnityProject\h5-line-runner\LineRunner\Library\DotsRuntimeBuild</BEEBUILDWORKINGDIR>
+    <BEEOUTPUTDIRECTORY>artifacts\Bee.CSharpSupport\LineRunner\Release</BEEOUTPUTDIRECTORY>
+  </PropertyGroup>
+  <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'asmjs-release|AnyCPU' ">
+    <Reference Include="Unity.ZeroJobs">
+      <HintPath>artifacts\Unity.ZeroJobs.dll\asmjs-release\Unity.ZeroJobs.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.LowLevel">
+      <HintPath>artifacts\Unity.LowLevel.dll\asmjs-release\Unity.LowLevel.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Collections">
+      <HintPath>artifacts\Unity.Collections.dll\asmjs-release\Unity.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Entities">
+      <HintPath>artifacts\Unity.Entities.dll\asmjs-release\Unity.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics">
+      <HintPath>artifacts\Unity.Mathematics.dll\asmjs-release\Unity.Mathematics.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Audio">
+      <HintPath>artifacts\Unity.Tiny.Audio.dll\asmjs-release\Unity.Tiny.Audio.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.AudioHTML">
+      <HintPath>artifacts\Unity.Tiny.AudioHTML.dll\asmjs-release\Unity.Tiny.AudioHTML.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Core">
+      <HintPath>artifacts\Unity.Tiny.Core.dll\asmjs-release\Unity.Tiny.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Core2D">
+      <HintPath>artifacts\Unity.Tiny.Core2D.dll\asmjs-release\Unity.Tiny.Core2D.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Core2DTypes">
+      <HintPath>artifacts\Unity.Tiny.Core2DTypes.dll\asmjs-release\Unity.Tiny.Core2DTypes.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.EntryPoint">
+      <HintPath>artifacts\Unity.Tiny.EntryPoint.exe\asmjs-release\Unity.Tiny.EntryPoint.exe</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.HitBox2D">
+      <HintPath>artifacts\Unity.Tiny.HitBox2D.dll\asmjs-release\Unity.Tiny.HitBox2D.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.HTML">
+      <HintPath>artifacts\Unity.Tiny.HTML.dll\asmjs-release\Unity.Tiny.HTML.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Image2D">
+      <HintPath>artifacts\Unity.Tiny.Image2D.dll\asmjs-release\Unity.Tiny.Image2D.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Image2DIOHTML">
+      <HintPath>artifacts\Unity.Tiny.Image2DIOHTML.dll\asmjs-release\Unity.Tiny.Image2DIOHTML.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Input">
+      <HintPath>artifacts\Unity.Tiny.Input.dll\asmjs-release\Unity.Tiny.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.InputHTML">
+      <HintPath>artifacts\Unity.Tiny.InputHTML.dll\asmjs-release\Unity.Tiny.InputHTML.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.IO">
+      <HintPath>artifacts\Unity.Tiny.IO.dll\asmjs-release\Unity.Tiny.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Particles">
+      <HintPath>artifacts\Unity.Tiny.Particles.dll\asmjs-release\Unity.Tiny.Particles.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.PointQuery">
+      <HintPath>artifacts\Unity.Tiny.PointQuery.dll\asmjs-release\Unity.Tiny.PointQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Renderer">
+      <HintPath>artifacts\Unity.Tiny.Renderer.dll\asmjs-release\Unity.Tiny.Renderer.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.RendererCanvas">
+      <HintPath>artifacts\Unity.Tiny.RendererCanvas.dll\asmjs-release\Unity.Tiny.RendererCanvas.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.RendererGL">
+      <HintPath>artifacts\Unity.Tiny.RendererGL.dll\asmjs-release\Unity.Tiny.RendererGL.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.RendererGLES2">
+      <HintPath>artifacts\Unity.Tiny.RendererGLES2.dll\asmjs-release\Unity.Tiny.RendererGLES2.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Scenes">
+      <HintPath>artifacts\Unity.Tiny.Scenes.dll\asmjs-release\Unity.Tiny.Scenes.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Sprite2D">
+      <HintPath>artifacts\Unity.Tiny.Sprite2D.dll\asmjs-release\Unity.Tiny.Sprite2D.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Text">
+      <HintPath>artifacts\Unity.Tiny.Text.dll\asmjs-release\Unity.Tiny.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.TextHTML">
+      <HintPath>artifacts\Unity.Tiny.TextHTML.dll\asmjs-release\Unity.Tiny.TextHTML.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Tweens">
+      <HintPath>artifacts\Unity.Tiny.Tweens.dll\asmjs-release\Unity.Tiny.Tweens.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.UIControls">
+      <HintPath>artifacts\Unity.Tiny.UIControls.dll\asmjs-release\Unity.Tiny.UIControls.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.UILayout">
+      <HintPath>artifacts\Unity.Tiny.UILayout.dll\asmjs-release\Unity.Tiny.UILayout.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Video">
+      <HintPath>artifacts\Unity.Tiny.Video.dll\asmjs-release\Unity.Tiny.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.VideoHTML">
+      <HintPath>artifacts\Unity.Tiny.VideoHTML.dll\asmjs-release\Unity.Tiny.VideoHTML.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Watchers">
+      <HintPath>artifacts\Unity.Tiny.Watchers.dll\asmjs-release\Unity.Tiny.Watchers.dll</HintPath>
+    </Reference>
+    <ProjectReference Include="Unity.TinyCorlib.csproj">
+      <Project>{95BE9475-7513-1D77-602F-DE1C691BFC25}</Project>
+      <Name>mscorlib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'wasm-debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>artifacts\Bee.CSharpSupport\LineRunner\Debug</OutputPath>
+    <DefineConstants>UNITY_2018_3_OR_NEWER;UNITY_DOTSPLAYER;UNITY_ZEROPLAYER;NET_TINY;NET_DOTS;UNITY_USE_TINYMATH;UNITY_BINDGEM;UNITY_WEBGL;DEBUG;ENABLE_UNITY_COLLECTIONS_CHECKS;UNITY_DOTSPLAYER_IL2CPP</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <NoWarn></NoWarn>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+    <StartAction>URL</StartAction>
+    <StartURL>file:///C:/Users/Katsuya/Documents/UnityProject/h5-line-runner/LineRunner/Library/DotsRuntimeBuild/build/LineRunner/LineRunner-wasm-debug/LineRunner.html</StartURL>
+    <NoStdLib>true</NoStdLib>
+    <AddAdditionalExplicitAssemblyReferences>false</AddAdditionalExplicitAssemblyReferences>
+    <RuntimeMetadataVersion>v4.0.30319</RuntimeMetadataVersion>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <BEE_USE_EMPTY_BUILD>false</BEE_USE_EMPTY_BUILD>
+    <BEEBUILDCOMMAND>"C:\Users\Katsuya\Documents\UnityProject\h5-line-runner\LineRunner\Library\PackageCache\com.unity.tiny@0.15.3-preview\DotsPlayer\bee~\bee.exe" --no-colors build/LineRunner/LineRunner-wasm-debug/LineRunner.html</BEEBUILDCOMMAND>
+    <BEEBUILDWORKINGDIR>C:\Users\Katsuya\Documents\UnityProject\h5-line-runner\LineRunner\Library\DotsRuntimeBuild</BEEBUILDWORKINGDIR>
+    <BEEOUTPUTDIRECTORY>artifacts\Bee.CSharpSupport\LineRunner\Debug</BEEOUTPUTDIRECTORY>
+  </PropertyGroup>
+  <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'wasm-debug|AnyCPU' ">
+    <Reference Include="Unity.ZeroJobs">
+      <HintPath>artifacts\Unity.ZeroJobs.dll\wasm-debug\Unity.ZeroJobs.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.LowLevel">
+      <HintPath>artifacts\Unity.LowLevel.dll\wasm-debug\Unity.LowLevel.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Collections">
+      <HintPath>artifacts\Unity.Collections.dll\wasm-debug\Unity.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Entities">
+      <HintPath>artifacts\Unity.Entities.dll\wasm-debug\Unity.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics">
+      <HintPath>artifacts\Unity.Mathematics.dll\wasm-debug\Unity.Mathematics.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Audio">
+      <HintPath>artifacts\Unity.Tiny.Audio.dll\wasm-debug\Unity.Tiny.Audio.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.AudioHTML">
+      <HintPath>artifacts\Unity.Tiny.AudioHTML.dll\wasm-debug\Unity.Tiny.AudioHTML.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Core">
+      <HintPath>artifacts\Unity.Tiny.Core.dll\wasm-debug\Unity.Tiny.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Core2D">
+      <HintPath>artifacts\Unity.Tiny.Core2D.dll\wasm-debug\Unity.Tiny.Core2D.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Core2DTypes">
+      <HintPath>artifacts\Unity.Tiny.Core2DTypes.dll\wasm-debug\Unity.Tiny.Core2DTypes.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.EntryPoint">
+      <HintPath>artifacts\Unity.Tiny.EntryPoint.exe\wasm-debug\Unity.Tiny.EntryPoint.exe</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.HitBox2D">
+      <HintPath>artifacts\Unity.Tiny.HitBox2D.dll\wasm-debug\Unity.Tiny.HitBox2D.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.HTML">
+      <HintPath>artifacts\Unity.Tiny.HTML.dll\wasm-debug\Unity.Tiny.HTML.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Image2D">
+      <HintPath>artifacts\Unity.Tiny.Image2D.dll\wasm-debug\Unity.Tiny.Image2D.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Image2DIOHTML">
+      <HintPath>artifacts\Unity.Tiny.Image2DIOHTML.dll\wasm-debug\Unity.Tiny.Image2DIOHTML.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Input">
+      <HintPath>artifacts\Unity.Tiny.Input.dll\wasm-debug\Unity.Tiny.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.InputHTML">
+      <HintPath>artifacts\Unity.Tiny.InputHTML.dll\wasm-debug\Unity.Tiny.InputHTML.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.IO">
+      <HintPath>artifacts\Unity.Tiny.IO.dll\wasm-debug\Unity.Tiny.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Particles">
+      <HintPath>artifacts\Unity.Tiny.Particles.dll\wasm-debug\Unity.Tiny.Particles.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.PointQuery">
+      <HintPath>artifacts\Unity.Tiny.PointQuery.dll\wasm-debug\Unity.Tiny.PointQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Renderer">
+      <HintPath>artifacts\Unity.Tiny.Renderer.dll\wasm-debug\Unity.Tiny.Renderer.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.RendererCanvas">
+      <HintPath>artifacts\Unity.Tiny.RendererCanvas.dll\wasm-debug\Unity.Tiny.RendererCanvas.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.RendererGL">
+      <HintPath>artifacts\Unity.Tiny.RendererGL.dll\wasm-debug\Unity.Tiny.RendererGL.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.RendererGLES2">
+      <HintPath>artifacts\Unity.Tiny.RendererGLES2.dll\wasm-debug\Unity.Tiny.RendererGLES2.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Scenes">
+      <HintPath>artifacts\Unity.Tiny.Scenes.dll\wasm-debug\Unity.Tiny.Scenes.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Sprite2D">
+      <HintPath>artifacts\Unity.Tiny.Sprite2D.dll\wasm-debug\Unity.Tiny.Sprite2D.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Text">
+      <HintPath>artifacts\Unity.Tiny.Text.dll\wasm-debug\Unity.Tiny.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.TextHTML">
+      <HintPath>artifacts\Unity.Tiny.TextHTML.dll\wasm-debug\Unity.Tiny.TextHTML.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Tweens">
+      <HintPath>artifacts\Unity.Tiny.Tweens.dll\wasm-debug\Unity.Tiny.Tweens.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.UIControls">
+      <HintPath>artifacts\Unity.Tiny.UIControls.dll\wasm-debug\Unity.Tiny.UIControls.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.UILayout">
+      <HintPath>artifacts\Unity.Tiny.UILayout.dll\wasm-debug\Unity.Tiny.UILayout.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Video">
+      <HintPath>artifacts\Unity.Tiny.Video.dll\wasm-debug\Unity.Tiny.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.VideoHTML">
+      <HintPath>artifacts\Unity.Tiny.VideoHTML.dll\wasm-debug\Unity.Tiny.VideoHTML.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Watchers">
+      <HintPath>artifacts\Unity.Tiny.Watchers.dll\wasm-debug\Unity.Tiny.Watchers.dll</HintPath>
+    </Reference>
+    <ProjectReference Include="Unity.TinyCorlib.csproj">
+      <Project>{95BE9475-7513-1D77-602F-DE1C691BFC25}</Project>
+      <Name>mscorlib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'wasm-develop|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>artifacts\Bee.CSharpSupport\LineRunner\Release</OutputPath>
+    <DefineConstants>UNITY_2018_3_OR_NEWER;UNITY_DOTSPLAYER;UNITY_ZEROPLAYER;NET_TINY;NET_DOTS;UNITY_USE_TINYMATH;UNITY_BINDGEM;UNITY_WEBGL;ENABLE_UNITY_COLLECTIONS_CHECKS;UNITY_DOTSPLAYER_IL2CPP</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <NoWarn></NoWarn>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+    <StartAction>URL</StartAction>
+    <StartURL>file:///C:/Users/Katsuya/Documents/UnityProject/h5-line-runner/LineRunner/Library/DotsRuntimeBuild/build/LineRunner/LineRunner-wasm-develop/LineRunner.html</StartURL>
+    <NoStdLib>true</NoStdLib>
+    <AddAdditionalExplicitAssemblyReferences>false</AddAdditionalExplicitAssemblyReferences>
+    <RuntimeMetadataVersion>v4.0.30319</RuntimeMetadataVersion>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <BEE_USE_EMPTY_BUILD>false</BEE_USE_EMPTY_BUILD>
+    <BEEBUILDCOMMAND>"C:\Users\Katsuya\Documents\UnityProject\h5-line-runner\LineRunner\Library\PackageCache\com.unity.tiny@0.15.3-preview\DotsPlayer\bee~\bee.exe" --no-colors build/LineRunner/LineRunner-wasm-develop/LineRunner.html</BEEBUILDCOMMAND>
+    <BEEBUILDWORKINGDIR>C:\Users\Katsuya\Documents\UnityProject\h5-line-runner\LineRunner\Library\DotsRuntimeBuild</BEEBUILDWORKINGDIR>
+    <BEEOUTPUTDIRECTORY>artifacts\Bee.CSharpSupport\LineRunner\Release</BEEOUTPUTDIRECTORY>
+  </PropertyGroup>
+  <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'wasm-develop|AnyCPU' ">
+    <Reference Include="Unity.ZeroJobs">
+      <HintPath>artifacts\Unity.ZeroJobs.dll\wasm-develop\Unity.ZeroJobs.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.LowLevel">
+      <HintPath>artifacts\Unity.LowLevel.dll\wasm-develop\Unity.LowLevel.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Collections">
+      <HintPath>artifacts\Unity.Collections.dll\wasm-develop\Unity.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Entities">
+      <HintPath>artifacts\Unity.Entities.dll\wasm-develop\Unity.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics">
+      <HintPath>artifacts\Unity.Mathematics.dll\wasm-develop\Unity.Mathematics.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Audio">
+      <HintPath>artifacts\Unity.Tiny.Audio.dll\wasm-develop\Unity.Tiny.Audio.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.AudioHTML">
+      <HintPath>artifacts\Unity.Tiny.AudioHTML.dll\wasm-develop\Unity.Tiny.AudioHTML.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Core">
+      <HintPath>artifacts\Unity.Tiny.Core.dll\wasm-develop\Unity.Tiny.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Core2D">
+      <HintPath>artifacts\Unity.Tiny.Core2D.dll\wasm-develop\Unity.Tiny.Core2D.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Core2DTypes">
+      <HintPath>artifacts\Unity.Tiny.Core2DTypes.dll\wasm-develop\Unity.Tiny.Core2DTypes.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.EntryPoint">
+      <HintPath>artifacts\Unity.Tiny.EntryPoint.exe\wasm-develop\Unity.Tiny.EntryPoint.exe</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.HitBox2D">
+      <HintPath>artifacts\Unity.Tiny.HitBox2D.dll\wasm-develop\Unity.Tiny.HitBox2D.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.HTML">
+      <HintPath>artifacts\Unity.Tiny.HTML.dll\wasm-develop\Unity.Tiny.HTML.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Image2D">
+      <HintPath>artifacts\Unity.Tiny.Image2D.dll\wasm-develop\Unity.Tiny.Image2D.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Image2DIOHTML">
+      <HintPath>artifacts\Unity.Tiny.Image2DIOHTML.dll\wasm-develop\Unity.Tiny.Image2DIOHTML.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Input">
+      <HintPath>artifacts\Unity.Tiny.Input.dll\wasm-develop\Unity.Tiny.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.InputHTML">
+      <HintPath>artifacts\Unity.Tiny.InputHTML.dll\wasm-develop\Unity.Tiny.InputHTML.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.IO">
+      <HintPath>artifacts\Unity.Tiny.IO.dll\wasm-develop\Unity.Tiny.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Particles">
+      <HintPath>artifacts\Unity.Tiny.Particles.dll\wasm-develop\Unity.Tiny.Particles.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.PointQuery">
+      <HintPath>artifacts\Unity.Tiny.PointQuery.dll\wasm-develop\Unity.Tiny.PointQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Renderer">
+      <HintPath>artifacts\Unity.Tiny.Renderer.dll\wasm-develop\Unity.Tiny.Renderer.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.RendererCanvas">
+      <HintPath>artifacts\Unity.Tiny.RendererCanvas.dll\wasm-develop\Unity.Tiny.RendererCanvas.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.RendererGL">
+      <HintPath>artifacts\Unity.Tiny.RendererGL.dll\wasm-develop\Unity.Tiny.RendererGL.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.RendererGLES2">
+      <HintPath>artifacts\Unity.Tiny.RendererGLES2.dll\wasm-develop\Unity.Tiny.RendererGLES2.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Scenes">
+      <HintPath>artifacts\Unity.Tiny.Scenes.dll\wasm-develop\Unity.Tiny.Scenes.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Sprite2D">
+      <HintPath>artifacts\Unity.Tiny.Sprite2D.dll\wasm-develop\Unity.Tiny.Sprite2D.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Text">
+      <HintPath>artifacts\Unity.Tiny.Text.dll\wasm-develop\Unity.Tiny.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.TextHTML">
+      <HintPath>artifacts\Unity.Tiny.TextHTML.dll\wasm-develop\Unity.Tiny.TextHTML.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Tweens">
+      <HintPath>artifacts\Unity.Tiny.Tweens.dll\wasm-develop\Unity.Tiny.Tweens.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.UIControls">
+      <HintPath>artifacts\Unity.Tiny.UIControls.dll\wasm-develop\Unity.Tiny.UIControls.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.UILayout">
+      <HintPath>artifacts\Unity.Tiny.UILayout.dll\wasm-develop\Unity.Tiny.UILayout.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Video">
+      <HintPath>artifacts\Unity.Tiny.Video.dll\wasm-develop\Unity.Tiny.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.VideoHTML">
+      <HintPath>artifacts\Unity.Tiny.VideoHTML.dll\wasm-develop\Unity.Tiny.VideoHTML.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Watchers">
+      <HintPath>artifacts\Unity.Tiny.Watchers.dll\wasm-develop\Unity.Tiny.Watchers.dll</HintPath>
+    </Reference>
+    <ProjectReference Include="Unity.TinyCorlib.csproj">
+      <Project>{95BE9475-7513-1D77-602F-DE1C691BFC25}</Project>
+      <Name>mscorlib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'wasm-release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>artifacts\Bee.CSharpSupport\LineRunner\Release</OutputPath>
+    <DefineConstants>UNITY_2018_3_OR_NEWER;UNITY_DOTSPLAYER;UNITY_ZEROPLAYER;NET_TINY;NET_DOTS;UNITY_USE_TINYMATH;UNITY_BINDGEM;UNITY_WEBGL;UNITY_DOTSPLAYER_IL2CPP</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <NoWarn></NoWarn>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+    <StartAction>URL</StartAction>
+    <StartURL>file:///C:/Users/Katsuya/Documents/UnityProject/h5-line-runner/LineRunner/Library/DotsRuntimeBuild/build/LineRunner/LineRunner-wasm-release/LineRunner.html</StartURL>
+    <NoStdLib>true</NoStdLib>
+    <AddAdditionalExplicitAssemblyReferences>false</AddAdditionalExplicitAssemblyReferences>
+    <RuntimeMetadataVersion>v4.0.30319</RuntimeMetadataVersion>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <BEE_USE_EMPTY_BUILD>false</BEE_USE_EMPTY_BUILD>
+    <BEEBUILDCOMMAND>"C:\Users\Katsuya\Documents\UnityProject\h5-line-runner\LineRunner\Library\PackageCache\com.unity.tiny@0.15.3-preview\DotsPlayer\bee~\bee.exe" --no-colors build/LineRunner/LineRunner-wasm-release/LineRunner.html</BEEBUILDCOMMAND>
+    <BEEBUILDWORKINGDIR>C:\Users\Katsuya\Documents\UnityProject\h5-line-runner\LineRunner\Library\DotsRuntimeBuild</BEEBUILDWORKINGDIR>
+    <BEEOUTPUTDIRECTORY>artifacts\Bee.CSharpSupport\LineRunner\Release</BEEOUTPUTDIRECTORY>
+  </PropertyGroup>
+  <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'wasm-release|AnyCPU' ">
+    <Reference Include="Unity.ZeroJobs">
+      <HintPath>artifacts\Unity.ZeroJobs.dll\wasm-release\Unity.ZeroJobs.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.LowLevel">
+      <HintPath>artifacts\Unity.LowLevel.dll\wasm-release\Unity.LowLevel.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Collections">
+      <HintPath>artifacts\Unity.Collections.dll\wasm-release\Unity.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Entities">
+      <HintPath>artifacts\Unity.Entities.dll\wasm-release\Unity.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics">
+      <HintPath>artifacts\Unity.Mathematics.dll\wasm-release\Unity.Mathematics.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Audio">
+      <HintPath>artifacts\Unity.Tiny.Audio.dll\wasm-release\Unity.Tiny.Audio.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.AudioHTML">
+      <HintPath>artifacts\Unity.Tiny.AudioHTML.dll\wasm-release\Unity.Tiny.AudioHTML.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Core">
+      <HintPath>artifacts\Unity.Tiny.Core.dll\wasm-release\Unity.Tiny.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Core2D">
+      <HintPath>artifacts\Unity.Tiny.Core2D.dll\wasm-release\Unity.Tiny.Core2D.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Core2DTypes">
+      <HintPath>artifacts\Unity.Tiny.Core2DTypes.dll\wasm-release\Unity.Tiny.Core2DTypes.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.EntryPoint">
+      <HintPath>artifacts\Unity.Tiny.EntryPoint.exe\wasm-release\Unity.Tiny.EntryPoint.exe</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.HitBox2D">
+      <HintPath>artifacts\Unity.Tiny.HitBox2D.dll\wasm-release\Unity.Tiny.HitBox2D.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.HTML">
+      <HintPath>artifacts\Unity.Tiny.HTML.dll\wasm-release\Unity.Tiny.HTML.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Image2D">
+      <HintPath>artifacts\Unity.Tiny.Image2D.dll\wasm-release\Unity.Tiny.Image2D.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Image2DIOHTML">
+      <HintPath>artifacts\Unity.Tiny.Image2DIOHTML.dll\wasm-release\Unity.Tiny.Image2DIOHTML.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Input">
+      <HintPath>artifacts\Unity.Tiny.Input.dll\wasm-release\Unity.Tiny.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.InputHTML">
+      <HintPath>artifacts\Unity.Tiny.InputHTML.dll\wasm-release\Unity.Tiny.InputHTML.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.IO">
+      <HintPath>artifacts\Unity.Tiny.IO.dll\wasm-release\Unity.Tiny.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Particles">
+      <HintPath>artifacts\Unity.Tiny.Particles.dll\wasm-release\Unity.Tiny.Particles.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.PointQuery">
+      <HintPath>artifacts\Unity.Tiny.PointQuery.dll\wasm-release\Unity.Tiny.PointQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Renderer">
+      <HintPath>artifacts\Unity.Tiny.Renderer.dll\wasm-release\Unity.Tiny.Renderer.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.RendererCanvas">
+      <HintPath>artifacts\Unity.Tiny.RendererCanvas.dll\wasm-release\Unity.Tiny.RendererCanvas.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.RendererGL">
+      <HintPath>artifacts\Unity.Tiny.RendererGL.dll\wasm-release\Unity.Tiny.RendererGL.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.RendererGLES2">
+      <HintPath>artifacts\Unity.Tiny.RendererGLES2.dll\wasm-release\Unity.Tiny.RendererGLES2.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Scenes">
+      <HintPath>artifacts\Unity.Tiny.Scenes.dll\wasm-release\Unity.Tiny.Scenes.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Sprite2D">
+      <HintPath>artifacts\Unity.Tiny.Sprite2D.dll\wasm-release\Unity.Tiny.Sprite2D.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Text">
+      <HintPath>artifacts\Unity.Tiny.Text.dll\wasm-release\Unity.Tiny.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.TextHTML">
+      <HintPath>artifacts\Unity.Tiny.TextHTML.dll\wasm-release\Unity.Tiny.TextHTML.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Tweens">
+      <HintPath>artifacts\Unity.Tiny.Tweens.dll\wasm-release\Unity.Tiny.Tweens.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.UIControls">
+      <HintPath>artifacts\Unity.Tiny.UIControls.dll\wasm-release\Unity.Tiny.UIControls.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.UILayout">
+      <HintPath>artifacts\Unity.Tiny.UILayout.dll\wasm-release\Unity.Tiny.UILayout.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Video">
+      <HintPath>artifacts\Unity.Tiny.Video.dll\wasm-release\Unity.Tiny.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.VideoHTML">
+      <HintPath>artifacts\Unity.Tiny.VideoHTML.dll\wasm-release\Unity.Tiny.VideoHTML.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Watchers">
+      <HintPath>artifacts\Unity.Tiny.Watchers.dll\wasm-release\Unity.Tiny.Watchers.dll</HintPath>
+    </Reference>
+    <ProjectReference Include="Unity.TinyCorlib.csproj">
+      <Project>{95BE9475-7513-1D77-602F-DE1C691BFC25}</Project>
+      <Name>mscorlib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'windows-dotnet-debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>artifacts\Bee.CSharpSupport\LineRunner\Debug</OutputPath>
+    <DefineConstants>UNITY_2018_3_OR_NEWER;UNITY_DOTSPLAYER;UNITY_ZEROPLAYER;NET_TINY;NET_DOTS;UNITY_USE_TINYMATH;UNITY_BINDGEM;UNITY_WINDOWS;DEBUG;ENABLE_UNITY_COLLECTIONS_CHECKS;UNITY_DOTSPLAYER_DOTNET</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <NoWarn></NoWarn>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <Prefer32Bit>true</Prefer32Bit>
+    <StartAction>Program</StartAction>
+    <StartProgram>C:\Users\Katsuya\Documents\UnityProject\h5-line-runner\LineRunner\Library\DotsRuntimeBuild\build\LineRunner\LineRunner-windows-dotnet-debug\LineRunner.exe</StartProgram>
+    <StartArguments />
+    <StartWorkingDirectory>C:\Users\Katsuya\Documents\UnityProject\h5-line-runner\LineRunner\Library\DotsRuntimeBuild\build\LineRunner\LineRunner-windows-dotnet-debug</StartWorkingDirectory>
+    <EnableUnmanagedDebugging>true</EnableUnmanagedDebugging>
+    <NoStdLib>true</NoStdLib>
+    <AddAdditionalExplicitAssemblyReferences>false</AddAdditionalExplicitAssemblyReferences>
+    <RuntimeMetadataVersion>v4.0.30319</RuntimeMetadataVersion>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <BEE_USE_EMPTY_BUILD>false</BEE_USE_EMPTY_BUILD>
+    <BEEBUILDCOMMAND>"C:\Users\Katsuya\Documents\UnityProject\h5-line-runner\LineRunner\Library\PackageCache\com.unity.tiny@0.15.3-preview\DotsPlayer\bee~\bee.exe" --no-colors build/LineRunner/LineRunner-windows-dotnet-debug/LineRunner.dll</BEEBUILDCOMMAND>
+    <BEEBUILDWORKINGDIR>C:\Users\Katsuya\Documents\UnityProject\h5-line-runner\LineRunner\Library\DotsRuntimeBuild</BEEBUILDWORKINGDIR>
+    <BEEOUTPUTDIRECTORY>artifacts\Bee.CSharpSupport\LineRunner\Debug</BEEOUTPUTDIRECTORY>
+  </PropertyGroup>
+  <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'windows-dotnet-debug|AnyCPU' ">
+    <Reference Include="Unity.ZeroJobs">
+      <HintPath>artifacts\Unity.ZeroJobs.dll\windows-dotnet-debug\Unity.ZeroJobs.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.LowLevel">
+      <HintPath>artifacts\Unity.LowLevel.dll\windows-dotnet-debug\Unity.LowLevel.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Collections">
+      <HintPath>artifacts\Unity.Collections.dll\windows-dotnet-debug\Unity.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Entities">
+      <HintPath>artifacts\Unity.Entities.dll\windows-dotnet-debug\Unity.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics">
+      <HintPath>artifacts\Unity.Mathematics.dll\windows-dotnet-debug\Unity.Mathematics.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Audio">
+      <HintPath>artifacts\Unity.Tiny.Audio.dll\windows-dotnet-debug\Unity.Tiny.Audio.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.AudioNative">
+      <HintPath>artifacts\Unity.Tiny.AudioNative.dll\windows-dotnet-debug\Unity.Tiny.AudioNative.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Core">
+      <HintPath>artifacts\Unity.Tiny.Core.dll\windows-dotnet-debug\Unity.Tiny.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Core2D">
+      <HintPath>artifacts\Unity.Tiny.Core2D.dll\windows-dotnet-debug\Unity.Tiny.Core2D.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Core2DTypes">
+      <HintPath>artifacts\Unity.Tiny.Core2DTypes.dll\windows-dotnet-debug\Unity.Tiny.Core2DTypes.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.EntryPoint">
+      <HintPath>artifacts\Unity.Tiny.EntryPoint.exe\windows-dotnet-debug\Unity.Tiny.EntryPoint.exe</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.GLFW">
+      <HintPath>artifacts\Unity.Tiny.GLFW.dll\windows-dotnet-debug\Unity.Tiny.GLFW.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.HitBox2D">
+      <HintPath>artifacts\Unity.Tiny.HitBox2D.dll\windows-dotnet-debug\Unity.Tiny.HitBox2D.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Image2D">
+      <HintPath>artifacts\Unity.Tiny.Image2D.dll\windows-dotnet-debug\Unity.Tiny.Image2D.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Image2DIOSTB">
+      <HintPath>artifacts\Unity.Tiny.Image2DIOSTB.dll\windows-dotnet-debug\Unity.Tiny.Image2DIOSTB.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Input">
+      <HintPath>artifacts\Unity.Tiny.Input.dll\windows-dotnet-debug\Unity.Tiny.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.InputGLFW">
+      <HintPath>artifacts\Unity.Tiny.InputGLFW.dll\windows-dotnet-debug\Unity.Tiny.InputGLFW.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.IO">
+      <HintPath>artifacts\Unity.Tiny.IO.dll\windows-dotnet-debug\Unity.Tiny.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Particles">
+      <HintPath>artifacts\Unity.Tiny.Particles.dll\windows-dotnet-debug\Unity.Tiny.Particles.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.PointQuery">
+      <HintPath>artifacts\Unity.Tiny.PointQuery.dll\windows-dotnet-debug\Unity.Tiny.PointQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Renderer">
+      <HintPath>artifacts\Unity.Tiny.Renderer.dll\windows-dotnet-debug\Unity.Tiny.Renderer.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.RendererGL">
+      <HintPath>artifacts\Unity.Tiny.RendererGL.dll\windows-dotnet-debug\Unity.Tiny.RendererGL.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.RendererGLNative">
+      <HintPath>artifacts\Unity.Tiny.RendererGLNative.dll\windows-dotnet-debug\Unity.Tiny.RendererGLNative.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Scenes">
+      <HintPath>artifacts\Unity.Tiny.Scenes.dll\windows-dotnet-debug\Unity.Tiny.Scenes.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Sprite2D">
+      <HintPath>artifacts\Unity.Tiny.Sprite2D.dll\windows-dotnet-debug\Unity.Tiny.Sprite2D.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Text">
+      <HintPath>artifacts\Unity.Tiny.Text.dll\windows-dotnet-debug\Unity.Tiny.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Tweens">
+      <HintPath>artifacts\Unity.Tiny.Tweens.dll\windows-dotnet-debug\Unity.Tiny.Tweens.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.UIControls">
+      <HintPath>artifacts\Unity.Tiny.UIControls.dll\windows-dotnet-debug\Unity.Tiny.UIControls.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.UILayout">
+      <HintPath>artifacts\Unity.Tiny.UILayout.dll\windows-dotnet-debug\Unity.Tiny.UILayout.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Video">
+      <HintPath>artifacts\Unity.Tiny.Video.dll\windows-dotnet-debug\Unity.Tiny.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.VideoNative">
+      <HintPath>artifacts\Unity.Tiny.VideoNative.dll\windows-dotnet-debug\Unity.Tiny.VideoNative.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Watchers">
+      <HintPath>artifacts\Unity.Tiny.Watchers.dll\windows-dotnet-debug\Unity.Tiny.Watchers.dll</HintPath>
+    </Reference>
+    <ProjectReference Include="Unity.TinyCorlib.csproj">
+      <Project>{95BE9475-7513-1D77-602F-DE1C691BFC25}</Project>
+      <Name>mscorlib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'windows-dotnet-develop|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>artifacts\Bee.CSharpSupport\LineRunner\Release</OutputPath>
+    <DefineConstants>UNITY_2018_3_OR_NEWER;UNITY_DOTSPLAYER;UNITY_ZEROPLAYER;NET_TINY;NET_DOTS;UNITY_USE_TINYMATH;UNITY_BINDGEM;UNITY_WINDOWS;ENABLE_UNITY_COLLECTIONS_CHECKS;UNITY_DOTSPLAYER_DOTNET</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <NoWarn></NoWarn>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <Prefer32Bit>true</Prefer32Bit>
+    <StartAction>Program</StartAction>
+    <StartProgram>C:\Users\Katsuya\Documents\UnityProject\h5-line-runner\LineRunner\Library\DotsRuntimeBuild\build\LineRunner\LineRunner-windows-dotnet-develop\LineRunner.exe</StartProgram>
+    <StartArguments />
+    <StartWorkingDirectory>C:\Users\Katsuya\Documents\UnityProject\h5-line-runner\LineRunner\Library\DotsRuntimeBuild\build\LineRunner\LineRunner-windows-dotnet-develop</StartWorkingDirectory>
+    <EnableUnmanagedDebugging>true</EnableUnmanagedDebugging>
+    <NoStdLib>true</NoStdLib>
+    <AddAdditionalExplicitAssemblyReferences>false</AddAdditionalExplicitAssemblyReferences>
+    <RuntimeMetadataVersion>v4.0.30319</RuntimeMetadataVersion>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <BEE_USE_EMPTY_BUILD>false</BEE_USE_EMPTY_BUILD>
+    <BEEBUILDCOMMAND>"C:\Users\Katsuya\Documents\UnityProject\h5-line-runner\LineRunner\Library\PackageCache\com.unity.tiny@0.15.3-preview\DotsPlayer\bee~\bee.exe" --no-colors build/LineRunner/LineRunner-windows-dotnet-develop/LineRunner.dll</BEEBUILDCOMMAND>
+    <BEEBUILDWORKINGDIR>C:\Users\Katsuya\Documents\UnityProject\h5-line-runner\LineRunner\Library\DotsRuntimeBuild</BEEBUILDWORKINGDIR>
+    <BEEOUTPUTDIRECTORY>artifacts\Bee.CSharpSupport\LineRunner\Release</BEEOUTPUTDIRECTORY>
+  </PropertyGroup>
+  <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'windows-dotnet-develop|AnyCPU' ">
+    <Reference Include="Unity.ZeroJobs">
+      <HintPath>artifacts\Unity.ZeroJobs.dll\windows-dotnet-develop\Unity.ZeroJobs.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.LowLevel">
+      <HintPath>artifacts\Unity.LowLevel.dll\windows-dotnet-develop\Unity.LowLevel.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Collections">
+      <HintPath>artifacts\Unity.Collections.dll\windows-dotnet-develop\Unity.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Entities">
+      <HintPath>artifacts\Unity.Entities.dll\windows-dotnet-develop\Unity.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics">
+      <HintPath>artifacts\Unity.Mathematics.dll\windows-dotnet-develop\Unity.Mathematics.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Audio">
+      <HintPath>artifacts\Unity.Tiny.Audio.dll\windows-dotnet-develop\Unity.Tiny.Audio.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.AudioNative">
+      <HintPath>artifacts\Unity.Tiny.AudioNative.dll\windows-dotnet-develop\Unity.Tiny.AudioNative.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Core">
+      <HintPath>artifacts\Unity.Tiny.Core.dll\windows-dotnet-develop\Unity.Tiny.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Core2D">
+      <HintPath>artifacts\Unity.Tiny.Core2D.dll\windows-dotnet-develop\Unity.Tiny.Core2D.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Core2DTypes">
+      <HintPath>artifacts\Unity.Tiny.Core2DTypes.dll\windows-dotnet-develop\Unity.Tiny.Core2DTypes.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.EntryPoint">
+      <HintPath>artifacts\Unity.Tiny.EntryPoint.exe\windows-dotnet-develop\Unity.Tiny.EntryPoint.exe</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.GLFW">
+      <HintPath>artifacts\Unity.Tiny.GLFW.dll\windows-dotnet-develop\Unity.Tiny.GLFW.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.HitBox2D">
+      <HintPath>artifacts\Unity.Tiny.HitBox2D.dll\windows-dotnet-develop\Unity.Tiny.HitBox2D.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Image2D">
+      <HintPath>artifacts\Unity.Tiny.Image2D.dll\windows-dotnet-develop\Unity.Tiny.Image2D.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Image2DIOSTB">
+      <HintPath>artifacts\Unity.Tiny.Image2DIOSTB.dll\windows-dotnet-develop\Unity.Tiny.Image2DIOSTB.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Input">
+      <HintPath>artifacts\Unity.Tiny.Input.dll\windows-dotnet-develop\Unity.Tiny.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.InputGLFW">
+      <HintPath>artifacts\Unity.Tiny.InputGLFW.dll\windows-dotnet-develop\Unity.Tiny.InputGLFW.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.IO">
+      <HintPath>artifacts\Unity.Tiny.IO.dll\windows-dotnet-develop\Unity.Tiny.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Particles">
+      <HintPath>artifacts\Unity.Tiny.Particles.dll\windows-dotnet-develop\Unity.Tiny.Particles.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.PointQuery">
+      <HintPath>artifacts\Unity.Tiny.PointQuery.dll\windows-dotnet-develop\Unity.Tiny.PointQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Renderer">
+      <HintPath>artifacts\Unity.Tiny.Renderer.dll\windows-dotnet-develop\Unity.Tiny.Renderer.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.RendererGL">
+      <HintPath>artifacts\Unity.Tiny.RendererGL.dll\windows-dotnet-develop\Unity.Tiny.RendererGL.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.RendererGLNative">
+      <HintPath>artifacts\Unity.Tiny.RendererGLNative.dll\windows-dotnet-develop\Unity.Tiny.RendererGLNative.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Scenes">
+      <HintPath>artifacts\Unity.Tiny.Scenes.dll\windows-dotnet-develop\Unity.Tiny.Scenes.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Sprite2D">
+      <HintPath>artifacts\Unity.Tiny.Sprite2D.dll\windows-dotnet-develop\Unity.Tiny.Sprite2D.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Text">
+      <HintPath>artifacts\Unity.Tiny.Text.dll\windows-dotnet-develop\Unity.Tiny.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Tweens">
+      <HintPath>artifacts\Unity.Tiny.Tweens.dll\windows-dotnet-develop\Unity.Tiny.Tweens.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.UIControls">
+      <HintPath>artifacts\Unity.Tiny.UIControls.dll\windows-dotnet-develop\Unity.Tiny.UIControls.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.UILayout">
+      <HintPath>artifacts\Unity.Tiny.UILayout.dll\windows-dotnet-develop\Unity.Tiny.UILayout.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Video">
+      <HintPath>artifacts\Unity.Tiny.Video.dll\windows-dotnet-develop\Unity.Tiny.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.VideoNative">
+      <HintPath>artifacts\Unity.Tiny.VideoNative.dll\windows-dotnet-develop\Unity.Tiny.VideoNative.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Watchers">
+      <HintPath>artifacts\Unity.Tiny.Watchers.dll\windows-dotnet-develop\Unity.Tiny.Watchers.dll</HintPath>
+    </Reference>
+    <ProjectReference Include="Unity.TinyCorlib.csproj">
+      <Project>{95BE9475-7513-1D77-602F-DE1C691BFC25}</Project>
+      <Name>mscorlib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'windows-dotnet-release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>artifacts\Bee.CSharpSupport\LineRunner\Release</OutputPath>
+    <DefineConstants>UNITY_2018_3_OR_NEWER;UNITY_DOTSPLAYER;UNITY_ZEROPLAYER;NET_TINY;NET_DOTS;UNITY_USE_TINYMATH;UNITY_BINDGEM;UNITY_WINDOWS;UNITY_DOTSPLAYER_DOTNET</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <NoWarn></NoWarn>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <Prefer32Bit>true</Prefer32Bit>
+    <StartAction>Program</StartAction>
+    <StartProgram>C:\Users\Katsuya\Documents\UnityProject\h5-line-runner\LineRunner\Library\DotsRuntimeBuild\build\LineRunner\LineRunner-windows-dotnet-release\LineRunner.exe</StartProgram>
+    <StartArguments />
+    <StartWorkingDirectory>C:\Users\Katsuya\Documents\UnityProject\h5-line-runner\LineRunner\Library\DotsRuntimeBuild\build\LineRunner\LineRunner-windows-dotnet-release</StartWorkingDirectory>
+    <EnableUnmanagedDebugging>true</EnableUnmanagedDebugging>
+    <NoStdLib>true</NoStdLib>
+    <AddAdditionalExplicitAssemblyReferences>false</AddAdditionalExplicitAssemblyReferences>
+    <RuntimeMetadataVersion>v4.0.30319</RuntimeMetadataVersion>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <BEE_USE_EMPTY_BUILD>false</BEE_USE_EMPTY_BUILD>
+    <BEEBUILDCOMMAND>"C:\Users\Katsuya\Documents\UnityProject\h5-line-runner\LineRunner\Library\PackageCache\com.unity.tiny@0.15.3-preview\DotsPlayer\bee~\bee.exe" --no-colors build/LineRunner/LineRunner-windows-dotnet-release/LineRunner.dll</BEEBUILDCOMMAND>
+    <BEEBUILDWORKINGDIR>C:\Users\Katsuya\Documents\UnityProject\h5-line-runner\LineRunner\Library\DotsRuntimeBuild</BEEBUILDWORKINGDIR>
+    <BEEOUTPUTDIRECTORY>artifacts\Bee.CSharpSupport\LineRunner\Release</BEEOUTPUTDIRECTORY>
+  </PropertyGroup>
+  <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'windows-dotnet-release|AnyCPU' ">
+    <Reference Include="Unity.ZeroJobs">
+      <HintPath>artifacts\Unity.ZeroJobs.dll\windows-dotnet-release\Unity.ZeroJobs.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.LowLevel">
+      <HintPath>artifacts\Unity.LowLevel.dll\windows-dotnet-release\Unity.LowLevel.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Collections">
+      <HintPath>artifacts\Unity.Collections.dll\windows-dotnet-release\Unity.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Entities">
+      <HintPath>artifacts\Unity.Entities.dll\windows-dotnet-release\Unity.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics">
+      <HintPath>artifacts\Unity.Mathematics.dll\windows-dotnet-release\Unity.Mathematics.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Audio">
+      <HintPath>artifacts\Unity.Tiny.Audio.dll\windows-dotnet-release\Unity.Tiny.Audio.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.AudioNative">
+      <HintPath>artifacts\Unity.Tiny.AudioNative.dll\windows-dotnet-release\Unity.Tiny.AudioNative.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Core">
+      <HintPath>artifacts\Unity.Tiny.Core.dll\windows-dotnet-release\Unity.Tiny.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Core2D">
+      <HintPath>artifacts\Unity.Tiny.Core2D.dll\windows-dotnet-release\Unity.Tiny.Core2D.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Core2DTypes">
+      <HintPath>artifacts\Unity.Tiny.Core2DTypes.dll\windows-dotnet-release\Unity.Tiny.Core2DTypes.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.EntryPoint">
+      <HintPath>artifacts\Unity.Tiny.EntryPoint.exe\windows-dotnet-release\Unity.Tiny.EntryPoint.exe</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.GLFW">
+      <HintPath>artifacts\Unity.Tiny.GLFW.dll\windows-dotnet-release\Unity.Tiny.GLFW.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.HitBox2D">
+      <HintPath>artifacts\Unity.Tiny.HitBox2D.dll\windows-dotnet-release\Unity.Tiny.HitBox2D.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Image2D">
+      <HintPath>artifacts\Unity.Tiny.Image2D.dll\windows-dotnet-release\Unity.Tiny.Image2D.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Image2DIOSTB">
+      <HintPath>artifacts\Unity.Tiny.Image2DIOSTB.dll\windows-dotnet-release\Unity.Tiny.Image2DIOSTB.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Input">
+      <HintPath>artifacts\Unity.Tiny.Input.dll\windows-dotnet-release\Unity.Tiny.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.InputGLFW">
+      <HintPath>artifacts\Unity.Tiny.InputGLFW.dll\windows-dotnet-release\Unity.Tiny.InputGLFW.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.IO">
+      <HintPath>artifacts\Unity.Tiny.IO.dll\windows-dotnet-release\Unity.Tiny.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Particles">
+      <HintPath>artifacts\Unity.Tiny.Particles.dll\windows-dotnet-release\Unity.Tiny.Particles.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.PointQuery">
+      <HintPath>artifacts\Unity.Tiny.PointQuery.dll\windows-dotnet-release\Unity.Tiny.PointQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Renderer">
+      <HintPath>artifacts\Unity.Tiny.Renderer.dll\windows-dotnet-release\Unity.Tiny.Renderer.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.RendererGL">
+      <HintPath>artifacts\Unity.Tiny.RendererGL.dll\windows-dotnet-release\Unity.Tiny.RendererGL.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.RendererGLNative">
+      <HintPath>artifacts\Unity.Tiny.RendererGLNative.dll\windows-dotnet-release\Unity.Tiny.RendererGLNative.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Scenes">
+      <HintPath>artifacts\Unity.Tiny.Scenes.dll\windows-dotnet-release\Unity.Tiny.Scenes.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Sprite2D">
+      <HintPath>artifacts\Unity.Tiny.Sprite2D.dll\windows-dotnet-release\Unity.Tiny.Sprite2D.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Text">
+      <HintPath>artifacts\Unity.Tiny.Text.dll\windows-dotnet-release\Unity.Tiny.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Tweens">
+      <HintPath>artifacts\Unity.Tiny.Tweens.dll\windows-dotnet-release\Unity.Tiny.Tweens.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.UIControls">
+      <HintPath>artifacts\Unity.Tiny.UIControls.dll\windows-dotnet-release\Unity.Tiny.UIControls.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.UILayout">
+      <HintPath>artifacts\Unity.Tiny.UILayout.dll\windows-dotnet-release\Unity.Tiny.UILayout.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Video">
+      <HintPath>artifacts\Unity.Tiny.Video.dll\windows-dotnet-release\Unity.Tiny.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.VideoNative">
+      <HintPath>artifacts\Unity.Tiny.VideoNative.dll\windows-dotnet-release\Unity.Tiny.VideoNative.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Watchers">
+      <HintPath>artifacts\Unity.Tiny.Watchers.dll\windows-dotnet-release\Unity.Tiny.Watchers.dll</HintPath>
+    </Reference>
+    <ProjectReference Include="Unity.TinyCorlib.csproj">
+      <Project>{95BE9475-7513-1D77-602F-DE1C691BFC25}</Project>
+      <Name>mscorlib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'windows-il2cpp-debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>artifacts\Bee.CSharpSupport\LineRunner\Debug</OutputPath>
+    <DefineConstants>UNITY_2018_3_OR_NEWER;UNITY_DOTSPLAYER;UNITY_ZEROPLAYER;NET_TINY;NET_DOTS;UNITY_USE_TINYMATH;UNITY_BINDGEM;UNITY_WINDOWS;DEBUG;ENABLE_UNITY_COLLECTIONS_CHECKS;UNITY_DOTSPLAYER_IL2CPP</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <NoWarn></NoWarn>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <Prefer32Bit>true</Prefer32Bit>
+    <StartAction>Program</StartAction>
+    <StartProgram>C:\Users\Katsuya\Documents\UnityProject\h5-line-runner\LineRunner\Library\DotsRuntimeBuild\build\LineRunner\LineRunner-windows-il2cpp-debug\LineRunner.exe</StartProgram>
+    <StartArguments />
+    <StartWorkingDirectory>C:\Users\Katsuya\Documents\UnityProject\h5-line-runner\LineRunner\Library\DotsRuntimeBuild\build\LineRunner\LineRunner-windows-il2cpp-debug</StartWorkingDirectory>
+    <EnableUnmanagedDebugging>true</EnableUnmanagedDebugging>
+    <NoStdLib>true</NoStdLib>
+    <AddAdditionalExplicitAssemblyReferences>false</AddAdditionalExplicitAssemblyReferences>
+    <RuntimeMetadataVersion>v4.0.30319</RuntimeMetadataVersion>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <BEE_USE_EMPTY_BUILD>false</BEE_USE_EMPTY_BUILD>
+    <BEEBUILDCOMMAND>"C:\Users\Katsuya\Documents\UnityProject\h5-line-runner\LineRunner\Library\PackageCache\com.unity.tiny@0.15.3-preview\DotsPlayer\bee~\bee.exe" --no-colors build/LineRunner/LineRunner-windows-il2cpp-debug/LineRunner.exe</BEEBUILDCOMMAND>
+    <BEEBUILDWORKINGDIR>C:\Users\Katsuya\Documents\UnityProject\h5-line-runner\LineRunner\Library\DotsRuntimeBuild</BEEBUILDWORKINGDIR>
+    <BEEOUTPUTDIRECTORY>artifacts\Bee.CSharpSupport\LineRunner\Debug</BEEOUTPUTDIRECTORY>
+  </PropertyGroup>
+  <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'windows-il2cpp-debug|AnyCPU' ">
+    <Reference Include="Unity.ZeroJobs">
+      <HintPath>artifacts\Unity.ZeroJobs.dll\windows-il2cpp-debug\Unity.ZeroJobs.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.LowLevel">
+      <HintPath>artifacts\Unity.LowLevel.dll\windows-il2cpp-debug\Unity.LowLevel.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Collections">
+      <HintPath>artifacts\Unity.Collections.dll\windows-il2cpp-debug\Unity.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Entities">
+      <HintPath>artifacts\Unity.Entities.dll\windows-il2cpp-debug\Unity.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics">
+      <HintPath>artifacts\Unity.Mathematics.dll\windows-il2cpp-debug\Unity.Mathematics.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Audio">
+      <HintPath>artifacts\Unity.Tiny.Audio.dll\windows-il2cpp-debug\Unity.Tiny.Audio.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.AudioNative">
+      <HintPath>artifacts\Unity.Tiny.AudioNative.dll\windows-il2cpp-debug\Unity.Tiny.AudioNative.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Core">
+      <HintPath>artifacts\Unity.Tiny.Core.dll\windows-il2cpp-debug\Unity.Tiny.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Core2D">
+      <HintPath>artifacts\Unity.Tiny.Core2D.dll\windows-il2cpp-debug\Unity.Tiny.Core2D.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Core2DTypes">
+      <HintPath>artifacts\Unity.Tiny.Core2DTypes.dll\windows-il2cpp-debug\Unity.Tiny.Core2DTypes.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.EntryPoint">
+      <HintPath>artifacts\Unity.Tiny.EntryPoint.exe\windows-il2cpp-debug\Unity.Tiny.EntryPoint.exe</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.GLFW">
+      <HintPath>artifacts\Unity.Tiny.GLFW.dll\windows-il2cpp-debug\Unity.Tiny.GLFW.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.HitBox2D">
+      <HintPath>artifacts\Unity.Tiny.HitBox2D.dll\windows-il2cpp-debug\Unity.Tiny.HitBox2D.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Image2D">
+      <HintPath>artifacts\Unity.Tiny.Image2D.dll\windows-il2cpp-debug\Unity.Tiny.Image2D.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Image2DIOSTB">
+      <HintPath>artifacts\Unity.Tiny.Image2DIOSTB.dll\windows-il2cpp-debug\Unity.Tiny.Image2DIOSTB.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Input">
+      <HintPath>artifacts\Unity.Tiny.Input.dll\windows-il2cpp-debug\Unity.Tiny.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.InputGLFW">
+      <HintPath>artifacts\Unity.Tiny.InputGLFW.dll\windows-il2cpp-debug\Unity.Tiny.InputGLFW.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.IO">
+      <HintPath>artifacts\Unity.Tiny.IO.dll\windows-il2cpp-debug\Unity.Tiny.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Particles">
+      <HintPath>artifacts\Unity.Tiny.Particles.dll\windows-il2cpp-debug\Unity.Tiny.Particles.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.PointQuery">
+      <HintPath>artifacts\Unity.Tiny.PointQuery.dll\windows-il2cpp-debug\Unity.Tiny.PointQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Renderer">
+      <HintPath>artifacts\Unity.Tiny.Renderer.dll\windows-il2cpp-debug\Unity.Tiny.Renderer.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.RendererGL">
+      <HintPath>artifacts\Unity.Tiny.RendererGL.dll\windows-il2cpp-debug\Unity.Tiny.RendererGL.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.RendererGLNative">
+      <HintPath>artifacts\Unity.Tiny.RendererGLNative.dll\windows-il2cpp-debug\Unity.Tiny.RendererGLNative.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Scenes">
+      <HintPath>artifacts\Unity.Tiny.Scenes.dll\windows-il2cpp-debug\Unity.Tiny.Scenes.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Sprite2D">
+      <HintPath>artifacts\Unity.Tiny.Sprite2D.dll\windows-il2cpp-debug\Unity.Tiny.Sprite2D.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Text">
+      <HintPath>artifacts\Unity.Tiny.Text.dll\windows-il2cpp-debug\Unity.Tiny.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Tweens">
+      <HintPath>artifacts\Unity.Tiny.Tweens.dll\windows-il2cpp-debug\Unity.Tiny.Tweens.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.UIControls">
+      <HintPath>artifacts\Unity.Tiny.UIControls.dll\windows-il2cpp-debug\Unity.Tiny.UIControls.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.UILayout">
+      <HintPath>artifacts\Unity.Tiny.UILayout.dll\windows-il2cpp-debug\Unity.Tiny.UILayout.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Video">
+      <HintPath>artifacts\Unity.Tiny.Video.dll\windows-il2cpp-debug\Unity.Tiny.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.VideoNative">
+      <HintPath>artifacts\Unity.Tiny.VideoNative.dll\windows-il2cpp-debug\Unity.Tiny.VideoNative.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Watchers">
+      <HintPath>artifacts\Unity.Tiny.Watchers.dll\windows-il2cpp-debug\Unity.Tiny.Watchers.dll</HintPath>
+    </Reference>
+    <ProjectReference Include="Unity.TinyCorlib.csproj">
+      <Project>{95BE9475-7513-1D77-602F-DE1C691BFC25}</Project>
+      <Name>mscorlib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'windows-il2cpp-develop|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>artifacts\Bee.CSharpSupport\LineRunner\Release</OutputPath>
+    <DefineConstants>UNITY_2018_3_OR_NEWER;UNITY_DOTSPLAYER;UNITY_ZEROPLAYER;NET_TINY;NET_DOTS;UNITY_USE_TINYMATH;UNITY_BINDGEM;UNITY_WINDOWS;ENABLE_UNITY_COLLECTIONS_CHECKS;UNITY_DOTSPLAYER_IL2CPP</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <NoWarn></NoWarn>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <Prefer32Bit>true</Prefer32Bit>
+    <StartAction>Program</StartAction>
+    <StartProgram>C:\Users\Katsuya\Documents\UnityProject\h5-line-runner\LineRunner\Library\DotsRuntimeBuild\build\LineRunner\LineRunner-windows-il2cpp-develop\LineRunner.exe</StartProgram>
+    <StartArguments />
+    <StartWorkingDirectory>C:\Users\Katsuya\Documents\UnityProject\h5-line-runner\LineRunner\Library\DotsRuntimeBuild\build\LineRunner\LineRunner-windows-il2cpp-develop</StartWorkingDirectory>
+    <EnableUnmanagedDebugging>true</EnableUnmanagedDebugging>
+    <NoStdLib>true</NoStdLib>
+    <AddAdditionalExplicitAssemblyReferences>false</AddAdditionalExplicitAssemblyReferences>
+    <RuntimeMetadataVersion>v4.0.30319</RuntimeMetadataVersion>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <BEE_USE_EMPTY_BUILD>false</BEE_USE_EMPTY_BUILD>
+    <BEEBUILDCOMMAND>"C:\Users\Katsuya\Documents\UnityProject\h5-line-runner\LineRunner\Library\PackageCache\com.unity.tiny@0.15.3-preview\DotsPlayer\bee~\bee.exe" --no-colors build/LineRunner/LineRunner-windows-il2cpp-develop/LineRunner.exe</BEEBUILDCOMMAND>
+    <BEEBUILDWORKINGDIR>C:\Users\Katsuya\Documents\UnityProject\h5-line-runner\LineRunner\Library\DotsRuntimeBuild</BEEBUILDWORKINGDIR>
+    <BEEOUTPUTDIRECTORY>artifacts\Bee.CSharpSupport\LineRunner\Release</BEEOUTPUTDIRECTORY>
+  </PropertyGroup>
+  <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'windows-il2cpp-develop|AnyCPU' ">
+    <Reference Include="Unity.ZeroJobs">
+      <HintPath>artifacts\Unity.ZeroJobs.dll\windows-il2cpp-develop\Unity.ZeroJobs.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.LowLevel">
+      <HintPath>artifacts\Unity.LowLevel.dll\windows-il2cpp-develop\Unity.LowLevel.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Collections">
+      <HintPath>artifacts\Unity.Collections.dll\windows-il2cpp-develop\Unity.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Entities">
+      <HintPath>artifacts\Unity.Entities.dll\windows-il2cpp-develop\Unity.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics">
+      <HintPath>artifacts\Unity.Mathematics.dll\windows-il2cpp-develop\Unity.Mathematics.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Audio">
+      <HintPath>artifacts\Unity.Tiny.Audio.dll\windows-il2cpp-develop\Unity.Tiny.Audio.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.AudioNative">
+      <HintPath>artifacts\Unity.Tiny.AudioNative.dll\windows-il2cpp-develop\Unity.Tiny.AudioNative.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Core">
+      <HintPath>artifacts\Unity.Tiny.Core.dll\windows-il2cpp-develop\Unity.Tiny.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Core2D">
+      <HintPath>artifacts\Unity.Tiny.Core2D.dll\windows-il2cpp-develop\Unity.Tiny.Core2D.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Core2DTypes">
+      <HintPath>artifacts\Unity.Tiny.Core2DTypes.dll\windows-il2cpp-develop\Unity.Tiny.Core2DTypes.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.EntryPoint">
+      <HintPath>artifacts\Unity.Tiny.EntryPoint.exe\windows-il2cpp-develop\Unity.Tiny.EntryPoint.exe</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.GLFW">
+      <HintPath>artifacts\Unity.Tiny.GLFW.dll\windows-il2cpp-develop\Unity.Tiny.GLFW.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.HitBox2D">
+      <HintPath>artifacts\Unity.Tiny.HitBox2D.dll\windows-il2cpp-develop\Unity.Tiny.HitBox2D.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Image2D">
+      <HintPath>artifacts\Unity.Tiny.Image2D.dll\windows-il2cpp-develop\Unity.Tiny.Image2D.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Image2DIOSTB">
+      <HintPath>artifacts\Unity.Tiny.Image2DIOSTB.dll\windows-il2cpp-develop\Unity.Tiny.Image2DIOSTB.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Input">
+      <HintPath>artifacts\Unity.Tiny.Input.dll\windows-il2cpp-develop\Unity.Tiny.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.InputGLFW">
+      <HintPath>artifacts\Unity.Tiny.InputGLFW.dll\windows-il2cpp-develop\Unity.Tiny.InputGLFW.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.IO">
+      <HintPath>artifacts\Unity.Tiny.IO.dll\windows-il2cpp-develop\Unity.Tiny.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Particles">
+      <HintPath>artifacts\Unity.Tiny.Particles.dll\windows-il2cpp-develop\Unity.Tiny.Particles.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.PointQuery">
+      <HintPath>artifacts\Unity.Tiny.PointQuery.dll\windows-il2cpp-develop\Unity.Tiny.PointQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Renderer">
+      <HintPath>artifacts\Unity.Tiny.Renderer.dll\windows-il2cpp-develop\Unity.Tiny.Renderer.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.RendererGL">
+      <HintPath>artifacts\Unity.Tiny.RendererGL.dll\windows-il2cpp-develop\Unity.Tiny.RendererGL.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.RendererGLNative">
+      <HintPath>artifacts\Unity.Tiny.RendererGLNative.dll\windows-il2cpp-develop\Unity.Tiny.RendererGLNative.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Scenes">
+      <HintPath>artifacts\Unity.Tiny.Scenes.dll\windows-il2cpp-develop\Unity.Tiny.Scenes.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Sprite2D">
+      <HintPath>artifacts\Unity.Tiny.Sprite2D.dll\windows-il2cpp-develop\Unity.Tiny.Sprite2D.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Text">
+      <HintPath>artifacts\Unity.Tiny.Text.dll\windows-il2cpp-develop\Unity.Tiny.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Tweens">
+      <HintPath>artifacts\Unity.Tiny.Tweens.dll\windows-il2cpp-develop\Unity.Tiny.Tweens.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.UIControls">
+      <HintPath>artifacts\Unity.Tiny.UIControls.dll\windows-il2cpp-develop\Unity.Tiny.UIControls.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.UILayout">
+      <HintPath>artifacts\Unity.Tiny.UILayout.dll\windows-il2cpp-develop\Unity.Tiny.UILayout.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Video">
+      <HintPath>artifacts\Unity.Tiny.Video.dll\windows-il2cpp-develop\Unity.Tiny.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.VideoNative">
+      <HintPath>artifacts\Unity.Tiny.VideoNative.dll\windows-il2cpp-develop\Unity.Tiny.VideoNative.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Watchers">
+      <HintPath>artifacts\Unity.Tiny.Watchers.dll\windows-il2cpp-develop\Unity.Tiny.Watchers.dll</HintPath>
+    </Reference>
+    <ProjectReference Include="Unity.TinyCorlib.csproj">
+      <Project>{95BE9475-7513-1D77-602F-DE1C691BFC25}</Project>
+      <Name>mscorlib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'windows-il2cpp-release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>artifacts\Bee.CSharpSupport\LineRunner\Release</OutputPath>
+    <DefineConstants>UNITY_2018_3_OR_NEWER;UNITY_DOTSPLAYER;UNITY_ZEROPLAYER;NET_TINY;NET_DOTS;UNITY_USE_TINYMATH;UNITY_BINDGEM;UNITY_WINDOWS;UNITY_DOTSPLAYER_IL2CPP</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <NoWarn></NoWarn>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <Prefer32Bit>true</Prefer32Bit>
+    <StartAction>Program</StartAction>
+    <StartProgram>C:\Users\Katsuya\Documents\UnityProject\h5-line-runner\LineRunner\Library\DotsRuntimeBuild\build\LineRunner\LineRunner-windows-il2cpp-release\LineRunner.exe</StartProgram>
+    <StartArguments />
+    <StartWorkingDirectory>C:\Users\Katsuya\Documents\UnityProject\h5-line-runner\LineRunner\Library\DotsRuntimeBuild\build\LineRunner\LineRunner-windows-il2cpp-release</StartWorkingDirectory>
+    <EnableUnmanagedDebugging>true</EnableUnmanagedDebugging>
+    <NoStdLib>true</NoStdLib>
+    <AddAdditionalExplicitAssemblyReferences>false</AddAdditionalExplicitAssemblyReferences>
+    <RuntimeMetadataVersion>v4.0.30319</RuntimeMetadataVersion>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <BEE_USE_EMPTY_BUILD>false</BEE_USE_EMPTY_BUILD>
+    <BEEBUILDCOMMAND>"C:\Users\Katsuya\Documents\UnityProject\h5-line-runner\LineRunner\Library\PackageCache\com.unity.tiny@0.15.3-preview\DotsPlayer\bee~\bee.exe" --no-colors build/LineRunner/LineRunner-windows-il2cpp-release/LineRunner.exe</BEEBUILDCOMMAND>
+    <BEEBUILDWORKINGDIR>C:\Users\Katsuya\Documents\UnityProject\h5-line-runner\LineRunner\Library\DotsRuntimeBuild</BEEBUILDWORKINGDIR>
+    <BEEOUTPUTDIRECTORY>artifacts\Bee.CSharpSupport\LineRunner\Release</BEEOUTPUTDIRECTORY>
+  </PropertyGroup>
+  <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'windows-il2cpp-release|AnyCPU' ">
+    <Reference Include="Unity.ZeroJobs">
+      <HintPath>artifacts\Unity.ZeroJobs.dll\windows-il2cpp-release\Unity.ZeroJobs.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.LowLevel">
+      <HintPath>artifacts\Unity.LowLevel.dll\windows-il2cpp-release\Unity.LowLevel.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Collections">
+      <HintPath>artifacts\Unity.Collections.dll\windows-il2cpp-release\Unity.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Entities">
+      <HintPath>artifacts\Unity.Entities.dll\windows-il2cpp-release\Unity.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics">
+      <HintPath>artifacts\Unity.Mathematics.dll\windows-il2cpp-release\Unity.Mathematics.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Audio">
+      <HintPath>artifacts\Unity.Tiny.Audio.dll\windows-il2cpp-release\Unity.Tiny.Audio.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.AudioNative">
+      <HintPath>artifacts\Unity.Tiny.AudioNative.dll\windows-il2cpp-release\Unity.Tiny.AudioNative.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Core">
+      <HintPath>artifacts\Unity.Tiny.Core.dll\windows-il2cpp-release\Unity.Tiny.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Core2D">
+      <HintPath>artifacts\Unity.Tiny.Core2D.dll\windows-il2cpp-release\Unity.Tiny.Core2D.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Core2DTypes">
+      <HintPath>artifacts\Unity.Tiny.Core2DTypes.dll\windows-il2cpp-release\Unity.Tiny.Core2DTypes.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.EntryPoint">
+      <HintPath>artifacts\Unity.Tiny.EntryPoint.exe\windows-il2cpp-release\Unity.Tiny.EntryPoint.exe</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.GLFW">
+      <HintPath>artifacts\Unity.Tiny.GLFW.dll\windows-il2cpp-release\Unity.Tiny.GLFW.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.HitBox2D">
+      <HintPath>artifacts\Unity.Tiny.HitBox2D.dll\windows-il2cpp-release\Unity.Tiny.HitBox2D.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Image2D">
+      <HintPath>artifacts\Unity.Tiny.Image2D.dll\windows-il2cpp-release\Unity.Tiny.Image2D.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Image2DIOSTB">
+      <HintPath>artifacts\Unity.Tiny.Image2DIOSTB.dll\windows-il2cpp-release\Unity.Tiny.Image2DIOSTB.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Input">
+      <HintPath>artifacts\Unity.Tiny.Input.dll\windows-il2cpp-release\Unity.Tiny.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.InputGLFW">
+      <HintPath>artifacts\Unity.Tiny.InputGLFW.dll\windows-il2cpp-release\Unity.Tiny.InputGLFW.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.IO">
+      <HintPath>artifacts\Unity.Tiny.IO.dll\windows-il2cpp-release\Unity.Tiny.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Particles">
+      <HintPath>artifacts\Unity.Tiny.Particles.dll\windows-il2cpp-release\Unity.Tiny.Particles.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.PointQuery">
+      <HintPath>artifacts\Unity.Tiny.PointQuery.dll\windows-il2cpp-release\Unity.Tiny.PointQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Renderer">
+      <HintPath>artifacts\Unity.Tiny.Renderer.dll\windows-il2cpp-release\Unity.Tiny.Renderer.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.RendererGL">
+      <HintPath>artifacts\Unity.Tiny.RendererGL.dll\windows-il2cpp-release\Unity.Tiny.RendererGL.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.RendererGLNative">
+      <HintPath>artifacts\Unity.Tiny.RendererGLNative.dll\windows-il2cpp-release\Unity.Tiny.RendererGLNative.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Scenes">
+      <HintPath>artifacts\Unity.Tiny.Scenes.dll\windows-il2cpp-release\Unity.Tiny.Scenes.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Sprite2D">
+      <HintPath>artifacts\Unity.Tiny.Sprite2D.dll\windows-il2cpp-release\Unity.Tiny.Sprite2D.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Text">
+      <HintPath>artifacts\Unity.Tiny.Text.dll\windows-il2cpp-release\Unity.Tiny.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Tweens">
+      <HintPath>artifacts\Unity.Tiny.Tweens.dll\windows-il2cpp-release\Unity.Tiny.Tweens.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.UIControls">
+      <HintPath>artifacts\Unity.Tiny.UIControls.dll\windows-il2cpp-release\Unity.Tiny.UIControls.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.UILayout">
+      <HintPath>artifacts\Unity.Tiny.UILayout.dll\windows-il2cpp-release\Unity.Tiny.UILayout.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Video">
+      <HintPath>artifacts\Unity.Tiny.Video.dll\windows-il2cpp-release\Unity.Tiny.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.VideoNative">
+      <HintPath>artifacts\Unity.Tiny.VideoNative.dll\windows-il2cpp-release\Unity.Tiny.VideoNative.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tiny.Watchers">
+      <HintPath>artifacts\Unity.Tiny.Watchers.dll\windows-il2cpp-release\Unity.Tiny.Watchers.dll</HintPath>
+    </Reference>
+    <ProjectReference Include="Unity.TinyCorlib.csproj">
+      <Project>{95BE9475-7513-1D77-602F-DE1C691BFC25}</Project>
+      <Name>mscorlib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="GenerateTargetFrameworkMonikerAttribute" />
+  <Target Name="Build" Outputs="$(BEEOUTPUTDIRECTORY)" DependsOnTargets="">
+    <Exec Command="$(BEEBUILDCOMMAND)" WorkingDirectory="$(BEEBUILDWORKINGDIR)" Condition=" '$(BEE_USE_EMPTY_BUILD)' == 'false' " />
+  </Target>
+</Project>
