@@ -49,9 +49,9 @@
                 "StableTypeHash": 6753126901390954908
             }]
         }, {
-            "$type": "Unity.Authoring.Core.ConfigurationTag, Unity.Authoring.Core"
-        }, {
             "$type": "LineRunner.GameConfig, LineRunner"
+        }, {
+            "$type": "Unity.Authoring.Core.ConfigurationTag, Unity.Authoring.Core"
         }]
     }]
 }
