@@ -9,7 +9,8 @@ namespace LineRunner
         protected override void OnUpdate()
         {
             var controlButton = false;
-
+            Entities.ForEach((DynamicBuffer<StopPositions> stoppositions) =>
+            {
             Entities.ForEach((Entity entity, ref Player player, ref Translation translation) =>
             {
                 if (player.Move)
@@ -22,12 +23,16 @@ namespace LineRunner
 
 
                 var position = translation.Value;
+
                 if (controlButton)
                 {
                     player.Move = true;
-                    player.Speed = 5f;
-                    translation.Value.x = 0.11f;
+                    player.Speed = 10f;
+                    translation.Value.x = translation.Value.x + 0.11f;
                 }
+
+            });
+
             });
         }
     }

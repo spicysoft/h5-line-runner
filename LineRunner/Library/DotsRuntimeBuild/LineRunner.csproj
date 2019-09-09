@@ -13,6 +13,9 @@
     <LangVersion>7.3</LangVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="..\..\Assets\LineRunner\Components\blackSegments.cs">
+      <Link>Components\blackSegments.cs</Link>
+    </Compile>
     <Compile Include="..\..\Assets\LineRunner\Components\ControllerButton.cs">
       <Link>Components\ControllerButton.cs</Link>
     </Compile>
@@ -27,6 +30,9 @@
     </Compile>
     <Compile Include="..\..\Assets\LineRunner\Scripts\AssemblyInfo.cs">
       <Link>Scripts\AssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Assets\LineRunner\Scripts\BlackMovingSystem.cs">
+      <Link>Scripts\BlackMovingSystem.cs</Link>
     </Compile>
     <Compile Include="..\..\Assets\LineRunner\Scripts\ControllerButtonSystem.cs">
       <Link>Scripts\ControllerButtonSystem.cs</Link>

@@ -1,5 +1,6 @@
 06d0a78b7523e833ed43a2db99db271e = "Assets"
 5cae2427e93686e6bd35319684ac6177 = "Assets/LineRunner/Graphic/circle.png"
+cde144989760e534db8bf239e462371d = "Assets/LineRunner/Graphic/square.png"
 87c8a79bf9774a759bdb56fcd3df37e3 = "Assets/LineRunner/Scenes/ControllerScene.scene"
 68e33dcbf4e343ad98752b3de0b44eea = "Assets/LineRunner/Scenes/MainScene.scene"
 029f282e8ffd441c938ab9f92fc75cf6 = "Assets/LineRunner/Scenes/PlayerScene.scene"
