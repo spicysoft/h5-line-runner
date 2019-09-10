@@ -8,7 +8,13 @@ namespace LineRunner
 
         protected override void OnUpdate()
         {
+            var tinyEnv = World.TinyEnvironment();
+            var config = World.TinyEnvironment().GetConfigData<GameConfig>();
 
+            if (config.Collide)
+                return;
+
+            
 
             Entities.ForEach((DynamicBuffer<StopPositions> stoppositions) =>
             {

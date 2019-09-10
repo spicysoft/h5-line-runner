@@ -1,4 +1,5 @@
 using Unity.Entities;
+using Unity.Tiny.Core;
 using Unity.Tiny.Core2D;
 using Unity.Tiny.UIControls;
 
@@ -8,6 +9,11 @@ namespace LineRunner
     {
         protected override void OnUpdate()
         {
+            var tinyEnv = World.TinyEnvironment();
+            var config = World.TinyEnvironment().GetConfigData<GameConfig>();
+
+            if (config.Collide)
+                return;
             var controlButton = false;
             Entities.ForEach((DynamicBuffer<StopPositions> stoppositions) =>
             {
