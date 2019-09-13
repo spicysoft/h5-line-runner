@@ -11,7 +11,7 @@ namespace LineRunner
             var tinyEnv = World.TinyEnvironment();
             var config = World.TinyEnvironment().GetConfigData<GameConfig>();
 
-            if (config.Collide)
+            if (config.Collide || !config.Start)
                 return;
 
             

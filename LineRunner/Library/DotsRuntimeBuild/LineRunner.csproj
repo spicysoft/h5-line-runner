@@ -13,6 +13,9 @@
     <LangVersion>7.3</LangVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="..\..\Assets\LineRunner\Components\black.cs">
+      <Link>Components\black.cs</Link>
+    </Compile>
     <Compile Include="..\..\Assets\LineRunner\Components\blackSegments.cs">
       <Link>Components\blackSegments.cs</Link>
     </Compile>
@@ -25,6 +28,15 @@
     <Compile Include="..\..\Assets\LineRunner\Components\Player.cs">
       <Link>Components\Player.cs</Link>
     </Compile>
+    <Compile Include="..\..\Assets\LineRunner\Components\RetryButton.cs">
+      <Link>Components\RetryButton.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Assets\LineRunner\Components\Score.cs">
+      <Link>Components\Score.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Assets\LineRunner\Components\StartButton.cs">
+      <Link>Components\StartButton.cs</Link>
+    </Compile>
     <Compile Include="..\..\Assets\LineRunner\Components\StopPositions.cs">
       <Link>Components\StopPositions.cs</Link>
     </Compile>
@@ -34,11 +46,29 @@
     <Compile Include="..\..\Assets\LineRunner\Scripts\BlackMovingSystem.cs">
       <Link>Scripts\BlackMovingSystem.cs</Link>
     </Compile>
+    <Compile Include="..\..\Assets\LineRunner\Scripts\CollideSystem.cs">
+      <Link>Scripts\CollideSystem.cs</Link>
+    </Compile>
     <Compile Include="..\..\Assets\LineRunner\Scripts\ControllerButtonSystem.cs">
       <Link>Scripts\ControllerButtonSystem.cs</Link>
     </Compile>
+    <Compile Include="..\..\Assets\LineRunner\Scripts\GameOverSystem.cs">
+      <Link>Scripts\GameOverSystem.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Assets\LineRunner\Scripts\PlayerFallSystem.cs">
+      <Link>Scripts\PlayerFallSystem.cs</Link>
+    </Compile>
     <Compile Include="..\..\Assets\LineRunner\Scripts\PlayerMovingSystem.cs">
       <Link>Scripts\PlayerMovingSystem.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Assets\LineRunner\Scripts\RetryButtonSystem.cs">
+      <Link>Scripts\RetryButtonSystem.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Assets\LineRunner\Scripts\ScoreSystem.cs">
+      <Link>Scripts\ScoreSystem.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Assets\LineRunner\Scripts\StartButtonSystem.cs">
+      <Link>Scripts\StartButtonSystem.cs</Link>
     </Compile>
     <None Include="..\..\Assets\LineRunner\LineRunner.asmdef">
       <Link>LineRunner.asmdef</Link>

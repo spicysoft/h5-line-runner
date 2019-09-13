@@ -2143,6 +2143,29 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float3_tB3DB6E304B40D8C4DA63622603E1671D83A2F
 		return L_13;
 	}
 }
+// Unity.Mathematics.float3 Unity.Mathematics.float3::op_Subtraction(Unity.Mathematics.float3,System.Single)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float3_tB3DB6E304B40D8C4DA63622603E1671D83A2FDF7  float3_op_Subtraction_mAB3441EB18B795ED3AA3F05BAEC99879B6FA7689 (float3_tB3DB6E304B40D8C4DA63622603E1671D83A2FDF7  ___lhs0, float ___rhs1)
+{
+	float3_tB3DB6E304B40D8C4DA63622603E1671D83A2FDF7  V_0;
+	il2cpp::utils::MemoryUtils::MemorySet((&V_0), 0, sizeof(V_0));
+	{
+		float3_tB3DB6E304B40D8C4DA63622603E1671D83A2FDF7  L_0 = ___lhs0;
+		float L_1 = L_0.get_x_0();
+		float L_2 = ___rhs1;
+		float3_tB3DB6E304B40D8C4DA63622603E1671D83A2FDF7  L_3 = ___lhs0;
+		float L_4 = L_3.get_y_1();
+		float L_5 = ___rhs1;
+		float3_tB3DB6E304B40D8C4DA63622603E1671D83A2FDF7  L_6 = ___lhs0;
+		float L_7 = L_6.get_z_2();
+		float L_8 = ___rhs1;
+		float3_tB3DB6E304B40D8C4DA63622603E1671D83A2FDF7  L_9;
+		il2cpp::utils::MemoryUtils::MemorySet((&L_9), 0, sizeof(L_9));
+		float3__ctor_m581FA57F57E627BEC942F186E61DFA7521D2E823_inline((&L_9), ((float)il2cpp_codegen_subtract((float)L_1, (float)L_2)), ((float)il2cpp_codegen_subtract((float)L_4, (float)L_5)), ((float)il2cpp_codegen_subtract((float)L_7, (float)L_8)));
+		V_0 = L_9;
+		float3_tB3DB6E304B40D8C4DA63622603E1671D83A2FDF7  L_10 = V_0;
+		return L_10;
+	}
+}
 // Unity.Mathematics.float3 Unity.Mathematics.float3::op_UnaryNegation(Unity.Mathematics.float3)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float3_tB3DB6E304B40D8C4DA63622603E1671D83A2FDF7  float3_op_UnaryNegation_m4F438D32357822881B2C834EBD0E9573ECE87456 (float3_tB3DB6E304B40D8C4DA63622603E1671D83A2FDF7  ___val0)
 {
