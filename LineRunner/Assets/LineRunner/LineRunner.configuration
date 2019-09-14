@@ -5,7 +5,8 @@
     "AssetReferences": [],
     "Entities": [{
         "Components": [{
-            "$type": "LineRunner.GameConfig, LineRunner"
+            "$type": "LineRunner.GameConfig, LineRunner",
+            "Speed": 2
         }, {
             "$type": "Unity.Entities.EntityGuid, Unity.Entities",
             "a": 6551993212523725086,
@@ -57,6 +58,8 @@
                 "StableTypeHash": 11526148243568828353
             }, {
                 "StableTypeHash": 2604495299034485776
+            }, {
+                "StableTypeHash": 5062847814069149060
             }]
         }, {
             "$type": "Unity.Authoring.Core.ConfigurationTag, Unity.Authoring.Core"

@@ -1204,6 +1204,8 @@
         }, {
             "$type": "Unity.Tiny.UIControls.PointerInteraction, Unity.Tiny.UIControls"
         }, {
+            "$type": "LineRunner.RetryButton, LineRunner"
+        }, {
             "$type": "Unity.Authoring.Core.SiblingIndex, Unity.Authoring.Core",
             "Index": 3
         }, {
@@ -1309,9 +1311,9 @@
                 "StableTypeHash": 5378123052767168278
             }, {
                 "StableTypeHash": 7766248495629219373
+            }, {
+                "StableTypeHash": 16537198402640921316
             }]
-        }, {
-            "$type": "LineRunner.RetryButton, LineRunner"
         }]
     }, {
         "Components": [{

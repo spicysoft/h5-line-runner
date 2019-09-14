@@ -21,6 +21,8 @@
 
 // LineRunner.BlackMovingSystem
 struct BlackMovingSystem_t26881F3048AD501EC11C08DD4D22388244673A0E;
+// LineRunner.BlackResetSystem
+struct BlackResetSystem_tA9C1DA53D685F604BC276136672B358EDAA39DD6;
 // LineRunner.CollideSystem
 struct CollideSystem_tD6E9E0CC87DB8E671524825D279284A120C13994;
 // LineRunner.ControllerButtonSystem
@@ -1097,6 +1099,7 @@ IL2CPP_EXTERN_C const RuntimeMethod BeginInitializationEntityCommandBufferSystem
 IL2CPP_EXTERN_C const RuntimeMethod BeginPresentationEntityCommandBufferSystem__ctor_mD032AC2F0B401926B35567528272E3FBFA12EA0B_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod BeginSimulationEntityCommandBufferSystem__ctor_m7366FD8AFA5B646C37F9BF5D4D1657CBB93ED72A_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod BlackMovingSystem__ctor_mA6FA9FC0A42889A326088CA924551FD835280749_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeMethod BlackResetSystem__ctor_m74A5ECDC148852FCA8C3D5A25E6618316D04076E_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod ButtonSystem__ctor_m084F648DE4D766CA0772F02AD34AAC73298B0DE4_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod ClearRemappedEntityReferenceSystem__ctor_m3705697423A99238A3D8D817F3DE91E4E58B741F_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod CollideSystem__ctor_mC420CABE749BD1D6090DA4DFD709712B84EFA293_RuntimeMethod_var;
@@ -2322,14 +2325,16 @@ struct  GameConfig_t044CFD4C6434009583EEEF10719B5DDBEF5F804E
 public:
 	// System.Int32 LineRunner.GameConfig::Score
 	int32_t ___Score_0;
+	// System.Single LineRunner.GameConfig::Speed
+	float ___Speed_1;
 	// System.Boolean LineRunner.GameConfig::Collide
-	bool ___Collide_1;
+	bool ___Collide_2;
 	// System.Boolean LineRunner.GameConfig::Start
-	bool ___Start_2;
+	bool ___Start_3;
 	// System.Boolean LineRunner.GameConfig::GameOver
-	bool ___GameOver_3;
+	bool ___GameOver_4;
 	// System.Boolean LineRunner.GameConfig::Retry
-	bool ___Retry_4;
+	bool ___Retry_5;
 
 public:
 	inline int32_t get_Score_0() const { return ___Score_0; }
@@ -2339,32 +2344,39 @@ public:
 		___Score_0 = value;
 	}
 
-	inline bool get_Collide_1() const { return ___Collide_1; }
-	inline bool* get_address_of_Collide_1() { return &___Collide_1; }
-	inline void set_Collide_1(bool value)
+	inline float get_Speed_1() const { return ___Speed_1; }
+	inline float* get_address_of_Speed_1() { return &___Speed_1; }
+	inline void set_Speed_1(float value)
 	{
-		___Collide_1 = value;
+		___Speed_1 = value;
 	}
 
-	inline bool get_Start_2() const { return ___Start_2; }
-	inline bool* get_address_of_Start_2() { return &___Start_2; }
-	inline void set_Start_2(bool value)
+	inline bool get_Collide_2() const { return ___Collide_2; }
+	inline bool* get_address_of_Collide_2() { return &___Collide_2; }
+	inline void set_Collide_2(bool value)
 	{
-		___Start_2 = value;
+		___Collide_2 = value;
 	}
 
-	inline bool get_GameOver_3() const { return ___GameOver_3; }
-	inline bool* get_address_of_GameOver_3() { return &___GameOver_3; }
-	inline void set_GameOver_3(bool value)
+	inline bool get_Start_3() const { return ___Start_3; }
+	inline bool* get_address_of_Start_3() { return &___Start_3; }
+	inline void set_Start_3(bool value)
 	{
-		___GameOver_3 = value;
+		___Start_3 = value;
 	}
 
-	inline bool get_Retry_4() const { return ___Retry_4; }
-	inline bool* get_address_of_Retry_4() { return &___Retry_4; }
-	inline void set_Retry_4(bool value)
+	inline bool get_GameOver_4() const { return ___GameOver_4; }
+	inline bool* get_address_of_GameOver_4() { return &___GameOver_4; }
+	inline void set_GameOver_4(bool value)
 	{
-		___Retry_4 = value;
+		___GameOver_4 = value;
+	}
+
+	inline bool get_Retry_5() const { return ___Retry_5; }
+	inline bool* get_address_of_Retry_5() { return &___Retry_5; }
+	inline void set_Retry_5(bool value)
+	{
+		___Retry_5 = value;
 	}
 };
 
@@ -2372,10 +2384,11 @@ public:
 struct GameConfig_t044CFD4C6434009583EEEF10719B5DDBEF5F804E_marshaled_pinvoke
 {
 	int32_t ___Score_0;
-	int32_t ___Collide_1;
-	int32_t ___Start_2;
-	int32_t ___GameOver_3;
-	int32_t ___Retry_4;
+	float ___Speed_1;
+	int32_t ___Collide_2;
+	int32_t ___Start_3;
+	int32_t ___GameOver_4;
+	int32_t ___Retry_5;
 };
 
 // LineRunner.Player
@@ -2414,17 +2427,23 @@ struct Player_tEB216AB4227489A3E64818F65E7D5F2514917EC5_marshaled_pinvoke
 struct  RetryButton_tCB6B7F7F776C209E5A54A135AD2209EDBC9E8432 
 {
 public:
-	union
-	{
-		struct
-		{
-		};
-		uint8_t RetryButton_tCB6B7F7F776C209E5A54A135AD2209EDBC9E8432__padding[1];
-	};
+	// System.Boolean LineRunner.RetryButton::test
+	bool ___test_0;
 
 public:
+	inline bool get_test_0() const { return ___test_0; }
+	inline bool* get_address_of_test_0() { return &___test_0; }
+	inline void set_test_0(bool value)
+	{
+		___test_0 = value;
+	}
 };
 
+// Native definition for P/Invoke marshalling of LineRunner.RetryButton
+struct RetryButton_tCB6B7F7F776C209E5A54A135AD2209EDBC9E8432_marshaled_pinvoke
+{
+	int32_t ___test_0;
+};
 
 // LineRunner.StartButton
 struct  StartButton_tFF05FA8126FFC488320C82E1B32526F48B89A6D3 
@@ -24625,6 +24644,95 @@ public:
 };
 
 
+// LineRunner.BlackResetSystem
+struct  BlackResetSystem_tA9C1DA53D685F604BC276136672B358EDAA39DD6  : public ComponentSystem_t11926B8B0CA6228AF04CA706B051BDEC3B81E68B
+{
+public:
+	// Unity.Mathematics.Random LineRunner.BlackResetSystem::_random
+	Random_t3396F9B4823F44C4DE035EB1435DE62A7362FA69  ____random_15;
+	// System.Single LineRunner.BlackResetSystem::Speed
+	float ___Speed_16;
+	// Unity.Mathematics.float3 LineRunner.BlackResetSystem::prePosition
+	float3_tB3DB6E304B40D8C4DA63622603E1671D83A2FDF7  ___prePosition_17;
+	// Unity.Mathematics.float3 LineRunner.BlackResetSystem::lastPosition
+	float3_tB3DB6E304B40D8C4DA63622603E1671D83A2FDF7  ___lastPosition_18;
+	// Unity.Mathematics.float3 LineRunner.BlackResetSystem::prePositionB
+	float3_tB3DB6E304B40D8C4DA63622603E1671D83A2FDF7  ___prePositionB_19;
+	// Unity.Mathematics.float3 LineRunner.BlackResetSystem::lastPositionB
+	float3_tB3DB6E304B40D8C4DA63622603E1671D83A2FDF7  ___lastPositionB_20;
+	// Unity.Mathematics.float3 LineRunner.BlackResetSystem::prePositionC
+	float3_tB3DB6E304B40D8C4DA63622603E1671D83A2FDF7  ___prePositionC_21;
+	// Unity.Mathematics.float3 LineRunner.BlackResetSystem::lastPositionC
+	float3_tB3DB6E304B40D8C4DA63622603E1671D83A2FDF7  ___lastPositionC_22;
+	// System.Single LineRunner.BlackResetSystem::distance
+	float ___distance_23;
+
+public:
+	inline Random_t3396F9B4823F44C4DE035EB1435DE62A7362FA69  get__random_15() const { return ____random_15; }
+	inline Random_t3396F9B4823F44C4DE035EB1435DE62A7362FA69 * get_address_of__random_15() { return &____random_15; }
+	inline void set__random_15(Random_t3396F9B4823F44C4DE035EB1435DE62A7362FA69  value)
+	{
+		____random_15 = value;
+	}
+
+	inline float get_Speed_16() const { return ___Speed_16; }
+	inline float* get_address_of_Speed_16() { return &___Speed_16; }
+	inline void set_Speed_16(float value)
+	{
+		___Speed_16 = value;
+	}
+
+	inline float3_tB3DB6E304B40D8C4DA63622603E1671D83A2FDF7  get_prePosition_17() const { return ___prePosition_17; }
+	inline float3_tB3DB6E304B40D8C4DA63622603E1671D83A2FDF7 * get_address_of_prePosition_17() { return &___prePosition_17; }
+	inline void set_prePosition_17(float3_tB3DB6E304B40D8C4DA63622603E1671D83A2FDF7  value)
+	{
+		___prePosition_17 = value;
+	}
+
+	inline float3_tB3DB6E304B40D8C4DA63622603E1671D83A2FDF7  get_lastPosition_18() const { return ___lastPosition_18; }
+	inline float3_tB3DB6E304B40D8C4DA63622603E1671D83A2FDF7 * get_address_of_lastPosition_18() { return &___lastPosition_18; }
+	inline void set_lastPosition_18(float3_tB3DB6E304B40D8C4DA63622603E1671D83A2FDF7  value)
+	{
+		___lastPosition_18 = value;
+	}
+
+	inline float3_tB3DB6E304B40D8C4DA63622603E1671D83A2FDF7  get_prePositionB_19() const { return ___prePositionB_19; }
+	inline float3_tB3DB6E304B40D8C4DA63622603E1671D83A2FDF7 * get_address_of_prePositionB_19() { return &___prePositionB_19; }
+	inline void set_prePositionB_19(float3_tB3DB6E304B40D8C4DA63622603E1671D83A2FDF7  value)
+	{
+		___prePositionB_19 = value;
+	}
+
+	inline float3_tB3DB6E304B40D8C4DA63622603E1671D83A2FDF7  get_lastPositionB_20() const { return ___lastPositionB_20; }
+	inline float3_tB3DB6E304B40D8C4DA63622603E1671D83A2FDF7 * get_address_of_lastPositionB_20() { return &___lastPositionB_20; }
+	inline void set_lastPositionB_20(float3_tB3DB6E304B40D8C4DA63622603E1671D83A2FDF7  value)
+	{
+		___lastPositionB_20 = value;
+	}
+
+	inline float3_tB3DB6E304B40D8C4DA63622603E1671D83A2FDF7  get_prePositionC_21() const { return ___prePositionC_21; }
+	inline float3_tB3DB6E304B40D8C4DA63622603E1671D83A2FDF7 * get_address_of_prePositionC_21() { return &___prePositionC_21; }
+	inline void set_prePositionC_21(float3_tB3DB6E304B40D8C4DA63622603E1671D83A2FDF7  value)
+	{
+		___prePositionC_21 = value;
+	}
+
+	inline float3_tB3DB6E304B40D8C4DA63622603E1671D83A2FDF7  get_lastPositionC_22() const { return ___lastPositionC_22; }
+	inline float3_tB3DB6E304B40D8C4DA63622603E1671D83A2FDF7 * get_address_of_lastPositionC_22() { return &___lastPositionC_22; }
+	inline void set_lastPositionC_22(float3_tB3DB6E304B40D8C4DA63622603E1671D83A2FDF7  value)
+	{
+		___lastPositionC_22 = value;
+	}
+
+	inline float get_distance_23() const { return ___distance_23; }
+	inline float* get_address_of_distance_23() { return &___distance_23; }
+	inline void set_distance_23(float value)
+	{
+		___distance_23 = value;
+	}
+};
+
+
 // LineRunner.CollideSystem
 struct  CollideSystem_tD6E9E0CC87DB8E671524825D279284A120C13994  : public ComponentSystem_t11926B8B0CA6228AF04CA706B051BDEC3B81E68B
 {
@@ -28122,6 +28230,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RendererGLES2System__ctor_mBAD29A59672EF
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RendererCanvasSystem__ctor_mF1F5B01205DBE10692E5B8B1FB958E1FCCBAF769 (RendererCanvasSystem_tE3EEC0A8A9D00D8AA86EBE0A035C3188980210D2 * __this);
 // System.Void LineRunner.BlackMovingSystem::.ctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BlackMovingSystem__ctor_mA6FA9FC0A42889A326088CA924551FD835280749 (BlackMovingSystem_t26881F3048AD501EC11C08DD4D22388244673A0E * __this);
+// System.Void LineRunner.BlackResetSystem::.ctor()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BlackResetSystem__ctor_m74A5ECDC148852FCA8C3D5A25E6618316D04076E (BlackResetSystem_tA9C1DA53D685F604BC276136672B358EDAA39DD6 * __this);
 // System.Void LineRunner.CollideSystem::.ctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CollideSystem__ctor_mC420CABE749BD1D6090DA4DFD709712B84EFA293 (CollideSystem_tD6E9E0CC87DB8E671524825D279284A120C13994 * __this);
 // System.Void LineRunner.ControllerButtonSystem::.ctor()
@@ -31075,7 +31185,7 @@ IL_0016:
 		TypeInfoU5BU5D_tD8067FF6B4CCF3232558469F8F614EE38DCDECEB* L_1340 = L_1338;
 		TypeInfo_tDCC4AA347E5EA34625B335B94CC21AF3F9C6FAE3  L_1341;
 		il2cpp::utils::MemoryUtils::MemorySet((&L_1341), 0, sizeof(L_1341));
-		TypeInfo__ctor_m4CA189FC3E2AAEFF1A7630982DBE23FD17E2DDD7((&L_1341), ((int32_t)33554639), 0, 0, (-1), (((int64_t)((uint64_t)((int64_t)2604495299034485776LL)))), (((int64_t)((uint64_t)((int64_t)2604495299034485776LL)))), (-1), 8, 8, 8, ((int32_t)2147483647LL), 0, 0, 0, 0, 0, (bool)0, (bool)1);
+		TypeInfo__ctor_m4CA189FC3E2AAEFF1A7630982DBE23FD17E2DDD7((&L_1341), ((int32_t)33554639), 0, 0, (-1), (((int64_t)((uint64_t)((int64_t)5062847814069149060LL)))), (((int64_t)((uint64_t)((int64_t)5062847814069149060LL)))), (-1), ((int32_t)12), ((int32_t)12), ((int32_t)16), ((int32_t)2147483647LL), 0, 0, 0, 0, 0, (bool)0, (bool)1);
 		(L_1340)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)207)), (TypeInfo_tDCC4AA347E5EA34625B335B94CC21AF3F9C6FAE3 )L_1341);
 		TypeInfoU5BU5D_tD8067FF6B4CCF3232558469F8F614EE38DCDECEB* L_1342 = L_1340;
 		TypeInfo_tDCC4AA347E5EA34625B335B94CC21AF3F9C6FAE3  L_1343;
@@ -31085,7 +31195,7 @@ IL_0016:
 		TypeInfoU5BU5D_tD8067FF6B4CCF3232558469F8F614EE38DCDECEB* L_1344 = L_1342;
 		TypeInfo_tDCC4AA347E5EA34625B335B94CC21AF3F9C6FAE3  L_1345;
 		il2cpp::utils::MemoryUtils::MemorySet((&L_1345), 0, sizeof(L_1345));
-		TypeInfo__ctor_m4CA189FC3E2AAEFF1A7630982DBE23FD17E2DDD7((&L_1345), ((int32_t)1107296465), 0, 0, (-1), (((int64_t)((uint64_t)((int64_t)7766248495629219373LL)))), (((int64_t)((uint64_t)((int64_t)7766248495629219373LL)))), (-1), 0, 0, 1, ((int32_t)2147483647LL), 0, 0, 0, 0, 0, (bool)0, (bool)1);
+		TypeInfo__ctor_m4CA189FC3E2AAEFF1A7630982DBE23FD17E2DDD7((&L_1345), ((int32_t)33554641), 0, 0, (-1), (((int64_t)((uint64_t)((int64_t)-1909545671068630300LL)))), (((int64_t)((uint64_t)((int64_t)-1909545671068630300LL)))), (-1), 1, 1, 1, ((int32_t)2147483647LL), 0, 0, 0, 0, 0, (bool)0, (bool)1);
 		(L_1344)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)209)), (TypeInfo_tDCC4AA347E5EA34625B335B94CC21AF3F9C6FAE3 )L_1345);
 		TypeInfoU5BU5D_tD8067FF6B4CCF3232558469F8F614EE38DCDECEB* L_1346 = L_1344;
 		TypeInfo_tDCC4AA347E5EA34625B335B94CC21AF3F9C6FAE3  L_1347;
@@ -33647,7 +33757,7 @@ IL_0016:
 		L_2199->set_m_ReversePInvokeWrapperPtr_2(reinterpret_cast<void*>(NULL));
 		L_2199->set_m_IsDelegateOpen_3(true);
 		((EqualityHelper_1_t338AEB9C5FFB9CBAE159ABAB3EC25F8D450613F8_StaticFields*)EqualityHelper_1_t338AEB9C5FFB9CBAE159ABAB3EC25F8D450613F8_StaticFields_Storage)->set_Hash_1(L_2199);
-		TypeU5BU5D_t584B0166A16EB898D5298BCC10248E86B16D5B14* L_2200 = (TypeU5BU5D_t584B0166A16EB898D5298BCC10248E86B16D5B14*)(TypeU5BU5D_t584B0166A16EB898D5298BCC10248E86B16D5B14*)SZArrayNew<TypeU5BU5D_t584B0166A16EB898D5298BCC10248E86B16D5B14*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 2748 : 5496), sizeof(Type_t *), (uint32_t)((int32_t)66));
+		TypeU5BU5D_t584B0166A16EB898D5298BCC10248E86B16D5B14* L_2200 = (TypeU5BU5D_t584B0166A16EB898D5298BCC10248E86B16D5B14*)(TypeU5BU5D_t584B0166A16EB898D5298BCC10248E86B16D5B14*)SZArrayNew<TypeU5BU5D_t584B0166A16EB898D5298BCC10248E86B16D5B14*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 2748 : 5496), sizeof(Type_t *), (uint32_t)((int32_t)67));
 		TypeU5BU5D_t584B0166A16EB898D5298BCC10248E86B16D5B14* L_2201 = L_2200;
 		RuntimeTypeHandle_t4AEFB4045F601C7B50F59B5483EEE787CC4D967A  L_2202 = { reinterpret_cast<intptr_t> (LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 25656 : 51296)) };
 		Type_t * L_2203 = Type_GetTypeFromHandle_m2E0BF604BD00AD02BFCB4A8FB6B3DBDA96CABFB6(L_2202);
@@ -33978,341 +34088,351 @@ IL_0016:
 		Type_t * L_2398 = Type_GetTypeFromHandle_m2E0BF604BD00AD02BFCB4A8FB6B3DBDA96CABFB6(L_2397);
 		ArrayElementTypeCheck (L_2396, L_2398);
 		(L_2396)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)65)), (Type_t *)L_2398);
-		((StaticTypeRegistry_t84643602B6988792546973957016AF10B095AC45_StaticFields*)StaticTypeRegistry_t84643602B6988792546973957016AF10B095AC45_StaticFields_Storage)->set_Systems_6(L_2396);
-		BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040* L_2399 = (BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040*)(BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040*)SZArrayNew<BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30432 : 60848), sizeof(bool), (uint32_t)((int32_t)66));
-		BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040* L_2400 = L_2399;
-		(L_2400)->SetAt(static_cast<il2cpp_array_size_t>(0), (bool)0);
-		BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040* L_2401 = L_2400;
-		(L_2401)->SetAt(static_cast<il2cpp_array_size_t>(1), (bool)0);
-		BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040* L_2402 = L_2401;
-		(L_2402)->SetAt(static_cast<il2cpp_array_size_t>(2), (bool)1);
+		TypeU5BU5D_t584B0166A16EB898D5298BCC10248E86B16D5B14* L_2399 = L_2396;
+		RuntimeTypeHandle_t4AEFB4045F601C7B50F59B5483EEE787CC4D967A  L_2400 = { reinterpret_cast<intptr_t> (LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30432 : 60848)) };
+		Type_t * L_2401 = Type_GetTypeFromHandle_m2E0BF604BD00AD02BFCB4A8FB6B3DBDA96CABFB6(L_2400);
+		ArrayElementTypeCheck (L_2399, L_2401);
+		(L_2399)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)66)), (Type_t *)L_2401);
+		((StaticTypeRegistry_t84643602B6988792546973957016AF10B095AC45_StaticFields*)StaticTypeRegistry_t84643602B6988792546973957016AF10B095AC45_StaticFields_Storage)->set_Systems_6(L_2399);
+		BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040* L_2402 = (BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040*)(BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040*)SZArrayNew<BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30492 : 60968), sizeof(bool), (uint32_t)((int32_t)67));
 		BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040* L_2403 = L_2402;
-		(L_2403)->SetAt(static_cast<il2cpp_array_size_t>(3), (bool)0);
+		(L_2403)->SetAt(static_cast<il2cpp_array_size_t>(0), (bool)0);
 		BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040* L_2404 = L_2403;
-		(L_2404)->SetAt(static_cast<il2cpp_array_size_t>(4), (bool)0);
+		(L_2404)->SetAt(static_cast<il2cpp_array_size_t>(1), (bool)0);
 		BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040* L_2405 = L_2404;
-		(L_2405)->SetAt(static_cast<il2cpp_array_size_t>(5), (bool)1);
+		(L_2405)->SetAt(static_cast<il2cpp_array_size_t>(2), (bool)1);
 		BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040* L_2406 = L_2405;
-		(L_2406)->SetAt(static_cast<il2cpp_array_size_t>(6), (bool)1);
+		(L_2406)->SetAt(static_cast<il2cpp_array_size_t>(3), (bool)0);
 		BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040* L_2407 = L_2406;
-		(L_2407)->SetAt(static_cast<il2cpp_array_size_t>(7), (bool)0);
+		(L_2407)->SetAt(static_cast<il2cpp_array_size_t>(4), (bool)0);
 		BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040* L_2408 = L_2407;
-		(L_2408)->SetAt(static_cast<il2cpp_array_size_t>(8), (bool)0);
+		(L_2408)->SetAt(static_cast<il2cpp_array_size_t>(5), (bool)1);
 		BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040* L_2409 = L_2408;
-		(L_2409)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)9)), (bool)1);
+		(L_2409)->SetAt(static_cast<il2cpp_array_size_t>(6), (bool)1);
 		BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040* L_2410 = L_2409;
-		(L_2410)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)10)), (bool)0);
+		(L_2410)->SetAt(static_cast<il2cpp_array_size_t>(7), (bool)0);
 		BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040* L_2411 = L_2410;
-		(L_2411)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)11)), (bool)0);
+		(L_2411)->SetAt(static_cast<il2cpp_array_size_t>(8), (bool)0);
 		BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040* L_2412 = L_2411;
-		(L_2412)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)12)), (bool)0);
+		(L_2412)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)9)), (bool)1);
 		BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040* L_2413 = L_2412;
-		(L_2413)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)13)), (bool)1);
+		(L_2413)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)10)), (bool)0);
 		BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040* L_2414 = L_2413;
-		(L_2414)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)14)), (bool)0);
+		(L_2414)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)11)), (bool)0);
 		BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040* L_2415 = L_2414;
-		(L_2415)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)15)), (bool)0);
+		(L_2415)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)12)), (bool)0);
 		BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040* L_2416 = L_2415;
-		(L_2416)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)16)), (bool)0);
+		(L_2416)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)13)), (bool)1);
 		BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040* L_2417 = L_2416;
-		(L_2417)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)17)), (bool)0);
+		(L_2417)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)14)), (bool)0);
 		BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040* L_2418 = L_2417;
-		(L_2418)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)18)), (bool)0);
+		(L_2418)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)15)), (bool)0);
 		BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040* L_2419 = L_2418;
-		(L_2419)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)19)), (bool)0);
+		(L_2419)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)16)), (bool)0);
 		BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040* L_2420 = L_2419;
-		(L_2420)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)20)), (bool)0);
+		(L_2420)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)17)), (bool)0);
 		BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040* L_2421 = L_2420;
-		(L_2421)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)21)), (bool)0);
+		(L_2421)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)18)), (bool)0);
 		BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040* L_2422 = L_2421;
-		(L_2422)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)22)), (bool)0);
+		(L_2422)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)19)), (bool)0);
 		BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040* L_2423 = L_2422;
-		(L_2423)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)23)), (bool)0);
+		(L_2423)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)20)), (bool)0);
 		BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040* L_2424 = L_2423;
-		(L_2424)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)24)), (bool)0);
+		(L_2424)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)21)), (bool)0);
 		BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040* L_2425 = L_2424;
-		(L_2425)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)25)), (bool)0);
+		(L_2425)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)22)), (bool)0);
 		BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040* L_2426 = L_2425;
-		(L_2426)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)26)), (bool)0);
+		(L_2426)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)23)), (bool)0);
 		BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040* L_2427 = L_2426;
-		(L_2427)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)27)), (bool)0);
+		(L_2427)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)24)), (bool)0);
 		BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040* L_2428 = L_2427;
-		(L_2428)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)28)), (bool)0);
+		(L_2428)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)25)), (bool)0);
 		BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040* L_2429 = L_2428;
-		(L_2429)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)29)), (bool)0);
+		(L_2429)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)26)), (bool)0);
 		BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040* L_2430 = L_2429;
-		(L_2430)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)30)), (bool)0);
+		(L_2430)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)27)), (bool)0);
 		BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040* L_2431 = L_2430;
-		(L_2431)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)31)), (bool)0);
+		(L_2431)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)28)), (bool)0);
 		BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040* L_2432 = L_2431;
-		(L_2432)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)32)), (bool)0);
+		(L_2432)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)29)), (bool)0);
 		BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040* L_2433 = L_2432;
-		(L_2433)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)33)), (bool)0);
+		(L_2433)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)30)), (bool)0);
 		BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040* L_2434 = L_2433;
-		(L_2434)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)34)), (bool)0);
+		(L_2434)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)31)), (bool)0);
 		BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040* L_2435 = L_2434;
-		(L_2435)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)35)), (bool)0);
+		(L_2435)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)32)), (bool)0);
 		BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040* L_2436 = L_2435;
-		(L_2436)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)36)), (bool)0);
+		(L_2436)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)33)), (bool)0);
 		BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040* L_2437 = L_2436;
-		(L_2437)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)37)), (bool)0);
+		(L_2437)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)34)), (bool)0);
 		BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040* L_2438 = L_2437;
-		(L_2438)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)38)), (bool)0);
+		(L_2438)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)35)), (bool)0);
 		BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040* L_2439 = L_2438;
-		(L_2439)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)39)), (bool)0);
+		(L_2439)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)36)), (bool)0);
 		BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040* L_2440 = L_2439;
-		(L_2440)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)40)), (bool)0);
+		(L_2440)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)37)), (bool)0);
 		BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040* L_2441 = L_2440;
-		(L_2441)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)41)), (bool)0);
+		(L_2441)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)38)), (bool)0);
 		BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040* L_2442 = L_2441;
-		(L_2442)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)42)), (bool)0);
+		(L_2442)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)39)), (bool)0);
 		BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040* L_2443 = L_2442;
-		(L_2443)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)43)), (bool)0);
+		(L_2443)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)40)), (bool)0);
 		BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040* L_2444 = L_2443;
-		(L_2444)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)44)), (bool)0);
+		(L_2444)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)41)), (bool)0);
 		BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040* L_2445 = L_2444;
-		(L_2445)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)45)), (bool)0);
+		(L_2445)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)42)), (bool)0);
 		BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040* L_2446 = L_2445;
-		(L_2446)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)46)), (bool)0);
+		(L_2446)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)43)), (bool)0);
 		BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040* L_2447 = L_2446;
-		(L_2447)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)47)), (bool)0);
+		(L_2447)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)44)), (bool)0);
 		BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040* L_2448 = L_2447;
-		(L_2448)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)48)), (bool)0);
+		(L_2448)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)45)), (bool)0);
 		BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040* L_2449 = L_2448;
-		(L_2449)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)49)), (bool)0);
+		(L_2449)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)46)), (bool)0);
 		BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040* L_2450 = L_2449;
-		(L_2450)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)50)), (bool)0);
+		(L_2450)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)47)), (bool)0);
 		BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040* L_2451 = L_2450;
-		(L_2451)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)51)), (bool)0);
+		(L_2451)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)48)), (bool)0);
 		BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040* L_2452 = L_2451;
-		(L_2452)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)52)), (bool)0);
+		(L_2452)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)49)), (bool)0);
 		BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040* L_2453 = L_2452;
-		(L_2453)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)53)), (bool)0);
+		(L_2453)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)50)), (bool)0);
 		BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040* L_2454 = L_2453;
-		(L_2454)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)54)), (bool)0);
+		(L_2454)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)51)), (bool)0);
 		BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040* L_2455 = L_2454;
-		(L_2455)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)55)), (bool)0);
+		(L_2455)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)52)), (bool)0);
 		BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040* L_2456 = L_2455;
-		(L_2456)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)56)), (bool)0);
+		(L_2456)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)53)), (bool)0);
 		BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040* L_2457 = L_2456;
-		(L_2457)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)57)), (bool)0);
+		(L_2457)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)54)), (bool)0);
 		BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040* L_2458 = L_2457;
-		(L_2458)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)58)), (bool)0);
+		(L_2458)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)55)), (bool)0);
 		BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040* L_2459 = L_2458;
-		(L_2459)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)59)), (bool)0);
+		(L_2459)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)56)), (bool)0);
 		BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040* L_2460 = L_2459;
-		(L_2460)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)60)), (bool)0);
+		(L_2460)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)57)), (bool)0);
 		BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040* L_2461 = L_2460;
-		(L_2461)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)61)), (bool)0);
+		(L_2461)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)58)), (bool)0);
 		BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040* L_2462 = L_2461;
-		(L_2462)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)62)), (bool)0);
+		(L_2462)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)59)), (bool)0);
 		BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040* L_2463 = L_2462;
-		(L_2463)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)63)), (bool)0);
+		(L_2463)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)60)), (bool)0);
 		BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040* L_2464 = L_2463;
-		(L_2464)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)64)), (bool)0);
+		(L_2464)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)61)), (bool)0);
 		BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040* L_2465 = L_2464;
-		(L_2465)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)65)), (bool)0);
-		((StaticTypeRegistry_t84643602B6988792546973957016AF10B095AC45_StaticFields*)StaticTypeRegistry_t84643602B6988792546973957016AF10B095AC45_StaticFields_Storage)->set_SystemIsGroup_7(L_2465);
-		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2466 = (StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E*)(StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E*)SZArrayNew<StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 10360 : 20704), sizeof(String_t*), (uint32_t)((int32_t)66));
-		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2467 = L_2466;
-		ArrayElementTypeCheck (L_2467, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 23588 : 25264));
-		(L_2467)->SetAt(static_cast<il2cpp_array_size_t>(0), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 23588 : 25264));
-		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2468 = L_2467;
-		ArrayElementTypeCheck (L_2468, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 23716 : 25400));
-		(L_2468)->SetAt(static_cast<il2cpp_array_size_t>(1), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 23716 : 25400));
-		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2469 = L_2468;
-		ArrayElementTypeCheck (L_2469, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 23840 : 25528));
-		(L_2469)->SetAt(static_cast<il2cpp_array_size_t>(2), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 23840 : 25528));
-		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2470 = L_2469;
-		ArrayElementTypeCheck (L_2470, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 23932 : 25624));
-		(L_2470)->SetAt(static_cast<il2cpp_array_size_t>(3), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 23932 : 25624));
+		(L_2465)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)62)), (bool)0);
+		BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040* L_2466 = L_2465;
+		(L_2466)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)63)), (bool)0);
+		BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040* L_2467 = L_2466;
+		(L_2467)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)64)), (bool)0);
+		BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040* L_2468 = L_2467;
+		(L_2468)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)65)), (bool)0);
+		BooleanU5BU5D_t192C7579715690E25BD5EFED47F3E0FC9DCB2040* L_2469 = L_2468;
+		(L_2469)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)66)), (bool)0);
+		((StaticTypeRegistry_t84643602B6988792546973957016AF10B095AC45_StaticFields*)StaticTypeRegistry_t84643602B6988792546973957016AF10B095AC45_StaticFields_Storage)->set_SystemIsGroup_7(L_2469);
+		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2470 = (StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E*)(StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E*)SZArrayNew<StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 10360 : 20704), sizeof(String_t*), (uint32_t)((int32_t)67));
 		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2471 = L_2470;
-		ArrayElementTypeCheck (L_2471, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 24052 : 25752));
-		(L_2471)->SetAt(static_cast<il2cpp_array_size_t>(4), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 24052 : 25752));
+		ArrayElementTypeCheck (L_2471, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 23588 : 25264));
+		(L_2471)->SetAt(static_cast<il2cpp_array_size_t>(0), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 23588 : 25264));
 		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2472 = L_2471;
-		ArrayElementTypeCheck (L_2472, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 24168 : 25872));
-		(L_2472)->SetAt(static_cast<il2cpp_array_size_t>(5), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 24168 : 25872));
+		ArrayElementTypeCheck (L_2472, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 23716 : 25400));
+		(L_2472)->SetAt(static_cast<il2cpp_array_size_t>(1), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 23716 : 25400));
 		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2473 = L_2472;
-		ArrayElementTypeCheck (L_2473, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 24260 : 25968));
-		(L_2473)->SetAt(static_cast<il2cpp_array_size_t>(6), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 24260 : 25968));
+		ArrayElementTypeCheck (L_2473, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 23840 : 25528));
+		(L_2473)->SetAt(static_cast<il2cpp_array_size_t>(2), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 23840 : 25528));
 		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2474 = L_2473;
-		ArrayElementTypeCheck (L_2474, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 24344 : 26056));
-		(L_2474)->SetAt(static_cast<il2cpp_array_size_t>(7), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 24344 : 26056));
+		ArrayElementTypeCheck (L_2474, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 23932 : 25624));
+		(L_2474)->SetAt(static_cast<il2cpp_array_size_t>(3), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 23932 : 25624));
 		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2475 = L_2474;
-		ArrayElementTypeCheck (L_2475, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 24468 : 26184));
-		(L_2475)->SetAt(static_cast<il2cpp_array_size_t>(8), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 24468 : 26184));
+		ArrayElementTypeCheck (L_2475, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 24052 : 25752));
+		(L_2475)->SetAt(static_cast<il2cpp_array_size_t>(4), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 24052 : 25752));
 		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2476 = L_2475;
-		ArrayElementTypeCheck (L_2476, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 24588 : 26312));
-		(L_2476)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)9)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 24588 : 26312));
+		ArrayElementTypeCheck (L_2476, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 24168 : 25872));
+		(L_2476)->SetAt(static_cast<il2cpp_array_size_t>(5), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 24168 : 25872));
 		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2477 = L_2476;
-		ArrayElementTypeCheck (L_2477, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 24676 : 26408));
-		(L_2477)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)10)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 24676 : 26408));
+		ArrayElementTypeCheck (L_2477, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 24260 : 25968));
+		(L_2477)->SetAt(static_cast<il2cpp_array_size_t>(6), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 24260 : 25968));
 		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2478 = L_2477;
-		ArrayElementTypeCheck (L_2478, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 24748 : 26488));
-		(L_2478)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)11)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 24748 : 26488));
+		ArrayElementTypeCheck (L_2478, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 24344 : 26056));
+		(L_2478)->SetAt(static_cast<il2cpp_array_size_t>(7), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 24344 : 26056));
 		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2479 = L_2478;
-		ArrayElementTypeCheck (L_2479, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 24836 : 26584));
-		(L_2479)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)12)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 24836 : 26584));
+		ArrayElementTypeCheck (L_2479, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 24468 : 26184));
+		(L_2479)->SetAt(static_cast<il2cpp_array_size_t>(8), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 24468 : 26184));
 		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2480 = L_2479;
-		ArrayElementTypeCheck (L_2480, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 24912 : 26664));
-		(L_2480)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)13)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 24912 : 26664));
+		ArrayElementTypeCheck (L_2480, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 24588 : 26312));
+		(L_2480)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)9)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 24588 : 26312));
 		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2481 = L_2480;
-		ArrayElementTypeCheck (L_2481, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 25008 : 26768));
-		(L_2481)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)14)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 25008 : 26768));
+		ArrayElementTypeCheck (L_2481, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 24676 : 26408));
+		(L_2481)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)10)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 24676 : 26408));
 		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2482 = L_2481;
-		ArrayElementTypeCheck (L_2482, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 25088 : 26856));
-		(L_2482)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)15)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 25088 : 26856));
+		ArrayElementTypeCheck (L_2482, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 24748 : 26488));
+		(L_2482)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)11)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 24748 : 26488));
 		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2483 = L_2482;
-		ArrayElementTypeCheck (L_2483, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 25180 : 26952));
-		(L_2483)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)16)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 25180 : 26952));
+		ArrayElementTypeCheck (L_2483, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 24836 : 26584));
+		(L_2483)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)12)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 24836 : 26584));
 		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2484 = L_2483;
-		ArrayElementTypeCheck (L_2484, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 25280 : 27056));
-		(L_2484)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)17)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 25280 : 27056));
+		ArrayElementTypeCheck (L_2484, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 24912 : 26664));
+		(L_2484)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)13)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 24912 : 26664));
 		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2485 = L_2484;
-		ArrayElementTypeCheck (L_2485, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 25396 : 27176));
-		(L_2485)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)18)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 25396 : 27176));
+		ArrayElementTypeCheck (L_2485, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 25008 : 26768));
+		(L_2485)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)14)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 25008 : 26768));
 		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2486 = L_2485;
-		ArrayElementTypeCheck (L_2486, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 25500 : 27288));
-		(L_2486)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)19)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 25500 : 27288));
+		ArrayElementTypeCheck (L_2486, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 25088 : 26856));
+		(L_2486)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)15)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 25088 : 26856));
 		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2487 = L_2486;
-		ArrayElementTypeCheck (L_2487, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 25588 : 27384));
-		(L_2487)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)20)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 25588 : 27384));
+		ArrayElementTypeCheck (L_2487, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 25180 : 26952));
+		(L_2487)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)16)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 25180 : 26952));
 		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2488 = L_2487;
-		ArrayElementTypeCheck (L_2488, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 25668 : 27472));
-		(L_2488)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)21)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 25668 : 27472));
+		ArrayElementTypeCheck (L_2488, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 25280 : 27056));
+		(L_2488)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)17)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 25280 : 27056));
 		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2489 = L_2488;
-		ArrayElementTypeCheck (L_2489, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 25760 : 27568));
-		(L_2489)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)22)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 25760 : 27568));
+		ArrayElementTypeCheck (L_2489, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 25396 : 27176));
+		(L_2489)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)18)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 25396 : 27176));
 		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2490 = L_2489;
-		ArrayElementTypeCheck (L_2490, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 25860 : 27672));
-		(L_2490)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)23)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 25860 : 27672));
+		ArrayElementTypeCheck (L_2490, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 25500 : 27288));
+		(L_2490)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)19)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 25500 : 27288));
 		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2491 = L_2490;
-		ArrayElementTypeCheck (L_2491, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 25960 : 27776));
-		(L_2491)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)24)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 25960 : 27776));
+		ArrayElementTypeCheck (L_2491, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 25588 : 27384));
+		(L_2491)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)20)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 25588 : 27384));
 		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2492 = L_2491;
-		ArrayElementTypeCheck (L_2492, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26028 : 27848));
-		(L_2492)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)25)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26028 : 27848));
+		ArrayElementTypeCheck (L_2492, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 25668 : 27472));
+		(L_2492)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)21)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 25668 : 27472));
 		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2493 = L_2492;
-		ArrayElementTypeCheck (L_2493, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26096 : 27920));
-		(L_2493)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)26)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26096 : 27920));
+		ArrayElementTypeCheck (L_2493, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 25760 : 27568));
+		(L_2493)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)22)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 25760 : 27568));
 		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2494 = L_2493;
-		ArrayElementTypeCheck (L_2494, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26176 : 28008));
-		(L_2494)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)27)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26176 : 28008));
+		ArrayElementTypeCheck (L_2494, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 25860 : 27672));
+		(L_2494)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)23)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 25860 : 27672));
 		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2495 = L_2494;
-		ArrayElementTypeCheck (L_2495, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26256 : 28096));
-		(L_2495)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)28)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26256 : 28096));
+		ArrayElementTypeCheck (L_2495, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 25960 : 27776));
+		(L_2495)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)24)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 25960 : 27776));
 		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2496 = L_2495;
-		ArrayElementTypeCheck (L_2496, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26332 : 28176));
-		(L_2496)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)29)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26332 : 28176));
+		ArrayElementTypeCheck (L_2496, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26028 : 27848));
+		(L_2496)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)25)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26028 : 27848));
 		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2497 = L_2496;
-		ArrayElementTypeCheck (L_2497, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26412 : 28264));
-		(L_2497)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)30)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26412 : 28264));
+		ArrayElementTypeCheck (L_2497, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26096 : 27920));
+		(L_2497)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)26)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26096 : 27920));
 		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2498 = L_2497;
-		ArrayElementTypeCheck (L_2498, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26500 : 28360));
-		(L_2498)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)31)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26500 : 28360));
+		ArrayElementTypeCheck (L_2498, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26176 : 28008));
+		(L_2498)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)27)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26176 : 28008));
 		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2499 = L_2498;
-		ArrayElementTypeCheck (L_2499, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26576 : 28440));
-		(L_2499)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)32)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26576 : 28440));
+		ArrayElementTypeCheck (L_2499, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26256 : 28096));
+		(L_2499)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)28)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26256 : 28096));
 		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2500 = L_2499;
-		ArrayElementTypeCheck (L_2500, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26668 : 28536));
-		(L_2500)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)33)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26668 : 28536));
+		ArrayElementTypeCheck (L_2500, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26332 : 28176));
+		(L_2500)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)29)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26332 : 28176));
 		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2501 = L_2500;
-		ArrayElementTypeCheck (L_2501, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26772 : 28648));
-		(L_2501)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)34)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26772 : 28648));
+		ArrayElementTypeCheck (L_2501, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26412 : 28264));
+		(L_2501)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)30)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26412 : 28264));
 		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2502 = L_2501;
-		ArrayElementTypeCheck (L_2502, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26864 : 28744));
-		(L_2502)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)35)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26864 : 28744));
+		ArrayElementTypeCheck (L_2502, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26500 : 28360));
+		(L_2502)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)31)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26500 : 28360));
 		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2503 = L_2502;
-		ArrayElementTypeCheck (L_2503, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26944 : 28832));
-		(L_2503)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)36)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26944 : 28832));
+		ArrayElementTypeCheck (L_2503, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26576 : 28440));
+		(L_2503)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)32)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26576 : 28440));
 		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2504 = L_2503;
-		ArrayElementTypeCheck (L_2504, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 27024 : 28920));
-		(L_2504)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)37)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 27024 : 28920));
+		ArrayElementTypeCheck (L_2504, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26668 : 28536));
+		(L_2504)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)33)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26668 : 28536));
 		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2505 = L_2504;
-		ArrayElementTypeCheck (L_2505, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 27104 : 29008));
-		(L_2505)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)38)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 27104 : 29008));
+		ArrayElementTypeCheck (L_2505, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26772 : 28648));
+		(L_2505)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)34)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26772 : 28648));
 		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2506 = L_2505;
-		ArrayElementTypeCheck (L_2506, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 27184 : 29096));
-		(L_2506)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)39)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 27184 : 29096));
+		ArrayElementTypeCheck (L_2506, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26864 : 28744));
+		(L_2506)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)35)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26864 : 28744));
 		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2507 = L_2506;
-		ArrayElementTypeCheck (L_2507, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 27256 : 29176));
-		(L_2507)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)40)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 27256 : 29176));
+		ArrayElementTypeCheck (L_2507, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26944 : 28832));
+		(L_2507)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)36)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26944 : 28832));
 		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2508 = L_2507;
-		ArrayElementTypeCheck (L_2508, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 27336 : 29264));
-		(L_2508)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)41)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 27336 : 29264));
+		ArrayElementTypeCheck (L_2508, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 27024 : 28920));
+		(L_2508)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)37)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 27024 : 28920));
 		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2509 = L_2508;
-		ArrayElementTypeCheck (L_2509, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 27412 : 29344));
-		(L_2509)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)42)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 27412 : 29344));
+		ArrayElementTypeCheck (L_2509, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 27104 : 29008));
+		(L_2509)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)38)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 27104 : 29008));
 		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2510 = L_2509;
-		ArrayElementTypeCheck (L_2510, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 27484 : 29424));
-		(L_2510)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)43)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 27484 : 29424));
+		ArrayElementTypeCheck (L_2510, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 27184 : 29096));
+		(L_2510)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)39)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 27184 : 29096));
 		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2511 = L_2510;
-		ArrayElementTypeCheck (L_2511, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 27552 : 29496));
-		(L_2511)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)44)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 27552 : 29496));
+		ArrayElementTypeCheck (L_2511, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 27256 : 29176));
+		(L_2511)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)40)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 27256 : 29176));
 		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2512 = L_2511;
-		ArrayElementTypeCheck (L_2512, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 27632 : 29584));
-		(L_2512)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)45)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 27632 : 29584));
+		ArrayElementTypeCheck (L_2512, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 27336 : 29264));
+		(L_2512)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)41)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 27336 : 29264));
 		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2513 = L_2512;
-		ArrayElementTypeCheck (L_2513, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 27736 : 29696));
-		(L_2513)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)46)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 27736 : 29696));
+		ArrayElementTypeCheck (L_2513, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 27412 : 29344));
+		(L_2513)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)42)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 27412 : 29344));
 		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2514 = L_2513;
-		ArrayElementTypeCheck (L_2514, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 27828 : 29792));
-		(L_2514)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)47)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 27828 : 29792));
+		ArrayElementTypeCheck (L_2514, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 27484 : 29424));
+		(L_2514)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)43)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 27484 : 29424));
 		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2515 = L_2514;
-		ArrayElementTypeCheck (L_2515, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 27908 : 29880));
-		(L_2515)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)48)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 27908 : 29880));
+		ArrayElementTypeCheck (L_2515, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 27552 : 29496));
+		(L_2515)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)44)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 27552 : 29496));
 		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2516 = L_2515;
-		ArrayElementTypeCheck (L_2516, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 27996 : 29976));
-		(L_2516)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)49)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 27996 : 29976));
+		ArrayElementTypeCheck (L_2516, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 27632 : 29584));
+		(L_2516)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)45)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 27632 : 29584));
 		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2517 = L_2516;
-		ArrayElementTypeCheck (L_2517, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 28100 : 30088));
-		(L_2517)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)50)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 28100 : 30088));
+		ArrayElementTypeCheck (L_2517, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 27736 : 29696));
+		(L_2517)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)46)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 27736 : 29696));
 		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2518 = L_2517;
-		ArrayElementTypeCheck (L_2518, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 28176 : 30168));
-		(L_2518)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)51)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 28176 : 30168));
+		ArrayElementTypeCheck (L_2518, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 27828 : 29792));
+		(L_2518)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)47)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 27828 : 29792));
 		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2519 = L_2518;
-		ArrayElementTypeCheck (L_2519, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 28260 : 30256));
-		(L_2519)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)52)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 28260 : 30256));
+		ArrayElementTypeCheck (L_2519, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 27908 : 29880));
+		(L_2519)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)48)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 27908 : 29880));
 		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2520 = L_2519;
-		ArrayElementTypeCheck (L_2520, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 28344 : 30344));
-		(L_2520)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)53)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 28344 : 30344));
+		ArrayElementTypeCheck (L_2520, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 27996 : 29976));
+		(L_2520)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)49)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 27996 : 29976));
 		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2521 = L_2520;
-		ArrayElementTypeCheck (L_2521, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 28416 : 30424));
-		(L_2521)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)54)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 28416 : 30424));
+		ArrayElementTypeCheck (L_2521, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 28100 : 30088));
+		(L_2521)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)50)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 28100 : 30088));
 		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2522 = L_2521;
-		ArrayElementTypeCheck (L_2522, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 28516 : 30528));
-		(L_2522)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)55)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 28516 : 30528));
+		ArrayElementTypeCheck (L_2522, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 28176 : 30168));
+		(L_2522)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)51)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 28176 : 30168));
 		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2523 = L_2522;
-		ArrayElementTypeCheck (L_2523, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 28608 : 30624));
-		(L_2523)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)56)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 28608 : 30624));
+		ArrayElementTypeCheck (L_2523, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 28260 : 30256));
+		(L_2523)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)52)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 28260 : 30256));
 		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2524 = L_2523;
-		ArrayElementTypeCheck (L_2524, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 28700 : 30720));
-		(L_2524)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)57)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 28700 : 30720));
+		ArrayElementTypeCheck (L_2524, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 28344 : 30344));
+		(L_2524)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)53)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 28344 : 30344));
 		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2525 = L_2524;
-		ArrayElementTypeCheck (L_2525, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 28768 : 30792));
-		(L_2525)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)58)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 28768 : 30792));
+		ArrayElementTypeCheck (L_2525, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 28416 : 30424));
+		(L_2525)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)54)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 28416 : 30424));
 		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2526 = L_2525;
-		ArrayElementTypeCheck (L_2526, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 28828 : 30856));
-		(L_2526)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)59)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 28828 : 30856));
+		ArrayElementTypeCheck (L_2526, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 28516 : 30528));
+		(L_2526)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)55)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 28516 : 30528));
 		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2527 = L_2526;
-		ArrayElementTypeCheck (L_2527, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 28904 : 30936));
-		(L_2527)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)60)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 28904 : 30936));
+		ArrayElementTypeCheck (L_2527, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 28608 : 30624));
+		(L_2527)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)56)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 28608 : 30624));
 		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2528 = L_2527;
-		ArrayElementTypeCheck (L_2528, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 28964 : 31000));
-		(L_2528)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)61)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 28964 : 31000));
+		ArrayElementTypeCheck (L_2528, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 28700 : 30720));
+		(L_2528)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)57)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 28700 : 30720));
 		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2529 = L_2528;
-		ArrayElementTypeCheck (L_2529, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 29028 : 31072));
-		(L_2529)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)62)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 29028 : 31072));
+		ArrayElementTypeCheck (L_2529, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 28768 : 30792));
+		(L_2529)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)58)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 28768 : 30792));
 		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2530 = L_2529;
-		ArrayElementTypeCheck (L_2530, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 29096 : 31144));
-		(L_2530)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)63)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 29096 : 31144));
+		ArrayElementTypeCheck (L_2530, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 28832 : 30864));
+		(L_2530)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)59)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 28832 : 30864));
 		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2531 = L_2530;
-		ArrayElementTypeCheck (L_2531, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 29164 : 31216));
-		(L_2531)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)64)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 29164 : 31216));
+		ArrayElementTypeCheck (L_2531, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 28892 : 30928));
+		(L_2531)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)60)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 28892 : 30928));
 		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2532 = L_2531;
-		ArrayElementTypeCheck (L_2532, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 29220 : 31280));
-		(L_2532)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)65)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 29220 : 31280));
-		((StaticTypeRegistry_t84643602B6988792546973957016AF10B095AC45_StaticFields*)StaticTypeRegistry_t84643602B6988792546973957016AF10B095AC45_StaticFields_Storage)->set_SystemName_8(L_2532);
+		ArrayElementTypeCheck (L_2532, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 28968 : 31008));
+		(L_2532)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)61)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 28968 : 31008));
+		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2533 = L_2532;
+		ArrayElementTypeCheck (L_2533, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 29028 : 31072));
+		(L_2533)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)62)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 29028 : 31072));
+		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2534 = L_2533;
+		ArrayElementTypeCheck (L_2534, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 29092 : 31144));
+		(L_2534)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)63)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 29092 : 31144));
+		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2535 = L_2534;
+		ArrayElementTypeCheck (L_2535, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 29160 : 31216));
+		(L_2535)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)64)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 29160 : 31216));
+		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2536 = L_2535;
+		ArrayElementTypeCheck (L_2536, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 29228 : 31288));
+		(L_2536)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)65)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 29228 : 31288));
+		StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E* L_2537 = L_2536;
+		ArrayElementTypeCheck (L_2537, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 29284 : 31352));
+		(L_2537)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)66)), (String_t*)LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 29284 : 31352));
+		((StaticTypeRegistry_t84643602B6988792546973957016AF10B095AC45_StaticFields*)StaticTypeRegistry_t84643602B6988792546973957016AF10B095AC45_StaticFields_Storage)->set_SystemName_8(L_2537);
 		return;
 	}
 }
@@ -35266,8 +35386,8 @@ IL_04fb:
 		}
 	}
 	{
-		CollideSystem_tD6E9E0CC87DB8E671524825D279284A120C13994 * L_235 = (CollideSystem_tD6E9E0CC87DB8E671524825D279284A120C13994 *)il2cpp_codegen_object_new(sizeof(CollideSystem_tD6E9E0CC87DB8E671524825D279284A120C13994), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 29952 : 59888));
-		CollideSystem__ctor_mC420CABE749BD1D6090DA4DFD709712B84EFA293(L_235);
+		BlackResetSystem_tA9C1DA53D685F604BC276136672B358EDAA39DD6 * L_235 = (BlackResetSystem_tA9C1DA53D685F604BC276136672B358EDAA39DD6 *)il2cpp_codegen_object_new(sizeof(BlackResetSystem_tA9C1DA53D685F604BC276136672B358EDAA39DD6), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 29952 : 59888));
+		BlackResetSystem__ctor_m74A5ECDC148852FCA8C3D5A25E6618316D04076E(L_235);
 		return L_235;
 	}
 
@@ -35282,8 +35402,8 @@ IL_0511:
 		}
 	}
 	{
-		ControllerButtonSystem_t4B68D492C0AB4F9355B75171A5D77A93648DB862 * L_239 = (ControllerButtonSystem_t4B68D492C0AB4F9355B75171A5D77A93648DB862 *)il2cpp_codegen_object_new(sizeof(ControllerButtonSystem_t4B68D492C0AB4F9355B75171A5D77A93648DB862), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30012 : 60008));
-		ControllerButtonSystem__ctor_m707E920A9BD84A53C7FD05F0848FEA7812F4AD53(L_239);
+		CollideSystem_tD6E9E0CC87DB8E671524825D279284A120C13994 * L_239 = (CollideSystem_tD6E9E0CC87DB8E671524825D279284A120C13994 *)il2cpp_codegen_object_new(sizeof(CollideSystem_tD6E9E0CC87DB8E671524825D279284A120C13994), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30012 : 60008));
+		CollideSystem__ctor_mC420CABE749BD1D6090DA4DFD709712B84EFA293(L_239);
 		return L_239;
 	}
 
@@ -35298,8 +35418,8 @@ IL_0527:
 		}
 	}
 	{
-		GameOverSystem_t589284F7C29AF4EB981F4ECF6026357271C05915 * L_243 = (GameOverSystem_t589284F7C29AF4EB981F4ECF6026357271C05915 *)il2cpp_codegen_object_new(sizeof(GameOverSystem_t589284F7C29AF4EB981F4ECF6026357271C05915), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30072 : 60128));
-		GameOverSystem__ctor_m85824006801C019D0BD2BB986D8BAA000DBB0806(L_243);
+		ControllerButtonSystem_t4B68D492C0AB4F9355B75171A5D77A93648DB862 * L_243 = (ControllerButtonSystem_t4B68D492C0AB4F9355B75171A5D77A93648DB862 *)il2cpp_codegen_object_new(sizeof(ControllerButtonSystem_t4B68D492C0AB4F9355B75171A5D77A93648DB862), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30072 : 60128));
+		ControllerButtonSystem__ctor_m707E920A9BD84A53C7FD05F0848FEA7812F4AD53(L_243);
 		return L_243;
 	}
 
@@ -35314,8 +35434,8 @@ IL_053d:
 		}
 	}
 	{
-		PlayerFallSystem_t0D7440AA2A4E4D9699CA136E95E9D6EF2B2C0D98 * L_247 = (PlayerFallSystem_t0D7440AA2A4E4D9699CA136E95E9D6EF2B2C0D98 *)il2cpp_codegen_object_new(sizeof(PlayerFallSystem_t0D7440AA2A4E4D9699CA136E95E9D6EF2B2C0D98), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30132 : 60248));
-		PlayerFallSystem__ctor_m95C9072FAE032A233D74199CC7FCF1523879D569(L_247);
+		GameOverSystem_t589284F7C29AF4EB981F4ECF6026357271C05915 * L_247 = (GameOverSystem_t589284F7C29AF4EB981F4ECF6026357271C05915 *)il2cpp_codegen_object_new(sizeof(GameOverSystem_t589284F7C29AF4EB981F4ECF6026357271C05915), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30132 : 60248));
+		GameOverSystem__ctor_m85824006801C019D0BD2BB986D8BAA000DBB0806(L_247);
 		return L_247;
 	}
 
@@ -35330,8 +35450,8 @@ IL_0553:
 		}
 	}
 	{
-		PlayerMovingSystem_tB09130E5091608B36AE7DB84977689CE22721F35 * L_251 = (PlayerMovingSystem_tB09130E5091608B36AE7DB84977689CE22721F35 *)il2cpp_codegen_object_new(sizeof(PlayerMovingSystem_tB09130E5091608B36AE7DB84977689CE22721F35), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30192 : 60368));
-		PlayerMovingSystem__ctor_m13E472CEB2B362A5E8A551447BE84CC13B07DCA5(L_251);
+		PlayerFallSystem_t0D7440AA2A4E4D9699CA136E95E9D6EF2B2C0D98 * L_251 = (PlayerFallSystem_t0D7440AA2A4E4D9699CA136E95E9D6EF2B2C0D98 *)il2cpp_codegen_object_new(sizeof(PlayerFallSystem_t0D7440AA2A4E4D9699CA136E95E9D6EF2B2C0D98), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30192 : 60368));
+		PlayerFallSystem__ctor_m95C9072FAE032A233D74199CC7FCF1523879D569(L_251);
 		return L_251;
 	}
 
@@ -35346,8 +35466,8 @@ IL_0569:
 		}
 	}
 	{
-		RetryButtonSystem_tCB5A765D64C8337D87B806A1F1669C4D2DFCD7CA * L_255 = (RetryButtonSystem_tCB5A765D64C8337D87B806A1F1669C4D2DFCD7CA *)il2cpp_codegen_object_new(sizeof(RetryButtonSystem_tCB5A765D64C8337D87B806A1F1669C4D2DFCD7CA), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30252 : 60488));
-		RetryButtonSystem__ctor_m382D609DDB461814C18BB33F956A06ABE9BE8CC0(L_255);
+		PlayerMovingSystem_tB09130E5091608B36AE7DB84977689CE22721F35 * L_255 = (PlayerMovingSystem_tB09130E5091608B36AE7DB84977689CE22721F35 *)il2cpp_codegen_object_new(sizeof(PlayerMovingSystem_tB09130E5091608B36AE7DB84977689CE22721F35), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30252 : 60488));
+		PlayerMovingSystem__ctor_m13E472CEB2B362A5E8A551447BE84CC13B07DCA5(L_255);
 		return L_255;
 	}
 
@@ -35362,8 +35482,8 @@ IL_057f:
 		}
 	}
 	{
-		ScoreSystem_tD8379D0154A8E066BBD566F504AA23547ED4FC71 * L_259 = (ScoreSystem_tD8379D0154A8E066BBD566F504AA23547ED4FC71 *)il2cpp_codegen_object_new(sizeof(ScoreSystem_tD8379D0154A8E066BBD566F504AA23547ED4FC71), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30312 : 60608));
-		ScoreSystem__ctor_mF086CE91F910CCC83A7D73291C2C63B7BE9D69C0(L_259);
+		RetryButtonSystem_tCB5A765D64C8337D87B806A1F1669C4D2DFCD7CA * L_259 = (RetryButtonSystem_tCB5A765D64C8337D87B806A1F1669C4D2DFCD7CA *)il2cpp_codegen_object_new(sizeof(RetryButtonSystem_tCB5A765D64C8337D87B806A1F1669C4D2DFCD7CA), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30312 : 60608));
+		RetryButtonSystem__ctor_m382D609DDB461814C18BB33F956A06ABE9BE8CC0(L_259);
 		return L_259;
 	}
 
@@ -35378,16 +35498,32 @@ IL_0595:
 		}
 	}
 	{
-		StartButtonSystem_tB9C005F301E6EFBCB4A45EDD5E1A75A543BBD814 * L_263 = (StartButtonSystem_tB9C005F301E6EFBCB4A45EDD5E1A75A543BBD814 *)il2cpp_codegen_object_new(sizeof(StartButtonSystem_tB9C005F301E6EFBCB4A45EDD5E1A75A543BBD814), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30372 : 60728));
-		StartButtonSystem__ctor_m1CDD1D7A3FF9388EB10E7EA70F0BFEDDA6882D02(L_263);
+		ScoreSystem_tD8379D0154A8E066BBD566F504AA23547ED4FC71 * L_263 = (ScoreSystem_tD8379D0154A8E066BBD566F504AA23547ED4FC71 *)il2cpp_codegen_object_new(sizeof(ScoreSystem_tD8379D0154A8E066BBD566F504AA23547ED4FC71), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30372 : 60728));
+		ScoreSystem__ctor_mF086CE91F910CCC83A7D73291C2C63B7BE9D69C0(L_263);
 		return L_263;
 	}
 
 IL_05ab:
 	{
-		InvalidOperationException_t789507B31C347564611329594AE22C7EE4F5BC57 * L_264 = (InvalidOperationException_t789507B31C347564611329594AE22C7EE4F5BC57 *)il2cpp_codegen_object_new(sizeof(InvalidOperationException_t789507B31C347564611329594AE22C7EE4F5BC57), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 332 : 664));
-		InvalidOperationException__ctor_m98EF8CF88D746B0012D1CF8D30E2054219BFCB7F(L_264, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 29288 : 31352));
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_264, &StaticTypeRegistry_CreateSystem_m9644BEDCF04A81FAC8D38A5847AC3FFE4F217A69_RuntimeMethod_var);
+		Type_t * L_264 = ___systemType0;
+		RuntimeTypeHandle_t4AEFB4045F601C7B50F59B5483EEE787CC4D967A  L_265 = { reinterpret_cast<intptr_t> (LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30432 : 60848)) };
+		Type_t * L_266 = Type_GetTypeFromHandle_m2E0BF604BD00AD02BFCB4A8FB6B3DBDA96CABFB6(L_265);
+		if (!((((RuntimeObject*)(Type_t *)L_264) == ((RuntimeObject*)(Type_t *)L_266))? 1 : 0))
+		{
+			goto IL_05c1;
+		}
+	}
+	{
+		StartButtonSystem_tB9C005F301E6EFBCB4A45EDD5E1A75A543BBD814 * L_267 = (StartButtonSystem_tB9C005F301E6EFBCB4A45EDD5E1A75A543BBD814 *)il2cpp_codegen_object_new(sizeof(StartButtonSystem_tB9C005F301E6EFBCB4A45EDD5E1A75A543BBD814), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30432 : 60848));
+		StartButtonSystem__ctor_m1CDD1D7A3FF9388EB10E7EA70F0BFEDDA6882D02(L_267);
+		return L_267;
+	}
+
+IL_05c1:
+	{
+		InvalidOperationException_t789507B31C347564611329594AE22C7EE4F5BC57 * L_268 = (InvalidOperationException_t789507B31C347564611329594AE22C7EE4F5BC57 *)il2cpp_codegen_object_new(sizeof(InvalidOperationException_t789507B31C347564611329594AE22C7EE4F5BC57), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 332 : 664));
+		InvalidOperationException__ctor_m98EF8CF88D746B0012D1CF8D30E2054219BFCB7F(L_268, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 29352 : 31424));
+		IL2CPP_RAISE_MANAGED_EXCEPTION(L_268, &StaticTypeRegistry_CreateSystem_m9644BEDCF04A81FAC8D38A5847AC3FFE4F217A69_RuntimeMethod_var);
 	}
 }
 // System.Attribute[] Unity.Entities.StaticTypeRegistry.StaticTypeRegistry::GetSystemAttributes(System.Type)
@@ -35403,9 +35539,9 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8
 		}
 	}
 	{
-		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_3 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30448 : 60880), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)1));
+		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_3 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30508 : 61000), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)1));
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_4 = L_3;
-		DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312 * L_5 = (DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312 *)il2cpp_codegen_object_new(sizeof(DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30464 : 60912));
+		DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312 * L_5 = (DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312 *)il2cpp_codegen_object_new(sizeof(DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30524 : 61032));
 		DisableAutoCreationAttribute__ctor_m7E19CD9AE8282D319FD7FDAFF07DC7976198568B(L_5);
 		ArrayElementTypeCheck (L_4, L_5);
 		(L_4)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)0)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_5);
@@ -35423,9 +35559,9 @@ IL_0026:
 		}
 	}
 	{
-		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_9 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30448 : 60880), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)1));
+		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_9 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30508 : 61000), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)1));
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_10 = L_9;
-		DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312 * L_11 = (DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312 *)il2cpp_codegen_object_new(sizeof(DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30464 : 60912));
+		DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312 * L_11 = (DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312 *)il2cpp_codegen_object_new(sizeof(DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30524 : 61032));
 		DisableAutoCreationAttribute__ctor_m7E19CD9AE8282D319FD7FDAFF07DC7976198568B(L_11);
 		ArrayElementTypeCheck (L_10, L_11);
 		(L_10)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)0)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_11);
@@ -35443,7 +35579,7 @@ IL_004d:
 		}
 	}
 	{
-		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_15 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30448 : 60880), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)0));
+		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_15 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30508 : 61000), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)0));
 		return L_15;
 	}
 
@@ -35458,9 +35594,9 @@ IL_0068:
 		}
 	}
 	{
-		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_19 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30448 : 60880), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)1));
+		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_19 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30508 : 61000), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)1));
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_20 = L_19;
-		DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312 * L_21 = (DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312 *)il2cpp_codegen_object_new(sizeof(DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30464 : 60912));
+		DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312 * L_21 = (DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312 *)il2cpp_codegen_object_new(sizeof(DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30524 : 61032));
 		DisableAutoCreationAttribute__ctor_m7E19CD9AE8282D319FD7FDAFF07DC7976198568B(L_21);
 		ArrayElementTypeCheck (L_20, L_21);
 		(L_20)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)0)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_21);
@@ -35478,9 +35614,9 @@ IL_008f:
 		}
 	}
 	{
-		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_25 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30448 : 60880), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)1));
+		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_25 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30508 : 61000), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)1));
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_26 = L_25;
-		DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312 * L_27 = (DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312 *)il2cpp_codegen_object_new(sizeof(DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30464 : 60912));
+		DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312 * L_27 = (DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312 *)il2cpp_codegen_object_new(sizeof(DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30524 : 61032));
 		DisableAutoCreationAttribute__ctor_m7E19CD9AE8282D319FD7FDAFF07DC7976198568B(L_27);
 		ArrayElementTypeCheck (L_26, L_27);
 		(L_26)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)0)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_27);
@@ -35498,9 +35634,9 @@ IL_00b6:
 		}
 	}
 	{
-		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_31 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30448 : 60880), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)1));
+		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_31 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30508 : 61000), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)1));
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_32 = L_31;
-		DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312 * L_33 = (DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312 *)il2cpp_codegen_object_new(sizeof(DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30464 : 60912));
+		DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312 * L_33 = (DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312 *)il2cpp_codegen_object_new(sizeof(DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30524 : 61032));
 		DisableAutoCreationAttribute__ctor_m7E19CD9AE8282D319FD7FDAFF07DC7976198568B(L_33);
 		ArrayElementTypeCheck (L_32, L_33);
 		(L_32)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)0)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_33);
@@ -35518,7 +35654,7 @@ IL_00dd:
 		}
 	}
 	{
-		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_37 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30448 : 60880), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)0));
+		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_37 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30508 : 61000), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)0));
 		return L_37;
 	}
 
@@ -35533,9 +35669,9 @@ IL_00f8:
 		}
 	}
 	{
-		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_41 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30448 : 60880), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)1));
+		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_41 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30508 : 61000), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)1));
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_42 = L_41;
-		DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312 * L_43 = (DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312 *)il2cpp_codegen_object_new(sizeof(DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30464 : 60912));
+		DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312 * L_43 = (DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312 *)il2cpp_codegen_object_new(sizeof(DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30524 : 61032));
 		DisableAutoCreationAttribute__ctor_m7E19CD9AE8282D319FD7FDAFF07DC7976198568B(L_43);
 		ArrayElementTypeCheck (L_42, L_43);
 		(L_42)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)0)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_43);
@@ -35553,9 +35689,9 @@ IL_011f:
 		}
 	}
 	{
-		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_47 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30448 : 60880), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)1));
+		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_47 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30508 : 61000), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)1));
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_48 = L_47;
-		DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312 * L_49 = (DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312 *)il2cpp_codegen_object_new(sizeof(DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30464 : 60912));
+		DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312 * L_49 = (DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312 *)il2cpp_codegen_object_new(sizeof(DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30524 : 61032));
 		DisableAutoCreationAttribute__ctor_m7E19CD9AE8282D319FD7FDAFF07DC7976198568B(L_49);
 		ArrayElementTypeCheck (L_48, L_49);
 		(L_48)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)0)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_49);
@@ -35573,7 +35709,7 @@ IL_0146:
 		}
 	}
 	{
-		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_53 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30448 : 60880), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)0));
+		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_53 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30508 : 61000), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)0));
 		return L_53;
 	}
 
@@ -35588,11 +35724,11 @@ IL_0161:
 		}
 	}
 	{
-		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_57 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30448 : 60880), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)1));
+		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_57 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30508 : 61000), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)1));
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_58 = L_57;
 		RuntimeTypeHandle_t4AEFB4045F601C7B50F59B5483EEE787CC4D967A  L_59 = { reinterpret_cast<intptr_t> (LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 25948 : 51880)) };
 		Type_t * L_60 = Type_GetTypeFromHandle_m2E0BF604BD00AD02BFCB4A8FB6B3DBDA96CABFB6(L_59);
-		UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A * L_61 = (UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A *)il2cpp_codegen_object_new(sizeof(UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30516 : 61016));
+		UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A * L_61 = (UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A *)il2cpp_codegen_object_new(sizeof(UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30576 : 61136));
 		UpdateInGroupAttribute__ctor_m4A0AAB39A7F5FDAB0F3A4FF0341401035EDC5DCA(L_61, L_60);
 		ArrayElementTypeCheck (L_58, L_61);
 		(L_58)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)0)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_61);
@@ -35610,11 +35746,11 @@ IL_0192:
 		}
 	}
 	{
-		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_65 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30448 : 60880), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)1));
+		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_65 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30508 : 61000), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)1));
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_66 = L_65;
 		RuntimeTypeHandle_t4AEFB4045F601C7B50F59B5483EEE787CC4D967A  L_67 = { reinterpret_cast<intptr_t> (LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26276 : 52536)) };
 		Type_t * L_68 = Type_GetTypeFromHandle_m2E0BF604BD00AD02BFCB4A8FB6B3DBDA96CABFB6(L_67);
-		UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A * L_69 = (UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A *)il2cpp_codegen_object_new(sizeof(UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30516 : 61016));
+		UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A * L_69 = (UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A *)il2cpp_codegen_object_new(sizeof(UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30576 : 61136));
 		UpdateInGroupAttribute__ctor_m4A0AAB39A7F5FDAB0F3A4FF0341401035EDC5DCA(L_69, L_68);
 		ArrayElementTypeCheck (L_66, L_69);
 		(L_66)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)0)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_69);
@@ -35632,11 +35768,11 @@ IL_01c3:
 		}
 	}
 	{
-		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_73 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30448 : 60880), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)1));
+		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_73 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30508 : 61000), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)1));
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_74 = L_73;
 		RuntimeTypeHandle_t4AEFB4045F601C7B50F59B5483EEE787CC4D967A  L_75 = { reinterpret_cast<intptr_t> (LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 25948 : 51880)) };
 		Type_t * L_76 = Type_GetTypeFromHandle_m2E0BF604BD00AD02BFCB4A8FB6B3DBDA96CABFB6(L_75);
-		UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A * L_77 = (UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A *)il2cpp_codegen_object_new(sizeof(UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30516 : 61016));
+		UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A * L_77 = (UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A *)il2cpp_codegen_object_new(sizeof(UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30576 : 61136));
 		UpdateInGroupAttribute__ctor_m4A0AAB39A7F5FDAB0F3A4FF0341401035EDC5DCA(L_77, L_76);
 		ArrayElementTypeCheck (L_74, L_77);
 		(L_74)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)0)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_77);
@@ -35654,9 +35790,9 @@ IL_01f4:
 		}
 	}
 	{
-		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_81 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30448 : 60880), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)1));
+		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_81 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30508 : 61000), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)1));
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_82 = L_81;
-		DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312 * L_83 = (DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312 *)il2cpp_codegen_object_new(sizeof(DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30464 : 60912));
+		DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312 * L_83 = (DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312 *)il2cpp_codegen_object_new(sizeof(DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30524 : 61032));
 		DisableAutoCreationAttribute__ctor_m7E19CD9AE8282D319FD7FDAFF07DC7976198568B(L_83);
 		ArrayElementTypeCheck (L_82, L_83);
 		(L_82)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)0)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_83);
@@ -35674,9 +35810,9 @@ IL_021b:
 		}
 	}
 	{
-		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_87 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30448 : 60880), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)1));
+		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_87 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30508 : 61000), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)1));
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_88 = L_87;
-		DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312 * L_89 = (DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312 *)il2cpp_codegen_object_new(sizeof(DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30464 : 60912));
+		DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312 * L_89 = (DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312 *)il2cpp_codegen_object_new(sizeof(DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30524 : 61032));
 		DisableAutoCreationAttribute__ctor_m7E19CD9AE8282D319FD7FDAFF07DC7976198568B(L_89);
 		ArrayElementTypeCheck (L_88, L_89);
 		(L_88)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)0)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_89);
@@ -35694,7 +35830,7 @@ IL_0242:
 		}
 	}
 	{
-		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_93 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30448 : 60880), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)0));
+		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_93 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30508 : 61000), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)0));
 		return L_93;
 	}
 
@@ -35709,9 +35845,9 @@ IL_025d:
 		}
 	}
 	{
-		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_97 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30448 : 60880), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)1));
+		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_97 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30508 : 61000), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)1));
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_98 = L_97;
-		DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312 * L_99 = (DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312 *)il2cpp_codegen_object_new(sizeof(DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30464 : 60912));
+		DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312 * L_99 = (DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312 *)il2cpp_codegen_object_new(sizeof(DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30524 : 61032));
 		DisableAutoCreationAttribute__ctor_m7E19CD9AE8282D319FD7FDAFF07DC7976198568B(L_99);
 		ArrayElementTypeCheck (L_98, L_99);
 		(L_98)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)0)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_99);
@@ -35729,9 +35865,9 @@ IL_0284:
 		}
 	}
 	{
-		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_103 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30448 : 60880), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)1));
+		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_103 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30508 : 61000), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)1));
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_104 = L_103;
-		DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312 * L_105 = (DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312 *)il2cpp_codegen_object_new(sizeof(DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30464 : 60912));
+		DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312 * L_105 = (DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312 *)il2cpp_codegen_object_new(sizeof(DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30524 : 61032));
 		DisableAutoCreationAttribute__ctor_m7E19CD9AE8282D319FD7FDAFF07DC7976198568B(L_105);
 		ArrayElementTypeCheck (L_104, L_105);
 		(L_104)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)0)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_105);
@@ -35749,16 +35885,16 @@ IL_02ab:
 		}
 	}
 	{
-		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_109 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30448 : 60880), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)2));
+		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_109 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30508 : 61000), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)2));
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_110 = L_109;
 		RuntimeTypeHandle_t4AEFB4045F601C7B50F59B5483EEE787CC4D967A  L_111 = { reinterpret_cast<intptr_t> (LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26912 : 53808)) };
 		Type_t * L_112 = Type_GetTypeFromHandle_m2E0BF604BD00AD02BFCB4A8FB6B3DBDA96CABFB6(L_111);
-		UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 * L_113 = (UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 *)il2cpp_codegen_object_new(sizeof(UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30544 : 61072));
+		UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 * L_113 = (UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 *)il2cpp_codegen_object_new(sizeof(UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30604 : 61192));
 		UpdateAfterAttribute__ctor_mD7355CFB9474F19D5307E5C44728509A3AAA738E(L_113, L_112);
 		ArrayElementTypeCheck (L_110, L_113);
 		(L_110)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)0)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_113);
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_114 = L_110;
-		DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312 * L_115 = (DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312 *)il2cpp_codegen_object_new(sizeof(DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30464 : 60912));
+		DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312 * L_115 = (DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312 *)il2cpp_codegen_object_new(sizeof(DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30524 : 61032));
 		DisableAutoCreationAttribute__ctor_m7E19CD9AE8282D319FD7FDAFF07DC7976198568B(L_115);
 		ArrayElementTypeCheck (L_114, L_115);
 		(L_114)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)1)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_115);
@@ -35776,11 +35912,11 @@ IL_02e8:
 		}
 	}
 	{
-		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_119 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30448 : 60880), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)1));
+		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_119 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30508 : 61000), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)1));
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_120 = L_119;
 		RuntimeTypeHandle_t4AEFB4045F601C7B50F59B5483EEE787CC4D967A  L_121 = { reinterpret_cast<intptr_t> (LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 25948 : 51880)) };
 		Type_t * L_122 = Type_GetTypeFromHandle_m2E0BF604BD00AD02BFCB4A8FB6B3DBDA96CABFB6(L_121);
-		UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A * L_123 = (UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A *)il2cpp_codegen_object_new(sizeof(UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30516 : 61016));
+		UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A * L_123 = (UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A *)il2cpp_codegen_object_new(sizeof(UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30576 : 61136));
 		UpdateInGroupAttribute__ctor_m4A0AAB39A7F5FDAB0F3A4FF0341401035EDC5DCA(L_123, L_122);
 		ArrayElementTypeCheck (L_120, L_123);
 		(L_120)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)0)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_123);
@@ -35798,11 +35934,11 @@ IL_0319:
 		}
 	}
 	{
-		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_127 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30448 : 60880), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)1));
+		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_127 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30508 : 61000), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)1));
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_128 = L_127;
 		RuntimeTypeHandle_t4AEFB4045F601C7B50F59B5483EEE787CC4D967A  L_129 = { reinterpret_cast<intptr_t> (LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26472 : 52928)) };
 		Type_t * L_130 = Type_GetTypeFromHandle_m2E0BF604BD00AD02BFCB4A8FB6B3DBDA96CABFB6(L_129);
-		UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A * L_131 = (UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A *)il2cpp_codegen_object_new(sizeof(UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30516 : 61016));
+		UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A * L_131 = (UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A *)il2cpp_codegen_object_new(sizeof(UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30576 : 61136));
 		UpdateInGroupAttribute__ctor_m4A0AAB39A7F5FDAB0F3A4FF0341401035EDC5DCA(L_131, L_130);
 		ArrayElementTypeCheck (L_128, L_131);
 		(L_128)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)0)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_131);
@@ -35820,7 +35956,7 @@ IL_034a:
 		}
 	}
 	{
-		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_135 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30448 : 60880), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)0));
+		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_135 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30508 : 61000), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)0));
 		return L_135;
 	}
 
@@ -35835,18 +35971,18 @@ IL_0365:
 		}
 	}
 	{
-		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_139 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30448 : 60880), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)2));
+		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_139 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30508 : 61000), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)2));
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_140 = L_139;
 		RuntimeTypeHandle_t4AEFB4045F601C7B50F59B5483EEE787CC4D967A  L_141 = { reinterpret_cast<intptr_t> (LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 27332 : 54648)) };
 		Type_t * L_142 = Type_GetTypeFromHandle_m2E0BF604BD00AD02BFCB4A8FB6B3DBDA96CABFB6(L_141);
-		UpdateBeforeAttribute_t1547E96ADA4D845BEFE640C7EBA54BB1BF9964FB * L_143 = (UpdateBeforeAttribute_t1547E96ADA4D845BEFE640C7EBA54BB1BF9964FB *)il2cpp_codegen_object_new(sizeof(UpdateBeforeAttribute_t1547E96ADA4D845BEFE640C7EBA54BB1BF9964FB), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30572 : 61128));
+		UpdateBeforeAttribute_t1547E96ADA4D845BEFE640C7EBA54BB1BF9964FB * L_143 = (UpdateBeforeAttribute_t1547E96ADA4D845BEFE640C7EBA54BB1BF9964FB *)il2cpp_codegen_object_new(sizeof(UpdateBeforeAttribute_t1547E96ADA4D845BEFE640C7EBA54BB1BF9964FB), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30632 : 61248));
 		UpdateBeforeAttribute__ctor_m84744E1BF5A6C03A9E2B30D7422C844DAD80296A(L_143, L_142);
 		ArrayElementTypeCheck (L_140, L_143);
 		(L_140)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)0)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_143);
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_144 = L_140;
 		RuntimeTypeHandle_t4AEFB4045F601C7B50F59B5483EEE787CC4D967A  L_145 = { reinterpret_cast<intptr_t> (LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26472 : 52928)) };
 		Type_t * L_146 = Type_GetTypeFromHandle_m2E0BF604BD00AD02BFCB4A8FB6B3DBDA96CABFB6(L_145);
-		UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A * L_147 = (UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A *)il2cpp_codegen_object_new(sizeof(UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30516 : 61016));
+		UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A * L_147 = (UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A *)il2cpp_codegen_object_new(sizeof(UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30576 : 61136));
 		UpdateInGroupAttribute__ctor_m4A0AAB39A7F5FDAB0F3A4FF0341401035EDC5DCA(L_147, L_146);
 		ArrayElementTypeCheck (L_144, L_147);
 		(L_144)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)1)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_147);
@@ -35864,25 +36000,25 @@ IL_03ac:
 		}
 	}
 	{
-		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_151 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30448 : 60880), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)3));
+		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_151 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30508 : 61000), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)3));
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_152 = L_151;
 		RuntimeTypeHandle_t4AEFB4045F601C7B50F59B5483EEE787CC4D967A  L_153 = { reinterpret_cast<intptr_t> (LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 27152 : 54288)) };
 		Type_t * L_154 = Type_GetTypeFromHandle_m2E0BF604BD00AD02BFCB4A8FB6B3DBDA96CABFB6(L_153);
-		UpdateBeforeAttribute_t1547E96ADA4D845BEFE640C7EBA54BB1BF9964FB * L_155 = (UpdateBeforeAttribute_t1547E96ADA4D845BEFE640C7EBA54BB1BF9964FB *)il2cpp_codegen_object_new(sizeof(UpdateBeforeAttribute_t1547E96ADA4D845BEFE640C7EBA54BB1BF9964FB), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30572 : 61128));
+		UpdateBeforeAttribute_t1547E96ADA4D845BEFE640C7EBA54BB1BF9964FB * L_155 = (UpdateBeforeAttribute_t1547E96ADA4D845BEFE640C7EBA54BB1BF9964FB *)il2cpp_codegen_object_new(sizeof(UpdateBeforeAttribute_t1547E96ADA4D845BEFE640C7EBA54BB1BF9964FB), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30632 : 61248));
 		UpdateBeforeAttribute__ctor_m84744E1BF5A6C03A9E2B30D7422C844DAD80296A(L_155, L_154);
 		ArrayElementTypeCheck (L_152, L_155);
 		(L_152)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)0)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_155);
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_156 = L_152;
 		RuntimeTypeHandle_t4AEFB4045F601C7B50F59B5483EEE787CC4D967A  L_157 = { reinterpret_cast<intptr_t> (LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 27272 : 54528)) };
 		Type_t * L_158 = Type_GetTypeFromHandle_m2E0BF604BD00AD02BFCB4A8FB6B3DBDA96CABFB6(L_157);
-		UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 * L_159 = (UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 *)il2cpp_codegen_object_new(sizeof(UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30544 : 61072));
+		UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 * L_159 = (UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 *)il2cpp_codegen_object_new(sizeof(UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30604 : 61192));
 		UpdateAfterAttribute__ctor_mD7355CFB9474F19D5307E5C44728509A3AAA738E(L_159, L_158);
 		ArrayElementTypeCheck (L_156, L_159);
 		(L_156)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)1)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_159);
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_160 = L_156;
 		RuntimeTypeHandle_t4AEFB4045F601C7B50F59B5483EEE787CC4D967A  L_161 = { reinterpret_cast<intptr_t> (LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26472 : 52928)) };
 		Type_t * L_162 = Type_GetTypeFromHandle_m2E0BF604BD00AD02BFCB4A8FB6B3DBDA96CABFB6(L_161);
-		UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A * L_163 = (UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A *)il2cpp_codegen_object_new(sizeof(UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30516 : 61016));
+		UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A * L_163 = (UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A *)il2cpp_codegen_object_new(sizeof(UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30576 : 61136));
 		UpdateInGroupAttribute__ctor_m4A0AAB39A7F5FDAB0F3A4FF0341401035EDC5DCA(L_163, L_162);
 		ArrayElementTypeCheck (L_160, L_163);
 		(L_160)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)2)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_163);
@@ -35900,7 +36036,7 @@ IL_0409:
 		}
 	}
 	{
-		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_167 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30448 : 60880), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)0));
+		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_167 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30508 : 61000), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)0));
 		return L_167;
 	}
 
@@ -35915,9 +36051,9 @@ IL_0424:
 		}
 	}
 	{
-		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_171 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30448 : 60880), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)1));
+		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_171 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30508 : 61000), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)1));
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_172 = L_171;
-		DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312 * L_173 = (DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312 *)il2cpp_codegen_object_new(sizeof(DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30464 : 60912));
+		DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312 * L_173 = (DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312 *)il2cpp_codegen_object_new(sizeof(DisableAutoCreationAttribute_t3C298CB9B52B30B7172CD7FB4C8DBB4DA9E95312), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30524 : 61032));
 		DisableAutoCreationAttribute__ctor_m7E19CD9AE8282D319FD7FDAFF07DC7976198568B(L_173);
 		ArrayElementTypeCheck (L_172, L_173);
 		(L_172)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)0)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_173);
@@ -35935,18 +36071,18 @@ IL_044b:
 		}
 	}
 	{
-		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_177 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30448 : 60880), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)2));
+		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_177 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30508 : 61000), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)2));
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_178 = L_177;
 		RuntimeTypeHandle_t4AEFB4045F601C7B50F59B5483EEE787CC4D967A  L_179 = { reinterpret_cast<intptr_t> (LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26660 : 53304)) };
 		Type_t * L_180 = Type_GetTypeFromHandle_m2E0BF604BD00AD02BFCB4A8FB6B3DBDA96CABFB6(L_179);
-		UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 * L_181 = (UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 *)il2cpp_codegen_object_new(sizeof(UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30544 : 61072));
+		UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 * L_181 = (UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 *)il2cpp_codegen_object_new(sizeof(UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30604 : 61192));
 		UpdateAfterAttribute__ctor_mD7355CFB9474F19D5307E5C44728509A3AAA738E(L_181, L_180);
 		ArrayElementTypeCheck (L_178, L_181);
 		(L_178)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)0)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_181);
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_182 = L_178;
 		RuntimeTypeHandle_t4AEFB4045F601C7B50F59B5483EEE787CC4D967A  L_183 = { reinterpret_cast<intptr_t> (LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 25948 : 51880)) };
 		Type_t * L_184 = Type_GetTypeFromHandle_m2E0BF604BD00AD02BFCB4A8FB6B3DBDA96CABFB6(L_183);
-		UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A * L_185 = (UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A *)il2cpp_codegen_object_new(sizeof(UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30516 : 61016));
+		UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A * L_185 = (UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A *)il2cpp_codegen_object_new(sizeof(UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30576 : 61136));
 		UpdateInGroupAttribute__ctor_m4A0AAB39A7F5FDAB0F3A4FF0341401035EDC5DCA(L_185, L_184);
 		ArrayElementTypeCheck (L_182, L_185);
 		(L_182)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)1)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_185);
@@ -35964,18 +36100,18 @@ IL_0492:
 		}
 	}
 	{
-		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_189 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30448 : 60880), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)2));
+		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_189 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30508 : 61000), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)2));
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_190 = L_189;
 		RuntimeTypeHandle_t4AEFB4045F601C7B50F59B5483EEE787CC4D967A  L_191 = { reinterpret_cast<intptr_t> (LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 27152 : 54288)) };
 		Type_t * L_192 = Type_GetTypeFromHandle_m2E0BF604BD00AD02BFCB4A8FB6B3DBDA96CABFB6(L_191);
-		UpdateBeforeAttribute_t1547E96ADA4D845BEFE640C7EBA54BB1BF9964FB * L_193 = (UpdateBeforeAttribute_t1547E96ADA4D845BEFE640C7EBA54BB1BF9964FB *)il2cpp_codegen_object_new(sizeof(UpdateBeforeAttribute_t1547E96ADA4D845BEFE640C7EBA54BB1BF9964FB), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30572 : 61128));
+		UpdateBeforeAttribute_t1547E96ADA4D845BEFE640C7EBA54BB1BF9964FB * L_193 = (UpdateBeforeAttribute_t1547E96ADA4D845BEFE640C7EBA54BB1BF9964FB *)il2cpp_codegen_object_new(sizeof(UpdateBeforeAttribute_t1547E96ADA4D845BEFE640C7EBA54BB1BF9964FB), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30632 : 61248));
 		UpdateBeforeAttribute__ctor_m84744E1BF5A6C03A9E2B30D7422C844DAD80296A(L_193, L_192);
 		ArrayElementTypeCheck (L_190, L_193);
 		(L_190)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)0)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_193);
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_194 = L_190;
 		RuntimeTypeHandle_t4AEFB4045F601C7B50F59B5483EEE787CC4D967A  L_195 = { reinterpret_cast<intptr_t> (LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26472 : 52928)) };
 		Type_t * L_196 = Type_GetTypeFromHandle_m2E0BF604BD00AD02BFCB4A8FB6B3DBDA96CABFB6(L_195);
-		UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A * L_197 = (UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A *)il2cpp_codegen_object_new(sizeof(UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30516 : 61016));
+		UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A * L_197 = (UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A *)il2cpp_codegen_object_new(sizeof(UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30576 : 61136));
 		UpdateInGroupAttribute__ctor_m4A0AAB39A7F5FDAB0F3A4FF0341401035EDC5DCA(L_197, L_196);
 		ArrayElementTypeCheck (L_194, L_197);
 		(L_194)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)1)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_197);
@@ -35993,18 +36129,18 @@ IL_04d9:
 		}
 	}
 	{
-		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_201 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30448 : 60880), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)2));
+		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_201 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30508 : 61000), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)2));
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_202 = L_201;
 		RuntimeTypeHandle_t4AEFB4045F601C7B50F59B5483EEE787CC4D967A  L_203 = { reinterpret_cast<intptr_t> (LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 27152 : 54288)) };
 		Type_t * L_204 = Type_GetTypeFromHandle_m2E0BF604BD00AD02BFCB4A8FB6B3DBDA96CABFB6(L_203);
-		UpdateBeforeAttribute_t1547E96ADA4D845BEFE640C7EBA54BB1BF9964FB * L_205 = (UpdateBeforeAttribute_t1547E96ADA4D845BEFE640C7EBA54BB1BF9964FB *)il2cpp_codegen_object_new(sizeof(UpdateBeforeAttribute_t1547E96ADA4D845BEFE640C7EBA54BB1BF9964FB), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30572 : 61128));
+		UpdateBeforeAttribute_t1547E96ADA4D845BEFE640C7EBA54BB1BF9964FB * L_205 = (UpdateBeforeAttribute_t1547E96ADA4D845BEFE640C7EBA54BB1BF9964FB *)il2cpp_codegen_object_new(sizeof(UpdateBeforeAttribute_t1547E96ADA4D845BEFE640C7EBA54BB1BF9964FB), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30632 : 61248));
 		UpdateBeforeAttribute__ctor_m84744E1BF5A6C03A9E2B30D7422C844DAD80296A(L_205, L_204);
 		ArrayElementTypeCheck (L_202, L_205);
 		(L_202)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)0)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_205);
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_206 = L_202;
 		RuntimeTypeHandle_t4AEFB4045F601C7B50F59B5483EEE787CC4D967A  L_207 = { reinterpret_cast<intptr_t> (LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26472 : 52928)) };
 		Type_t * L_208 = Type_GetTypeFromHandle_m2E0BF604BD00AD02BFCB4A8FB6B3DBDA96CABFB6(L_207);
-		UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A * L_209 = (UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A *)il2cpp_codegen_object_new(sizeof(UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30516 : 61016));
+		UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A * L_209 = (UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A *)il2cpp_codegen_object_new(sizeof(UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30576 : 61136));
 		UpdateInGroupAttribute__ctor_m4A0AAB39A7F5FDAB0F3A4FF0341401035EDC5DCA(L_209, L_208);
 		ArrayElementTypeCheck (L_206, L_209);
 		(L_206)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)1)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_209);
@@ -36022,7 +36158,7 @@ IL_0520:
 		}
 	}
 	{
-		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_213 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30448 : 60880), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)0));
+		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_213 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30508 : 61000), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)0));
 		return L_213;
 	}
 
@@ -36037,11 +36173,11 @@ IL_053b:
 		}
 	}
 	{
-		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_217 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30448 : 60880), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)1));
+		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_217 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30508 : 61000), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)1));
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_218 = L_217;
 		RuntimeTypeHandle_t4AEFB4045F601C7B50F59B5483EEE787CC4D967A  L_219 = { reinterpret_cast<intptr_t> (LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26276 : 52536)) };
 		Type_t * L_220 = Type_GetTypeFromHandle_m2E0BF604BD00AD02BFCB4A8FB6B3DBDA96CABFB6(L_219);
-		UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A * L_221 = (UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A *)il2cpp_codegen_object_new(sizeof(UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30516 : 61016));
+		UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A * L_221 = (UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A *)il2cpp_codegen_object_new(sizeof(UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30576 : 61136));
 		UpdateInGroupAttribute__ctor_m4A0AAB39A7F5FDAB0F3A4FF0341401035EDC5DCA(L_221, L_220);
 		ArrayElementTypeCheck (L_218, L_221);
 		(L_218)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)0)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_221);
@@ -36059,11 +36195,11 @@ IL_056c:
 		}
 	}
 	{
-		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_225 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30448 : 60880), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)1));
+		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_225 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30508 : 61000), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)1));
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_226 = L_225;
 		RuntimeTypeHandle_t4AEFB4045F601C7B50F59B5483EEE787CC4D967A  L_227 = { reinterpret_cast<intptr_t> (LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 25948 : 51880)) };
 		Type_t * L_228 = Type_GetTypeFromHandle_m2E0BF604BD00AD02BFCB4A8FB6B3DBDA96CABFB6(L_227);
-		UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A * L_229 = (UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A *)il2cpp_codegen_object_new(sizeof(UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30516 : 61016));
+		UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A * L_229 = (UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A *)il2cpp_codegen_object_new(sizeof(UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30576 : 61136));
 		UpdateInGroupAttribute__ctor_m4A0AAB39A7F5FDAB0F3A4FF0341401035EDC5DCA(L_229, L_228);
 		ArrayElementTypeCheck (L_226, L_229);
 		(L_226)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)0)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_229);
@@ -36081,11 +36217,11 @@ IL_059d:
 		}
 	}
 	{
-		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_233 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30448 : 60880), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)1));
+		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_233 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30508 : 61000), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)1));
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_234 = L_233;
 		RuntimeTypeHandle_t4AEFB4045F601C7B50F59B5483EEE787CC4D967A  L_235 = { reinterpret_cast<intptr_t> (LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 25948 : 51880)) };
 		Type_t * L_236 = Type_GetTypeFromHandle_m2E0BF604BD00AD02BFCB4A8FB6B3DBDA96CABFB6(L_235);
-		UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A * L_237 = (UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A *)il2cpp_codegen_object_new(sizeof(UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30516 : 61016));
+		UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A * L_237 = (UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A *)il2cpp_codegen_object_new(sizeof(UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30576 : 61136));
 		UpdateInGroupAttribute__ctor_m4A0AAB39A7F5FDAB0F3A4FF0341401035EDC5DCA(L_237, L_236);
 		ArrayElementTypeCheck (L_234, L_237);
 		(L_234)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)0)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_237);
@@ -36103,18 +36239,18 @@ IL_05ce:
 		}
 	}
 	{
-		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_241 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30448 : 60880), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)2));
+		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_241 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30508 : 61000), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)2));
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_242 = L_241;
 		RuntimeTypeHandle_t4AEFB4045F601C7B50F59B5483EEE787CC4D967A  L_243 = { reinterpret_cast<intptr_t> (LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 28248 : 56480)) };
 		Type_t * L_244 = Type_GetTypeFromHandle_m2E0BF604BD00AD02BFCB4A8FB6B3DBDA96CABFB6(L_243);
-		UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 * L_245 = (UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 *)il2cpp_codegen_object_new(sizeof(UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30544 : 61072));
+		UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 * L_245 = (UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 *)il2cpp_codegen_object_new(sizeof(UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30604 : 61192));
 		UpdateAfterAttribute__ctor_mD7355CFB9474F19D5307E5C44728509A3AAA738E(L_245, L_244);
 		ArrayElementTypeCheck (L_242, L_245);
 		(L_242)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)0)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_245);
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_246 = L_242;
 		RuntimeTypeHandle_t4AEFB4045F601C7B50F59B5483EEE787CC4D967A  L_247 = { reinterpret_cast<intptr_t> (LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26276 : 52536)) };
 		Type_t * L_248 = Type_GetTypeFromHandle_m2E0BF604BD00AD02BFCB4A8FB6B3DBDA96CABFB6(L_247);
-		UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A * L_249 = (UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A *)il2cpp_codegen_object_new(sizeof(UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30516 : 61016));
+		UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A * L_249 = (UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A *)il2cpp_codegen_object_new(sizeof(UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30576 : 61136));
 		UpdateInGroupAttribute__ctor_m4A0AAB39A7F5FDAB0F3A4FF0341401035EDC5DCA(L_249, L_248);
 		ArrayElementTypeCheck (L_246, L_249);
 		(L_246)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)1)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_249);
@@ -36132,18 +36268,18 @@ IL_0615:
 		}
 	}
 	{
-		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_253 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30448 : 60880), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)2));
+		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_253 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30508 : 61000), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)2));
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_254 = L_253;
 		RuntimeTypeHandle_t4AEFB4045F601C7B50F59B5483EEE787CC4D967A  L_255 = { reinterpret_cast<intptr_t> (LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 28068 : 56120)) };
 		Type_t * L_256 = Type_GetTypeFromHandle_m2E0BF604BD00AD02BFCB4A8FB6B3DBDA96CABFB6(L_255);
-		UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 * L_257 = (UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 *)il2cpp_codegen_object_new(sizeof(UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30544 : 61072));
+		UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 * L_257 = (UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 *)il2cpp_codegen_object_new(sizeof(UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30604 : 61192));
 		UpdateAfterAttribute__ctor_mD7355CFB9474F19D5307E5C44728509A3AAA738E(L_257, L_256);
 		ArrayElementTypeCheck (L_254, L_257);
 		(L_254)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)0)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_257);
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_258 = L_254;
 		RuntimeTypeHandle_t4AEFB4045F601C7B50F59B5483EEE787CC4D967A  L_259 = { reinterpret_cast<intptr_t> (LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26276 : 52536)) };
 		Type_t * L_260 = Type_GetTypeFromHandle_m2E0BF604BD00AD02BFCB4A8FB6B3DBDA96CABFB6(L_259);
-		UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A * L_261 = (UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A *)il2cpp_codegen_object_new(sizeof(UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30516 : 61016));
+		UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A * L_261 = (UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A *)il2cpp_codegen_object_new(sizeof(UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30576 : 61136));
 		UpdateInGroupAttribute__ctor_m4A0AAB39A7F5FDAB0F3A4FF0341401035EDC5DCA(L_261, L_260);
 		ArrayElementTypeCheck (L_258, L_261);
 		(L_258)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)1)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_261);
@@ -36161,11 +36297,11 @@ IL_065c:
 		}
 	}
 	{
-		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_265 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30448 : 60880), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)1));
+		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_265 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30508 : 61000), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)1));
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_266 = L_265;
 		RuntimeTypeHandle_t4AEFB4045F601C7B50F59B5483EEE787CC4D967A  L_267 = { reinterpret_cast<intptr_t> (LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26276 : 52536)) };
 		Type_t * L_268 = Type_GetTypeFromHandle_m2E0BF604BD00AD02BFCB4A8FB6B3DBDA96CABFB6(L_267);
-		UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A * L_269 = (UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A *)il2cpp_codegen_object_new(sizeof(UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30516 : 61016));
+		UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A * L_269 = (UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A *)il2cpp_codegen_object_new(sizeof(UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30576 : 61136));
 		UpdateInGroupAttribute__ctor_m4A0AAB39A7F5FDAB0F3A4FF0341401035EDC5DCA(L_269, L_268);
 		ArrayElementTypeCheck (L_266, L_269);
 		(L_266)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)0)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_269);
@@ -36183,18 +36319,18 @@ IL_068d:
 		}
 	}
 	{
-		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_273 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30448 : 60880), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)2));
+		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_273 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30508 : 61000), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)2));
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_274 = L_273;
 		RuntimeTypeHandle_t4AEFB4045F601C7B50F59B5483EEE787CC4D967A  L_275 = { reinterpret_cast<intptr_t> (LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 28188 : 56360)) };
 		Type_t * L_276 = Type_GetTypeFromHandle_m2E0BF604BD00AD02BFCB4A8FB6B3DBDA96CABFB6(L_275);
-		UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 * L_277 = (UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 *)il2cpp_codegen_object_new(sizeof(UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30544 : 61072));
+		UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 * L_277 = (UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 *)il2cpp_codegen_object_new(sizeof(UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30604 : 61192));
 		UpdateAfterAttribute__ctor_mD7355CFB9474F19D5307E5C44728509A3AAA738E(L_277, L_276);
 		ArrayElementTypeCheck (L_274, L_277);
 		(L_274)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)0)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_277);
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_278 = L_274;
 		RuntimeTypeHandle_t4AEFB4045F601C7B50F59B5483EEE787CC4D967A  L_279 = { reinterpret_cast<intptr_t> (LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26276 : 52536)) };
 		Type_t * L_280 = Type_GetTypeFromHandle_m2E0BF604BD00AD02BFCB4A8FB6B3DBDA96CABFB6(L_279);
-		UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A * L_281 = (UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A *)il2cpp_codegen_object_new(sizeof(UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30516 : 61016));
+		UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A * L_281 = (UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A *)il2cpp_codegen_object_new(sizeof(UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30576 : 61136));
 		UpdateInGroupAttribute__ctor_m4A0AAB39A7F5FDAB0F3A4FF0341401035EDC5DCA(L_281, L_280);
 		ArrayElementTypeCheck (L_278, L_281);
 		(L_278)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)1)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_281);
@@ -36212,11 +36348,11 @@ IL_06d4:
 		}
 	}
 	{
-		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_285 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30448 : 60880), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)1));
+		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_285 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30508 : 61000), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)1));
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_286 = L_285;
 		RuntimeTypeHandle_t4AEFB4045F601C7B50F59B5483EEE787CC4D967A  L_287 = { reinterpret_cast<intptr_t> (LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26276 : 52536)) };
 		Type_t * L_288 = Type_GetTypeFromHandle_m2E0BF604BD00AD02BFCB4A8FB6B3DBDA96CABFB6(L_287);
-		UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A * L_289 = (UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A *)il2cpp_codegen_object_new(sizeof(UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30516 : 61016));
+		UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A * L_289 = (UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A *)il2cpp_codegen_object_new(sizeof(UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30576 : 61136));
 		UpdateInGroupAttribute__ctor_m4A0AAB39A7F5FDAB0F3A4FF0341401035EDC5DCA(L_289, L_288);
 		ArrayElementTypeCheck (L_286, L_289);
 		(L_286)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)0)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_289);
@@ -36234,18 +36370,18 @@ IL_0705:
 		}
 	}
 	{
-		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_293 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30448 : 60880), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)2));
+		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_293 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30508 : 61000), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)2));
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_294 = L_293;
 		RuntimeTypeHandle_t4AEFB4045F601C7B50F59B5483EEE787CC4D967A  L_295 = { reinterpret_cast<intptr_t> (LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 28308 : 56600)) };
 		Type_t * L_296 = Type_GetTypeFromHandle_m2E0BF604BD00AD02BFCB4A8FB6B3DBDA96CABFB6(L_295);
-		UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 * L_297 = (UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 *)il2cpp_codegen_object_new(sizeof(UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30544 : 61072));
+		UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 * L_297 = (UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 *)il2cpp_codegen_object_new(sizeof(UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30604 : 61192));
 		UpdateAfterAttribute__ctor_mD7355CFB9474F19D5307E5C44728509A3AAA738E(L_297, L_296);
 		ArrayElementTypeCheck (L_294, L_297);
 		(L_294)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)0)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_297);
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_298 = L_294;
 		RuntimeTypeHandle_t4AEFB4045F601C7B50F59B5483EEE787CC4D967A  L_299 = { reinterpret_cast<intptr_t> (LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26276 : 52536)) };
 		Type_t * L_300 = Type_GetTypeFromHandle_m2E0BF604BD00AD02BFCB4A8FB6B3DBDA96CABFB6(L_299);
-		UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A * L_301 = (UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A *)il2cpp_codegen_object_new(sizeof(UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30516 : 61016));
+		UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A * L_301 = (UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A *)il2cpp_codegen_object_new(sizeof(UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30576 : 61136));
 		UpdateInGroupAttribute__ctor_m4A0AAB39A7F5FDAB0F3A4FF0341401035EDC5DCA(L_301, L_300);
 		ArrayElementTypeCheck (L_298, L_301);
 		(L_298)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)1)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_301);
@@ -36263,18 +36399,18 @@ IL_074c:
 		}
 	}
 	{
-		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_305 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30448 : 60880), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)2));
+		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_305 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30508 : 61000), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)2));
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_306 = L_305;
 		RuntimeTypeHandle_t4AEFB4045F601C7B50F59B5483EEE787CC4D967A  L_307 = { reinterpret_cast<intptr_t> (LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 27876 : 55736)) };
 		Type_t * L_308 = Type_GetTypeFromHandle_m2E0BF604BD00AD02BFCB4A8FB6B3DBDA96CABFB6(L_307);
-		UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 * L_309 = (UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 *)il2cpp_codegen_object_new(sizeof(UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30544 : 61072));
+		UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 * L_309 = (UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 *)il2cpp_codegen_object_new(sizeof(UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30604 : 61192));
 		UpdateAfterAttribute__ctor_mD7355CFB9474F19D5307E5C44728509A3AAA738E(L_309, L_308);
 		ArrayElementTypeCheck (L_306, L_309);
 		(L_306)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)0)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_309);
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_310 = L_306;
 		RuntimeTypeHandle_t4AEFB4045F601C7B50F59B5483EEE787CC4D967A  L_311 = { reinterpret_cast<intptr_t> (LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 25948 : 51880)) };
 		Type_t * L_312 = Type_GetTypeFromHandle_m2E0BF604BD00AD02BFCB4A8FB6B3DBDA96CABFB6(L_311);
-		UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A * L_313 = (UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A *)il2cpp_codegen_object_new(sizeof(UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30516 : 61016));
+		UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A * L_313 = (UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A *)il2cpp_codegen_object_new(sizeof(UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30576 : 61136));
 		UpdateInGroupAttribute__ctor_m4A0AAB39A7F5FDAB0F3A4FF0341401035EDC5DCA(L_313, L_312);
 		ArrayElementTypeCheck (L_310, L_313);
 		(L_310)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)1)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_313);
@@ -36292,18 +36428,18 @@ IL_0793:
 		}
 	}
 	{
-		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_317 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30448 : 60880), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)2));
+		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_317 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30508 : 61000), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)2));
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_318 = L_317;
 		RuntimeTypeHandle_t4AEFB4045F601C7B50F59B5483EEE787CC4D967A  L_319 = { reinterpret_cast<intptr_t> (LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 27152 : 54288)) };
 		Type_t * L_320 = Type_GetTypeFromHandle_m2E0BF604BD00AD02BFCB4A8FB6B3DBDA96CABFB6(L_319);
-		UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 * L_321 = (UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 *)il2cpp_codegen_object_new(sizeof(UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30544 : 61072));
+		UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 * L_321 = (UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 *)il2cpp_codegen_object_new(sizeof(UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30604 : 61192));
 		UpdateAfterAttribute__ctor_mD7355CFB9474F19D5307E5C44728509A3AAA738E(L_321, L_320);
 		ArrayElementTypeCheck (L_318, L_321);
 		(L_318)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)0)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_321);
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_322 = L_318;
 		RuntimeTypeHandle_t4AEFB4045F601C7B50F59B5483EEE787CC4D967A  L_323 = { reinterpret_cast<intptr_t> (LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26472 : 52928)) };
 		Type_t * L_324 = Type_GetTypeFromHandle_m2E0BF604BD00AD02BFCB4A8FB6B3DBDA96CABFB6(L_323);
-		UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A * L_325 = (UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A *)il2cpp_codegen_object_new(sizeof(UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30516 : 61016));
+		UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A * L_325 = (UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A *)il2cpp_codegen_object_new(sizeof(UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30576 : 61136));
 		UpdateInGroupAttribute__ctor_m4A0AAB39A7F5FDAB0F3A4FF0341401035EDC5DCA(L_325, L_324);
 		ArrayElementTypeCheck (L_322, L_325);
 		(L_322)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)1)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_325);
@@ -36321,18 +36457,18 @@ IL_07da:
 		}
 	}
 	{
-		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_329 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30448 : 60880), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)2));
+		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_329 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30508 : 61000), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)2));
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_330 = L_329;
 		RuntimeTypeHandle_t4AEFB4045F601C7B50F59B5483EEE787CC4D967A  L_331 = { reinterpret_cast<intptr_t> (LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 28676 : 57336)) };
 		Type_t * L_332 = Type_GetTypeFromHandle_m2E0BF604BD00AD02BFCB4A8FB6B3DBDA96CABFB6(L_331);
-		UpdateBeforeAttribute_t1547E96ADA4D845BEFE640C7EBA54BB1BF9964FB * L_333 = (UpdateBeforeAttribute_t1547E96ADA4D845BEFE640C7EBA54BB1BF9964FB *)il2cpp_codegen_object_new(sizeof(UpdateBeforeAttribute_t1547E96ADA4D845BEFE640C7EBA54BB1BF9964FB), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30572 : 61128));
+		UpdateBeforeAttribute_t1547E96ADA4D845BEFE640C7EBA54BB1BF9964FB * L_333 = (UpdateBeforeAttribute_t1547E96ADA4D845BEFE640C7EBA54BB1BF9964FB *)il2cpp_codegen_object_new(sizeof(UpdateBeforeAttribute_t1547E96ADA4D845BEFE640C7EBA54BB1BF9964FB), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30632 : 61248));
 		UpdateBeforeAttribute__ctor_m84744E1BF5A6C03A9E2B30D7422C844DAD80296A(L_333, L_332);
 		ArrayElementTypeCheck (L_330, L_333);
 		(L_330)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)0)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_333);
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_334 = L_330;
 		RuntimeTypeHandle_t4AEFB4045F601C7B50F59B5483EEE787CC4D967A  L_335 = { reinterpret_cast<intptr_t> (LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26472 : 52928)) };
 		Type_t * L_336 = Type_GetTypeFromHandle_m2E0BF604BD00AD02BFCB4A8FB6B3DBDA96CABFB6(L_335);
-		UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A * L_337 = (UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A *)il2cpp_codegen_object_new(sizeof(UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30516 : 61016));
+		UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A * L_337 = (UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A *)il2cpp_codegen_object_new(sizeof(UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30576 : 61136));
 		UpdateInGroupAttribute__ctor_m4A0AAB39A7F5FDAB0F3A4FF0341401035EDC5DCA(L_337, L_336);
 		ArrayElementTypeCheck (L_334, L_337);
 		(L_334)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)1)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_337);
@@ -36350,11 +36486,11 @@ IL_0821:
 		}
 	}
 	{
-		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_341 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30448 : 60880), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)1));
+		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_341 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30508 : 61000), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)1));
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_342 = L_341;
 		RuntimeTypeHandle_t4AEFB4045F601C7B50F59B5483EEE787CC4D967A  L_343 = { reinterpret_cast<intptr_t> (LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26472 : 52928)) };
 		Type_t * L_344 = Type_GetTypeFromHandle_m2E0BF604BD00AD02BFCB4A8FB6B3DBDA96CABFB6(L_343);
-		UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A * L_345 = (UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A *)il2cpp_codegen_object_new(sizeof(UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30516 : 61016));
+		UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A * L_345 = (UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A *)il2cpp_codegen_object_new(sizeof(UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30576 : 61136));
 		UpdateInGroupAttribute__ctor_m4A0AAB39A7F5FDAB0F3A4FF0341401035EDC5DCA(L_345, L_344);
 		ArrayElementTypeCheck (L_342, L_345);
 		(L_342)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)0)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_345);
@@ -36372,7 +36508,7 @@ IL_0852:
 		}
 	}
 	{
-		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_349 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30448 : 60880), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)0));
+		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_349 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30508 : 61000), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)0));
 		return L_349;
 	}
 
@@ -36387,18 +36523,18 @@ IL_086d:
 		}
 	}
 	{
-		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_353 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30448 : 60880), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)2));
+		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_353 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30508 : 61000), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)2));
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_354 = L_353;
 		RuntimeTypeHandle_t4AEFB4045F601C7B50F59B5483EEE787CC4D967A  L_355 = { reinterpret_cast<intptr_t> (LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 28952 : 57888)) };
 		Type_t * L_356 = Type_GetTypeFromHandle_m2E0BF604BD00AD02BFCB4A8FB6B3DBDA96CABFB6(L_355);
-		UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 * L_357 = (UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 *)il2cpp_codegen_object_new(sizeof(UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30544 : 61072));
+		UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 * L_357 = (UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 *)il2cpp_codegen_object_new(sizeof(UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30604 : 61192));
 		UpdateAfterAttribute__ctor_mD7355CFB9474F19D5307E5C44728509A3AAA738E(L_357, L_356);
 		ArrayElementTypeCheck (L_354, L_357);
 		(L_354)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)0)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_357);
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_358 = L_354;
 		RuntimeTypeHandle_t4AEFB4045F601C7B50F59B5483EEE787CC4D967A  L_359 = { reinterpret_cast<intptr_t> (LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26472 : 52928)) };
 		Type_t * L_360 = Type_GetTypeFromHandle_m2E0BF604BD00AD02BFCB4A8FB6B3DBDA96CABFB6(L_359);
-		UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A * L_361 = (UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A *)il2cpp_codegen_object_new(sizeof(UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30516 : 61016));
+		UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A * L_361 = (UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A *)il2cpp_codegen_object_new(sizeof(UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30576 : 61136));
 		UpdateInGroupAttribute__ctor_m4A0AAB39A7F5FDAB0F3A4FF0341401035EDC5DCA(L_361, L_360);
 		ArrayElementTypeCheck (L_358, L_361);
 		(L_358)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)1)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_361);
@@ -36416,18 +36552,18 @@ IL_08b4:
 		}
 	}
 	{
-		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_365 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30448 : 60880), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)2));
+		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_365 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30508 : 61000), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)2));
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_366 = L_365;
 		RuntimeTypeHandle_t4AEFB4045F601C7B50F59B5483EEE787CC4D967A  L_367 = { reinterpret_cast<intptr_t> (LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 29132 : 58248)) };
 		Type_t * L_368 = Type_GetTypeFromHandle_m2E0BF604BD00AD02BFCB4A8FB6B3DBDA96CABFB6(L_367);
-		UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 * L_369 = (UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 *)il2cpp_codegen_object_new(sizeof(UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30544 : 61072));
+		UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 * L_369 = (UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 *)il2cpp_codegen_object_new(sizeof(UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30604 : 61192));
 		UpdateAfterAttribute__ctor_mD7355CFB9474F19D5307E5C44728509A3AAA738E(L_369, L_368);
 		ArrayElementTypeCheck (L_366, L_369);
 		(L_366)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)0)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_369);
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_370 = L_366;
 		RuntimeTypeHandle_t4AEFB4045F601C7B50F59B5483EEE787CC4D967A  L_371 = { reinterpret_cast<intptr_t> (LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26472 : 52928)) };
 		Type_t * L_372 = Type_GetTypeFromHandle_m2E0BF604BD00AD02BFCB4A8FB6B3DBDA96CABFB6(L_371);
-		UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A * L_373 = (UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A *)il2cpp_codegen_object_new(sizeof(UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30516 : 61016));
+		UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A * L_373 = (UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A *)il2cpp_codegen_object_new(sizeof(UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30576 : 61136));
 		UpdateInGroupAttribute__ctor_m4A0AAB39A7F5FDAB0F3A4FF0341401035EDC5DCA(L_373, L_372);
 		ArrayElementTypeCheck (L_370, L_373);
 		(L_370)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)1)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_373);
@@ -36445,18 +36581,18 @@ IL_08fb:
 		}
 	}
 	{
-		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_377 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30448 : 60880), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)2));
+		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_377 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30508 : 61000), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)2));
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_378 = L_377;
 		RuntimeTypeHandle_t4AEFB4045F601C7B50F59B5483EEE787CC4D967A  L_379 = { reinterpret_cast<intptr_t> (LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 28952 : 57888)) };
 		Type_t * L_380 = Type_GetTypeFromHandle_m2E0BF604BD00AD02BFCB4A8FB6B3DBDA96CABFB6(L_379);
-		UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 * L_381 = (UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 *)il2cpp_codegen_object_new(sizeof(UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30544 : 61072));
+		UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 * L_381 = (UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 *)il2cpp_codegen_object_new(sizeof(UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30604 : 61192));
 		UpdateAfterAttribute__ctor_mD7355CFB9474F19D5307E5C44728509A3AAA738E(L_381, L_380);
 		ArrayElementTypeCheck (L_378, L_381);
 		(L_378)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)0)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_381);
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_382 = L_378;
 		RuntimeTypeHandle_t4AEFB4045F601C7B50F59B5483EEE787CC4D967A  L_383 = { reinterpret_cast<intptr_t> (LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26472 : 52928)) };
 		Type_t * L_384 = Type_GetTypeFromHandle_m2E0BF604BD00AD02BFCB4A8FB6B3DBDA96CABFB6(L_383);
-		UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A * L_385 = (UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A *)il2cpp_codegen_object_new(sizeof(UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30516 : 61016));
+		UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A * L_385 = (UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A *)il2cpp_codegen_object_new(sizeof(UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30576 : 61136));
 		UpdateInGroupAttribute__ctor_m4A0AAB39A7F5FDAB0F3A4FF0341401035EDC5DCA(L_385, L_384);
 		ArrayElementTypeCheck (L_382, L_385);
 		(L_382)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)1)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_385);
@@ -36474,18 +36610,18 @@ IL_0942:
 		}
 	}
 	{
-		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_389 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30448 : 60880), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)2));
+		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_389 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30508 : 61000), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)2));
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_390 = L_389;
 		RuntimeTypeHandle_t4AEFB4045F601C7B50F59B5483EEE787CC4D967A  L_391 = { reinterpret_cast<intptr_t> (LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 29012 : 58008)) };
 		Type_t * L_392 = Type_GetTypeFromHandle_m2E0BF604BD00AD02BFCB4A8FB6B3DBDA96CABFB6(L_391);
-		UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 * L_393 = (UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 *)il2cpp_codegen_object_new(sizeof(UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30544 : 61072));
+		UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 * L_393 = (UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 *)il2cpp_codegen_object_new(sizeof(UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30604 : 61192));
 		UpdateAfterAttribute__ctor_mD7355CFB9474F19D5307E5C44728509A3AAA738E(L_393, L_392);
 		ArrayElementTypeCheck (L_390, L_393);
 		(L_390)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)0)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_393);
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_394 = L_390;
 		RuntimeTypeHandle_t4AEFB4045F601C7B50F59B5483EEE787CC4D967A  L_395 = { reinterpret_cast<intptr_t> (LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26472 : 52928)) };
 		Type_t * L_396 = Type_GetTypeFromHandle_m2E0BF604BD00AD02BFCB4A8FB6B3DBDA96CABFB6(L_395);
-		UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A * L_397 = (UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A *)il2cpp_codegen_object_new(sizeof(UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30516 : 61016));
+		UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A * L_397 = (UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A *)il2cpp_codegen_object_new(sizeof(UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30576 : 61136));
 		UpdateInGroupAttribute__ctor_m4A0AAB39A7F5FDAB0F3A4FF0341401035EDC5DCA(L_397, L_396);
 		ArrayElementTypeCheck (L_394, L_397);
 		(L_394)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)1)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_397);
@@ -36503,11 +36639,11 @@ IL_0989:
 		}
 	}
 	{
-		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_401 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30448 : 60880), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)1));
+		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_401 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30508 : 61000), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)1));
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_402 = L_401;
 		RuntimeTypeHandle_t4AEFB4045F601C7B50F59B5483EEE787CC4D967A  L_403 = { reinterpret_cast<intptr_t> (LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26472 : 52928)) };
 		Type_t * L_404 = Type_GetTypeFromHandle_m2E0BF604BD00AD02BFCB4A8FB6B3DBDA96CABFB6(L_403);
-		UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A * L_405 = (UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A *)il2cpp_codegen_object_new(sizeof(UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30516 : 61016));
+		UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A * L_405 = (UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A *)il2cpp_codegen_object_new(sizeof(UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30576 : 61136));
 		UpdateInGroupAttribute__ctor_m4A0AAB39A7F5FDAB0F3A4FF0341401035EDC5DCA(L_405, L_404);
 		ArrayElementTypeCheck (L_402, L_405);
 		(L_402)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)0)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_405);
@@ -36525,18 +36661,18 @@ IL_09ba:
 		}
 	}
 	{
-		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_409 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30448 : 60880), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)2));
+		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_409 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30508 : 61000), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)2));
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_410 = L_409;
 		RuntimeTypeHandle_t4AEFB4045F601C7B50F59B5483EEE787CC4D967A  L_411 = { reinterpret_cast<intptr_t> (LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 28952 : 57888)) };
 		Type_t * L_412 = Type_GetTypeFromHandle_m2E0BF604BD00AD02BFCB4A8FB6B3DBDA96CABFB6(L_411);
-		UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 * L_413 = (UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 *)il2cpp_codegen_object_new(sizeof(UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30544 : 61072));
+		UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 * L_413 = (UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 *)il2cpp_codegen_object_new(sizeof(UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30604 : 61192));
 		UpdateAfterAttribute__ctor_mD7355CFB9474F19D5307E5C44728509A3AAA738E(L_413, L_412);
 		ArrayElementTypeCheck (L_410, L_413);
 		(L_410)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)0)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_413);
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_414 = L_410;
 		RuntimeTypeHandle_t4AEFB4045F601C7B50F59B5483EEE787CC4D967A  L_415 = { reinterpret_cast<intptr_t> (LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26472 : 52928)) };
 		Type_t * L_416 = Type_GetTypeFromHandle_m2E0BF604BD00AD02BFCB4A8FB6B3DBDA96CABFB6(L_415);
-		UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A * L_417 = (UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A *)il2cpp_codegen_object_new(sizeof(UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30516 : 61016));
+		UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A * L_417 = (UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A *)il2cpp_codegen_object_new(sizeof(UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30576 : 61136));
 		UpdateInGroupAttribute__ctor_m4A0AAB39A7F5FDAB0F3A4FF0341401035EDC5DCA(L_417, L_416);
 		ArrayElementTypeCheck (L_414, L_417);
 		(L_414)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)1)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_417);
@@ -36554,18 +36690,18 @@ IL_0a01:
 		}
 	}
 	{
-		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_421 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30448 : 60880), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)2));
+		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_421 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30508 : 61000), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)2));
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_422 = L_421;
 		RuntimeTypeHandle_t4AEFB4045F601C7B50F59B5483EEE787CC4D967A  L_423 = { reinterpret_cast<intptr_t> (LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 28068 : 56120)) };
 		Type_t * L_424 = Type_GetTypeFromHandle_m2E0BF604BD00AD02BFCB4A8FB6B3DBDA96CABFB6(L_423);
-		UpdateBeforeAttribute_t1547E96ADA4D845BEFE640C7EBA54BB1BF9964FB * L_425 = (UpdateBeforeAttribute_t1547E96ADA4D845BEFE640C7EBA54BB1BF9964FB *)il2cpp_codegen_object_new(sizeof(UpdateBeforeAttribute_t1547E96ADA4D845BEFE640C7EBA54BB1BF9964FB), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30572 : 61128));
+		UpdateBeforeAttribute_t1547E96ADA4D845BEFE640C7EBA54BB1BF9964FB * L_425 = (UpdateBeforeAttribute_t1547E96ADA4D845BEFE640C7EBA54BB1BF9964FB *)il2cpp_codegen_object_new(sizeof(UpdateBeforeAttribute_t1547E96ADA4D845BEFE640C7EBA54BB1BF9964FB), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30632 : 61248));
 		UpdateBeforeAttribute__ctor_m84744E1BF5A6C03A9E2B30D7422C844DAD80296A(L_425, L_424);
 		ArrayElementTypeCheck (L_422, L_425);
 		(L_422)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)0)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_425);
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_426 = L_422;
 		RuntimeTypeHandle_t4AEFB4045F601C7B50F59B5483EEE787CC4D967A  L_427 = { reinterpret_cast<intptr_t> (LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26276 : 52536)) };
 		Type_t * L_428 = Type_GetTypeFromHandle_m2E0BF604BD00AD02BFCB4A8FB6B3DBDA96CABFB6(L_427);
-		UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A * L_429 = (UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A *)il2cpp_codegen_object_new(sizeof(UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30516 : 61016));
+		UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A * L_429 = (UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A *)il2cpp_codegen_object_new(sizeof(UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30576 : 61136));
 		UpdateInGroupAttribute__ctor_m4A0AAB39A7F5FDAB0F3A4FF0341401035EDC5DCA(L_429, L_428);
 		ArrayElementTypeCheck (L_426, L_429);
 		(L_426)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)1)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_429);
@@ -36583,18 +36719,18 @@ IL_0a48:
 		}
 	}
 	{
-		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_433 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30448 : 60880), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)2));
+		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_433 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30508 : 61000), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)2));
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_434 = L_433;
 		RuntimeTypeHandle_t4AEFB4045F601C7B50F59B5483EEE787CC4D967A  L_435 = { reinterpret_cast<intptr_t> (LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 28068 : 56120)) };
 		Type_t * L_436 = Type_GetTypeFromHandle_m2E0BF604BD00AD02BFCB4A8FB6B3DBDA96CABFB6(L_435);
-		UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 * L_437 = (UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 *)il2cpp_codegen_object_new(sizeof(UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30544 : 61072));
+		UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 * L_437 = (UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 *)il2cpp_codegen_object_new(sizeof(UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30604 : 61192));
 		UpdateAfterAttribute__ctor_mD7355CFB9474F19D5307E5C44728509A3AAA738E(L_437, L_436);
 		ArrayElementTypeCheck (L_434, L_437);
 		(L_434)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)0)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_437);
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_438 = L_434;
 		RuntimeTypeHandle_t4AEFB4045F601C7B50F59B5483EEE787CC4D967A  L_439 = { reinterpret_cast<intptr_t> (LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26276 : 52536)) };
 		Type_t * L_440 = Type_GetTypeFromHandle_m2E0BF604BD00AD02BFCB4A8FB6B3DBDA96CABFB6(L_439);
-		UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A * L_441 = (UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A *)il2cpp_codegen_object_new(sizeof(UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30516 : 61016));
+		UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A * L_441 = (UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A *)il2cpp_codegen_object_new(sizeof(UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30576 : 61136));
 		UpdateInGroupAttribute__ctor_m4A0AAB39A7F5FDAB0F3A4FF0341401035EDC5DCA(L_441, L_440);
 		ArrayElementTypeCheck (L_438, L_441);
 		(L_438)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)1)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_441);
@@ -36612,18 +36748,18 @@ IL_0a8f:
 		}
 	}
 	{
-		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_445 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30448 : 60880), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)2));
+		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_445 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30508 : 61000), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)2));
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_446 = L_445;
 		RuntimeTypeHandle_t4AEFB4045F601C7B50F59B5483EEE787CC4D967A  L_447 = { reinterpret_cast<intptr_t> (LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 29500 : 58984)) };
 		Type_t * L_448 = Type_GetTypeFromHandle_m2E0BF604BD00AD02BFCB4A8FB6B3DBDA96CABFB6(L_447);
-		UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 * L_449 = (UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 *)il2cpp_codegen_object_new(sizeof(UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30544 : 61072));
+		UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 * L_449 = (UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 *)il2cpp_codegen_object_new(sizeof(UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30604 : 61192));
 		UpdateAfterAttribute__ctor_mD7355CFB9474F19D5307E5C44728509A3AAA738E(L_449, L_448);
 		ArrayElementTypeCheck (L_446, L_449);
 		(L_446)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)0)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_449);
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_450 = L_446;
 		RuntimeTypeHandle_t4AEFB4045F601C7B50F59B5483EEE787CC4D967A  L_451 = { reinterpret_cast<intptr_t> (LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26276 : 52536)) };
 		Type_t * L_452 = Type_GetTypeFromHandle_m2E0BF604BD00AD02BFCB4A8FB6B3DBDA96CABFB6(L_451);
-		UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A * L_453 = (UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A *)il2cpp_codegen_object_new(sizeof(UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30516 : 61016));
+		UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A * L_453 = (UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A *)il2cpp_codegen_object_new(sizeof(UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30576 : 61136));
 		UpdateInGroupAttribute__ctor_m4A0AAB39A7F5FDAB0F3A4FF0341401035EDC5DCA(L_453, L_452);
 		ArrayElementTypeCheck (L_450, L_453);
 		(L_450)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)1)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_453);
@@ -36641,18 +36777,18 @@ IL_0ad6:
 		}
 	}
 	{
-		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_457 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30448 : 60880), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)2));
+		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_457 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30508 : 61000), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)2));
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_458 = L_457;
 		RuntimeTypeHandle_t4AEFB4045F601C7B50F59B5483EEE787CC4D967A  L_459 = { reinterpret_cast<intptr_t> (LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 28832 : 57648)) };
 		Type_t * L_460 = Type_GetTypeFromHandle_m2E0BF604BD00AD02BFCB4A8FB6B3DBDA96CABFB6(L_459);
-		UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 * L_461 = (UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 *)il2cpp_codegen_object_new(sizeof(UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30544 : 61072));
+		UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 * L_461 = (UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 *)il2cpp_codegen_object_new(sizeof(UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30604 : 61192));
 		UpdateAfterAttribute__ctor_mD7355CFB9474F19D5307E5C44728509A3AAA738E(L_461, L_460);
 		ArrayElementTypeCheck (L_458, L_461);
 		(L_458)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)0)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_461);
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_462 = L_458;
 		RuntimeTypeHandle_t4AEFB4045F601C7B50F59B5483EEE787CC4D967A  L_463 = { reinterpret_cast<intptr_t> (LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26276 : 52536)) };
 		Type_t * L_464 = Type_GetTypeFromHandle_m2E0BF604BD00AD02BFCB4A8FB6B3DBDA96CABFB6(L_463);
-		UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A * L_465 = (UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A *)il2cpp_codegen_object_new(sizeof(UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30516 : 61016));
+		UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A * L_465 = (UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A *)il2cpp_codegen_object_new(sizeof(UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30576 : 61136));
 		UpdateInGroupAttribute__ctor_m4A0AAB39A7F5FDAB0F3A4FF0341401035EDC5DCA(L_465, L_464);
 		ArrayElementTypeCheck (L_462, L_465);
 		(L_462)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)1)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_465);
@@ -36670,18 +36806,18 @@ IL_0b1d:
 		}
 	}
 	{
-		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_469 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30448 : 60880), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)2));
+		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_469 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30508 : 61000), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)2));
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_470 = L_469;
 		RuntimeTypeHandle_t4AEFB4045F601C7B50F59B5483EEE787CC4D967A  L_471 = { reinterpret_cast<intptr_t> (LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 28068 : 56120)) };
 		Type_t * L_472 = Type_GetTypeFromHandle_m2E0BF604BD00AD02BFCB4A8FB6B3DBDA96CABFB6(L_471);
-		UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 * L_473 = (UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 *)il2cpp_codegen_object_new(sizeof(UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30544 : 61072));
+		UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 * L_473 = (UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 *)il2cpp_codegen_object_new(sizeof(UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30604 : 61192));
 		UpdateAfterAttribute__ctor_mD7355CFB9474F19D5307E5C44728509A3AAA738E(L_473, L_472);
 		ArrayElementTypeCheck (L_470, L_473);
 		(L_470)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)0)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_473);
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_474 = L_470;
 		RuntimeTypeHandle_t4AEFB4045F601C7B50F59B5483EEE787CC4D967A  L_475 = { reinterpret_cast<intptr_t> (LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26276 : 52536)) };
 		Type_t * L_476 = Type_GetTypeFromHandle_m2E0BF604BD00AD02BFCB4A8FB6B3DBDA96CABFB6(L_475);
-		UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A * L_477 = (UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A *)il2cpp_codegen_object_new(sizeof(UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30516 : 61016));
+		UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A * L_477 = (UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A *)il2cpp_codegen_object_new(sizeof(UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30576 : 61136));
 		UpdateInGroupAttribute__ctor_m4A0AAB39A7F5FDAB0F3A4FF0341401035EDC5DCA(L_477, L_476);
 		ArrayElementTypeCheck (L_474, L_477);
 		(L_474)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)1)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_477);
@@ -36699,18 +36835,18 @@ IL_0b64:
 		}
 	}
 	{
-		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_481 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30448 : 60880), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)2));
+		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_481 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30508 : 61000), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)2));
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_482 = L_481;
 		RuntimeTypeHandle_t4AEFB4045F601C7B50F59B5483EEE787CC4D967A  L_483 = { reinterpret_cast<intptr_t> (LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 27152 : 54288)) };
 		Type_t * L_484 = Type_GetTypeFromHandle_m2E0BF604BD00AD02BFCB4A8FB6B3DBDA96CABFB6(L_483);
-		UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 * L_485 = (UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 *)il2cpp_codegen_object_new(sizeof(UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30544 : 61072));
+		UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 * L_485 = (UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 *)il2cpp_codegen_object_new(sizeof(UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30604 : 61192));
 		UpdateAfterAttribute__ctor_mD7355CFB9474F19D5307E5C44728509A3AAA738E(L_485, L_484);
 		ArrayElementTypeCheck (L_482, L_485);
 		(L_482)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)0)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_485);
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_486 = L_482;
 		RuntimeTypeHandle_t4AEFB4045F601C7B50F59B5483EEE787CC4D967A  L_487 = { reinterpret_cast<intptr_t> (LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26472 : 52928)) };
 		Type_t * L_488 = Type_GetTypeFromHandle_m2E0BF604BD00AD02BFCB4A8FB6B3DBDA96CABFB6(L_487);
-		UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A * L_489 = (UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A *)il2cpp_codegen_object_new(sizeof(UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30516 : 61016));
+		UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A * L_489 = (UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A *)il2cpp_codegen_object_new(sizeof(UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30576 : 61136));
 		UpdateInGroupAttribute__ctor_m4A0AAB39A7F5FDAB0F3A4FF0341401035EDC5DCA(L_489, L_488);
 		ArrayElementTypeCheck (L_486, L_489);
 		(L_486)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)1)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_489);
@@ -36728,18 +36864,18 @@ IL_0bab:
 		}
 	}
 	{
-		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_493 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30448 : 60880), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)2));
+		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_493 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30508 : 61000), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)2));
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_494 = L_493;
 		RuntimeTypeHandle_t4AEFB4045F601C7B50F59B5483EEE787CC4D967A  L_495 = { reinterpret_cast<intptr_t> (LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 27152 : 54288)) };
 		Type_t * L_496 = Type_GetTypeFromHandle_m2E0BF604BD00AD02BFCB4A8FB6B3DBDA96CABFB6(L_495);
-		UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 * L_497 = (UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 *)il2cpp_codegen_object_new(sizeof(UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30544 : 61072));
+		UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 * L_497 = (UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3 *)il2cpp_codegen_object_new(sizeof(UpdateAfterAttribute_t3E5895B0558A08D5A5C193149925C5D947B22DE3), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30604 : 61192));
 		UpdateAfterAttribute__ctor_mD7355CFB9474F19D5307E5C44728509A3AAA738E(L_497, L_496);
 		ArrayElementTypeCheck (L_494, L_497);
 		(L_494)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)0)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_497);
 		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_498 = L_494;
 		RuntimeTypeHandle_t4AEFB4045F601C7B50F59B5483EEE787CC4D967A  L_499 = { reinterpret_cast<intptr_t> (LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 26472 : 52928)) };
 		Type_t * L_500 = Type_GetTypeFromHandle_m2E0BF604BD00AD02BFCB4A8FB6B3DBDA96CABFB6(L_499);
-		UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A * L_501 = (UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A *)il2cpp_codegen_object_new(sizeof(UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30516 : 61016));
+		UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A * L_501 = (UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A *)il2cpp_codegen_object_new(sizeof(UpdateInGroupAttribute_t10CFAF8D3E3A3DD188ECFA30CE20238F85FA276A), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30576 : 61136));
 		UpdateInGroupAttribute__ctor_m4A0AAB39A7F5FDAB0F3A4FF0341401035EDC5DCA(L_501, L_500);
 		ArrayElementTypeCheck (L_498, L_501);
 		(L_498)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)1)), (Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *)L_501);
@@ -36757,7 +36893,7 @@ IL_0bf2:
 		}
 	}
 	{
-		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_505 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30448 : 60880), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)0));
+		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_505 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30508 : 61000), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)0));
 		return L_505;
 	}
 
@@ -36772,7 +36908,7 @@ IL_0c0d:
 		}
 	}
 	{
-		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_509 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30448 : 60880), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)0));
+		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_509 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30508 : 61000), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)0));
 		return L_509;
 	}
 
@@ -36787,7 +36923,7 @@ IL_0c28:
 		}
 	}
 	{
-		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_513 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30448 : 60880), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)0));
+		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_513 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30508 : 61000), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)0));
 		return L_513;
 	}
 
@@ -36802,7 +36938,7 @@ IL_0c43:
 		}
 	}
 	{
-		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_517 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30448 : 60880), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)0));
+		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_517 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30508 : 61000), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)0));
 		return L_517;
 	}
 
@@ -36817,7 +36953,7 @@ IL_0c5e:
 		}
 	}
 	{
-		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_521 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30448 : 60880), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)0));
+		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_521 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30508 : 61000), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)0));
 		return L_521;
 	}
 
@@ -36832,7 +36968,7 @@ IL_0c79:
 		}
 	}
 	{
-		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_525 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30448 : 60880), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)0));
+		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_525 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30508 : 61000), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)0));
 		return L_525;
 	}
 
@@ -36847,7 +36983,7 @@ IL_0c94:
 		}
 	}
 	{
-		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_529 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30448 : 60880), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)0));
+		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_529 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30508 : 61000), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)0));
 		return L_529;
 	}
 
@@ -36862,7 +36998,7 @@ IL_0caf:
 		}
 	}
 	{
-		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_533 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30448 : 60880), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)0));
+		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_533 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30508 : 61000), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)0));
 		return L_533;
 	}
 
@@ -36877,15 +37013,30 @@ IL_0cca:
 		}
 	}
 	{
-		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_537 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30448 : 60880), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)0));
+		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_537 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30508 : 61000), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)0));
 		return L_537;
 	}
 
 IL_0ce5:
 	{
-		InvalidOperationException_t789507B31C347564611329594AE22C7EE4F5BC57 * L_538 = (InvalidOperationException_t789507B31C347564611329594AE22C7EE4F5BC57 *)il2cpp_codegen_object_new(sizeof(InvalidOperationException_t789507B31C347564611329594AE22C7EE4F5BC57), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 332 : 664));
-		InvalidOperationException__ctor_m98EF8CF88D746B0012D1CF8D30E2054219BFCB7F(L_538, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 29520 : 31592));
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_538, &StaticTypeRegistry_GetSystemAttributes_m51CDA1CA1F360FF647A4E44B2BEA0BA4BC88D297_RuntimeMethod_var);
+		Type_t * L_538 = ___systemType0;
+		RuntimeTypeHandle_t4AEFB4045F601C7B50F59B5483EEE787CC4D967A  L_539 = { reinterpret_cast<intptr_t> (LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30432 : 60848)) };
+		Type_t * L_540 = Type_GetTypeFromHandle_m2E0BF604BD00AD02BFCB4A8FB6B3DBDA96CABFB6(L_539);
+		if (!((((RuntimeObject*)(Type_t *)L_538) == ((RuntimeObject*)(Type_t *)L_540))? 1 : 0))
+		{
+			goto IL_0d00;
+		}
+	}
+	{
+		AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17* L_541 = (AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)(AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*)SZArrayNew<AttributeU5BU5D_t777BEFAB7857CFA5F0EE6C3EB1F8F7FF61F00A17*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 30508 : 61000), sizeof(Attribute_t7D963C4132F9F2C1688271027E938A439FAEF5C6 *), (uint32_t)((int32_t)0));
+		return L_541;
+	}
+
+IL_0d00:
+	{
+		InvalidOperationException_t789507B31C347564611329594AE22C7EE4F5BC57 * L_542 = (InvalidOperationException_t789507B31C347564611329594AE22C7EE4F5BC57 *)il2cpp_codegen_object_new(sizeof(InvalidOperationException_t789507B31C347564611329594AE22C7EE4F5BC57), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 332 : 664));
+		InvalidOperationException__ctor_m98EF8CF88D746B0012D1CF8D30E2054219BFCB7F(L_542, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 29584 : 31664));
+		IL2CPP_RAISE_MANAGED_EXCEPTION(L_542, &StaticTypeRegistry_GetSystemAttributes_m51CDA1CA1F360FF647A4E44B2BEA0BA4BC88D297_RuntimeMethod_var);
 	}
 }
 // System.Boolean Unity.Entities.StaticTypeRegistry.StaticTypeRegistry::Equals(System.Object,System.Object,System.Int32)
@@ -42029,7 +42180,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t StaticTypeRegistry_BoxedGetHashCode_m
 		{
 			case 0:
 			{
-				goto IL_0c05;
+				goto IL_0c0f;
 			}
 			case 1:
 			{
@@ -42869,20 +43020,20 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t StaticTypeRegistry_BoxedGetHashCode_m
 			}
 			case 210:
 			{
-				goto IL_0beb;
+				goto IL_0bf5;
 			}
 			case 211:
 			{
-				goto IL_0bed;
+				goto IL_0bf7;
 			}
 			case 212:
 			{
-				goto IL_0bf9;
+				goto IL_0c03;
 			}
 		}
 	}
 	{
-		goto IL_0c05;
+		goto IL_0c0f;
 	}
 
 IL_035f:
@@ -44281,29 +44432,31 @@ IL_0bdd:
 
 IL_0be9:
 	{
-		return 0;
-	}
-
-IL_0beb:
-	{
-		return 0;
-	}
-
-IL_0bed:
-	{
 		RuntimeObject * L_355 = ___val0;
-		int32_t L_356 = StaticTypeRegistry_DoHash_m33CC97670EACDC35458BC3DB7EB68A5106050852((blackSegments_tB196C2EF1CA7D62275302FC6ACC35186A26E0534 *)((blackSegments_tB196C2EF1CA7D62275302FC6ACC35186A26E0534 *)UnBox<blackSegments_tB196C2EF1CA7D62275302FC6ACC35186A26E0534 >(L_355, LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 10288 : 20560))));
+		int32_t L_356 = StaticTypeRegistry_DoHash_mC1A5D903A239410B83874438E5342ED38A690600((RetryButton_tCB6B7F7F776C209E5A54A135AD2209EDBC9E8432 *)((RetryButton_tCB6B7F7F776C209E5A54A135AD2209EDBC9E8432 *)UnBox<RetryButton_tCB6B7F7F776C209E5A54A135AD2209EDBC9E8432 >(L_355, LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 10216 : 20416))));
 		return L_356;
 	}
 
-IL_0bf9:
+IL_0bf5:
+	{
+		return 0;
+	}
+
+IL_0bf7:
 	{
 		RuntimeObject * L_357 = ___val0;
-		int32_t L_358 = StaticTypeRegistry_DoHash_m61FCA9B7629F8D64C11511C788A57366EA4832A6((StopPositions_t741365CE6BABB5B72BD122E69C4C219DC0F7D2ED *)((StopPositions_t741365CE6BABB5B72BD122E69C4C219DC0F7D2ED *)UnBox<StopPositions_t741365CE6BABB5B72BD122E69C4C219DC0F7D2ED >(L_357, LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 10324 : 20632))));
+		int32_t L_358 = StaticTypeRegistry_DoHash_m33CC97670EACDC35458BC3DB7EB68A5106050852((blackSegments_tB196C2EF1CA7D62275302FC6ACC35186A26E0534 *)((blackSegments_tB196C2EF1CA7D62275302FC6ACC35186A26E0534 *)UnBox<blackSegments_tB196C2EF1CA7D62275302FC6ACC35186A26E0534 >(L_357, LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 10288 : 20560))));
 		return L_358;
 	}
 
-IL_0c05:
+IL_0c03:
+	{
+		RuntimeObject * L_359 = ___val0;
+		int32_t L_360 = StaticTypeRegistry_DoHash_m61FCA9B7629F8D64C11511C788A57366EA4832A6((StopPositions_t741365CE6BABB5B72BD122E69C4C219DC0F7D2ED *)((StopPositions_t741365CE6BABB5B72BD122E69C4C219DC0F7D2ED *)UnBox<StopPositions_t741365CE6BABB5B72BD122E69C4C219DC0F7D2ED >(L_359, LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 10324 : 20632))));
+		return L_360;
+	}
+
+IL_0c0f:
 	{
 		return 0;
 	}
@@ -49958,7 +50111,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool StaticTypeRegistry_DoEquals_m920E1AAA64C
 	{
 		GameConfig_t044CFD4C6434009583EEEF10719B5DDBEF5F804E * L_0 = ___i00;
 		GameConfig_t044CFD4C6434009583EEEF10719B5DDBEF5F804E * L_1 = ___i11;
-		int32_t L_2 = il2cpp::utils::MemoryUtils::MemoryCompare((void*)(void*)L_0, (void*)(void*)L_1, ((int32_t)8));
+		int32_t L_2 = il2cpp::utils::MemoryUtils::MemoryCompare((void*)(void*)L_0, (void*)(void*)L_1, ((int32_t)12));
 		return (bool)((((int32_t)L_2) == ((int32_t)0))? 1 : 0);
 	}
 }
@@ -49969,14 +50122,16 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t StaticTypeRegistry_DoHash_m9738E75B34
 		GameConfig_t044CFD4C6434009583EEEF10719B5DDBEF5F804E * L_0 = ___val0;
 		int32_t L_1 = L_0->get_Score_0();
 		GameConfig_t044CFD4C6434009583EEEF10719B5DDBEF5F804E * L_2 = ___val0;
-		bool L_3 = L_2->get_Collide_1();
+		float L_3 = L_2->get_Speed_1();
 		GameConfig_t044CFD4C6434009583EEEF10719B5DDBEF5F804E * L_4 = ___val0;
-		bool L_5 = L_4->get_Start_2();
+		bool L_5 = L_4->get_Collide_2();
 		GameConfig_t044CFD4C6434009583EEEF10719B5DDBEF5F804E * L_6 = ___val0;
-		bool L_7 = L_6->get_GameOver_3();
+		bool L_7 = L_6->get_Start_3();
 		GameConfig_t044CFD4C6434009583EEEF10719B5DDBEF5F804E * L_8 = ___val0;
-		bool L_9 = L_8->get_Retry_4();
-		return ((int32_t)((int32_t)((int32_t)il2cpp_codegen_multiply((int32_t)((int32_t)((int32_t)((int32_t)il2cpp_codegen_multiply((int32_t)((int32_t)((int32_t)((int32_t)il2cpp_codegen_multiply((int32_t)((int32_t)((int32_t)((int32_t)il2cpp_codegen_multiply((int32_t)((int32_t)((int32_t)((int32_t)il2cpp_codegen_multiply((int32_t)((int32_t)-2128831035), (int32_t)((int32_t)16777619)))^(int32_t)(((int32_t)((int32_t)L_1))))), (int32_t)((int32_t)16777619)))^(int32_t)(((int32_t)((int32_t)L_3))))), (int32_t)((int32_t)16777619)))^(int32_t)(((int32_t)((int32_t)L_5))))), (int32_t)((int32_t)16777619)))^(int32_t)(((int32_t)((int32_t)L_7))))), (int32_t)((int32_t)16777619)))^(int32_t)(((int32_t)((int32_t)L_9)))));
+		bool L_9 = L_8->get_GameOver_4();
+		GameConfig_t044CFD4C6434009583EEEF10719B5DDBEF5F804E * L_10 = ___val0;
+		bool L_11 = L_10->get_Retry_5();
+		return ((int32_t)((int32_t)((int32_t)il2cpp_codegen_multiply((int32_t)((int32_t)((int32_t)((int32_t)il2cpp_codegen_multiply((int32_t)((int32_t)((int32_t)((int32_t)il2cpp_codegen_multiply((int32_t)((int32_t)((int32_t)((int32_t)il2cpp_codegen_multiply((int32_t)((int32_t)((int32_t)((int32_t)il2cpp_codegen_multiply((int32_t)((int32_t)((int32_t)((int32_t)il2cpp_codegen_multiply((int32_t)((int32_t)-2128831035), (int32_t)((int32_t)16777619)))^(int32_t)(((int32_t)((int32_t)L_1))))), (int32_t)((int32_t)16777619)))^(int32_t)(((int32_t)((int32_t)L_3))))), (int32_t)((int32_t)16777619)))^(int32_t)(((int32_t)((int32_t)L_5))))), (int32_t)((int32_t)16777619)))^(int32_t)(((int32_t)((int32_t)L_7))))), (int32_t)((int32_t)16777619)))^(int32_t)(((int32_t)((int32_t)L_9))))), (int32_t)((int32_t)16777619)))^(int32_t)(((int32_t)((int32_t)L_11)))));
 	}
 }
 // System.Boolean Unity.Entities.StaticTypeRegistry.StaticTypeRegistry::DoEquals(LineRunner.Player&,LineRunner.Player&)
@@ -50014,7 +50169,9 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool StaticTypeRegistry_DoEquals_mCEF7D4432D8
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t StaticTypeRegistry_DoHash_mC1A5D903A239410B83874438E5342ED38A690600 (RetryButton_tCB6B7F7F776C209E5A54A135AD2209EDBC9E8432 * ___val0)
 {
 	{
-		return 0;
+		RetryButton_tCB6B7F7F776C209E5A54A135AD2209EDBC9E8432 * L_0 = ___val0;
+		bool L_1 = L_0->get_test_0();
+		return ((int32_t)((int32_t)((int32_t)il2cpp_codegen_multiply((int32_t)((int32_t)-2128831035), (int32_t)((int32_t)16777619)))^(int32_t)(((int32_t)((int32_t)L_1)))));
 	}
 }
 // System.Boolean Unity.Entities.StaticTypeRegistry.StaticTypeRegistry::DoEquals(LineRunner.StartButton&,LineRunner.StartButton&)
@@ -54240,7 +54397,7 @@ IL_2aa5:
 	{
 		il2cpp_codegen_initobj((&V_206), sizeof(GameConfig_t044CFD4C6434009583EEEF10719B5DDBEF5F804E ));
 		void* L_1031 = ___buffer1;
-		UnsafeUtility_MemCpy_mDD1176BEEDC9AB89BC08C8DFB9D5CC2FB921B5E9((void*)(void*)(&V_206), (void*)(void*)L_1031, ((int64_t)8LL));
+		UnsafeUtility_MemCpy_mDD1176BEEDC9AB89BC08C8DFB9D5CC2FB921B5E9((void*)(void*)(&V_206), (void*)(void*)L_1031, ((int64_t)12LL));
 		GameConfig_t044CFD4C6434009583EEEF10719B5DDBEF5F804E  L_1032 = V_206;
 		GameConfig_t044CFD4C6434009583EEEF10719B5DDBEF5F804E  L_1033 = L_1032;
 		RuntimeObject * L_1034 = Box(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 10144 : 20272), &L_1033);
@@ -54340,7 +54497,7 @@ IL_2bae:
 IL_2be3:
 	{
 		InvalidOperationException_t789507B31C347564611329594AE22C7EE4F5BC57 * L_1060 = (InvalidOperationException_t789507B31C347564611329594AE22C7EE4F5BC57 *)il2cpp_codegen_object_new(sizeof(InvalidOperationException_t789507B31C347564611329594AE22C7EE4F5BC57), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 332 : 664));
-		InvalidOperationException__ctor_m98EF8CF88D746B0012D1CF8D30E2054219BFCB7F(L_1060, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 29648 : 31728));
+		InvalidOperationException__ctor_m98EF8CF88D746B0012D1CF8D30E2054219BFCB7F(L_1060, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 29712 : 31800));
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_1060, &StaticTypeRegistry_ConstructComponentFromBuffer_m74F54E08079B49132D9B8D479547FF6582E61F22_RuntimeMethod_var);
 	}
 }

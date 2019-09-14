@@ -46,6 +46,9 @@
     <Compile Include="..\..\Assets\LineRunner\Scripts\BlackMovingSystem.cs">
       <Link>Scripts\BlackMovingSystem.cs</Link>
     </Compile>
+    <Compile Include="..\..\Assets\LineRunner\Scripts\BlackResetSystem.cs">
+      <Link>Scripts\BlackResetSystem.cs</Link>
+    </Compile>
     <Compile Include="..\..\Assets\LineRunner\Scripts\CollideSystem.cs">
       <Link>Scripts\CollideSystem.cs</Link>
     </Compile>
