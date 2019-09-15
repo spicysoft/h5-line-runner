@@ -7,11 +7,16 @@ namespace LineRunner
 {
     public class ControllerButtonSystem : ComponentSystem
     {
+        bool right = true;
         protected override void OnUpdate()
         {
             var tinyEnv = World.TinyEnvironment();
             var config = World.TinyEnvironment().GetConfigData<GameConfig>();
 
+            if (config.GameOver)
+            {
+                right = true;
+            }
             if (config.Collide)
                 return;
             var controlButton = false;
@@ -33,8 +38,36 @@ namespace LineRunner
                 if (controlButton)
                 {
                     player.Move = true;
-                    player.Speed = 10f;
-                    translation.Value.x = translation.Value.x + 0.11f;
+                    if (stoppositions[0].position.x == translation.Value.x)
+                    {
+                        player.Speed = 10f;
+                        translation.Value.x = translation.Value.x + 0.11f;
+                        right = true;
+                    }
+                    else if (stoppositions[1].position.x == translation.Value.x)
+                    {
+                        if (right)
+                        {
+                            player.Speed = 10f;
+                            translation.Value.x = translation.Value.x + 0.11f;
+                        }
+                        if (!right)
+                        {
+                            player.Speed = -10f;
+                            translation.Value.x = translation.Value.x - 0.11f;
+                        }
+
+
+                    }
+                    else if (stoppositions[2].position.x == translation.Value.x)
+                    {
+                        player.Speed = -10f;
+                        translation.Value.x = translation.Value.x - 0.11f;
+                        right = false;
+                    }
+
+
+
                 }
 
             });

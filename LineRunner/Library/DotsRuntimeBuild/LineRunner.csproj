@@ -13,6 +13,9 @@
     <LangVersion>7.3</LangVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="..\..\Assets\LineRunner\Components\BestScore.cs">
+      <Link>Components\BestScore.cs</Link>
+    </Compile>
     <Compile Include="..\..\Assets\LineRunner\Components\black.cs">
       <Link>Components\black.cs</Link>
     </Compile>
@@ -24,6 +27,9 @@
     </Compile>
     <Compile Include="..\..\Assets\LineRunner\Components\GameConfig.cs">
       <Link>Components\GameConfig.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Assets\LineRunner\Components\GameOver.cs">
+      <Link>Components\GameOver.cs</Link>
     </Compile>
     <Compile Include="..\..\Assets\LineRunner\Components\Player.cs">
       <Link>Components\Player.cs</Link>
@@ -39,6 +45,9 @@
     </Compile>
     <Compile Include="..\..\Assets\LineRunner\Components\StopPositions.cs">
       <Link>Components\StopPositions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Assets\LineRunner\Components\Title.cs">
+      <Link>Components\Title.cs</Link>
     </Compile>
     <Compile Include="..\..\Assets\LineRunner\Scripts\AssemblyInfo.cs">
       <Link>Scripts\AssemblyInfo.cs</Link>
