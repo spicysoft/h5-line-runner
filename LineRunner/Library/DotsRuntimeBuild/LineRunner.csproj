@@ -79,6 +79,9 @@
     <Compile Include="..\..\Assets\LineRunner\Scripts\ScoreSystem.cs">
       <Link>Scripts\ScoreSystem.cs</Link>
     </Compile>
+    <Compile Include="..\..\Assets\LineRunner\Scripts\SpaceAddSystem.cs">
+      <Link>Scripts\SpaceAddSystem.cs</Link>
+    </Compile>
     <Compile Include="..\..\Assets\LineRunner\Scripts\StartButtonSystem.cs">
       <Link>Scripts\StartButtonSystem.cs</Link>
     </Compile>

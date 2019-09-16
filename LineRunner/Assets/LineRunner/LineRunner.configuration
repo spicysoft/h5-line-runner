@@ -6,7 +6,10 @@
     "Entities": [{
         "Components": [{
             "$type": "LineRunner.GameConfig, LineRunner",
-            "Speed": 2
+            "Speed": 2,
+            "BlackScene": {
+                "SceneGuid": "bd882d170f884525b37be84458ec7aab"
+            }
         }, {
             "$type": "Unity.Entities.EntityGuid, Unity.Entities",
             "a": 6551993212523725086,
@@ -31,6 +34,10 @@
             }, {
                 "SceneReference": {
                     "SceneGuid": "87c8a79bf9774a759bdb56fcd3df37e3"
+                }
+            }, {
+                "SceneReference": {
+                    "SceneGuid": "bd882d170f884525b37be84458ec7aab"
                 }
             }]
         }, {
@@ -64,6 +71,12 @@
                 "StableTypeHash": 3401838046918036665
             }, {
                 "StableTypeHash": 13183802615595274566
+            }, {
+                "StableTypeHash": 12326936805893170779
+            }, {
+                "StableTypeHash": 8878296530493171744
+            }, {
+                "StableTypeHash": 501103472859424516
             }]
         }, {
             "$type": "Unity.Authoring.Core.ConfigurationTag, Unity.Authoring.Core"

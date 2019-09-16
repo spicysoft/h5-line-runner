@@ -22,7 +22,8 @@
             },
             "blending": 0
         }, {
-            "$type": "black, LineRunner"
+            "$type": "black, LineRunner",
+            "IsCreated": true
         }, {
             "$type": "Unity.Authoring.Core.SiblingIndex, Unity.Authoring.Core",
             "Index": 19
@@ -92,6 +93,8 @@
                 "StableTypeHash": 16791256614846730296
             }, {
                 "StableTypeHash": 10423575070729940153
+            }, {
+                "StableTypeHash": 10612203875275220931
             }]
         }]
     }, {
@@ -108,7 +111,8 @@
             },
             "blending": 0
         }, {
-            "$type": "black, LineRunner"
+            "$type": "black, LineRunner",
+            "IsCreated": true
         }, {
             "$type": "Unity.Authoring.Core.SiblingIndex, Unity.Authoring.Core",
             "Index": 16
@@ -178,6 +182,8 @@
                 "StableTypeHash": 16791256614846730296
             }, {
                 "StableTypeHash": 10423575070729940153
+            }, {
+                "StableTypeHash": 10612203875275220931
             }]
         }]
     }, {
@@ -194,7 +200,8 @@
             },
             "blending": 0
         }, {
-            "$type": "black, LineRunner"
+            "$type": "black, LineRunner",
+            "IsCreated": true
         }, {
             "$type": "Unity.Authoring.Core.SiblingIndex, Unity.Authoring.Core",
             "Index": 10
@@ -261,6 +268,8 @@
                 "StableTypeHash": 16791256614846730296
             }, {
                 "StableTypeHash": 10423575070729940153
+            }, {
+                "StableTypeHash": 10612203875275220931
             }]
         }]
     }, {
@@ -277,7 +286,8 @@
             },
             "blending": 0
         }, {
-            "$type": "black, LineRunner"
+            "$type": "black, LineRunner",
+            "IsCreated": true
         }, {
             "$type": "Unity.Authoring.Core.SiblingIndex, Unity.Authoring.Core",
             "Index": 18
@@ -347,6 +357,8 @@
                 "StableTypeHash": 16791256614846730296
             }, {
                 "StableTypeHash": 10423575070729940153
+            }, {
+                "StableTypeHash": 10612203875275220931
             }]
         }]
     }, {
@@ -881,7 +893,8 @@
             },
             "blending": 0
         }, {
-            "$type": "black, LineRunner"
+            "$type": "black, LineRunner",
+            "IsCreated": true
         }, {
             "$type": "Unity.Authoring.Core.SiblingIndex, Unity.Authoring.Core",
             "Index": 15
@@ -951,6 +964,8 @@
                 "StableTypeHash": 16791256614846730296
             }, {
                 "StableTypeHash": 10423575070729940153
+            }, {
+                "StableTypeHash": 10612203875275220931
             }]
         }]
     }, {
@@ -1118,7 +1133,8 @@
             },
             "blending": 0
         }, {
-            "$type": "black, LineRunner"
+            "$type": "black, LineRunner",
+            "IsCreated": true
         }, {
             "$type": "Unity.Authoring.Core.SiblingIndex, Unity.Authoring.Core",
             "Index": 7
@@ -1185,6 +1201,8 @@
                 "StableTypeHash": 16791256614846730296
             }, {
                 "StableTypeHash": 10423575070729940153
+            }, {
+                "StableTypeHash": 10612203875275220931
             }]
         }]
     }, {
@@ -1618,7 +1636,8 @@
             },
             "blending": 0
         }, {
-            "$type": "black, LineRunner"
+            "$type": "black, LineRunner",
+            "IsCreated": true
         }, {
             "$type": "Unity.Authoring.Core.SiblingIndex, Unity.Authoring.Core",
             "Index": 17
@@ -1688,6 +1707,8 @@
                 "StableTypeHash": 16791256614846730296
             }, {
                 "StableTypeHash": 10423575070729940153
+            }, {
+                "StableTypeHash": 10612203875275220931
             }]
         }]
     }, {
@@ -1704,7 +1725,8 @@
             },
             "blending": 0
         }, {
-            "$type": "black, LineRunner"
+            "$type": "black, LineRunner",
+            "IsCreated": true
         }, {
             "$type": "Unity.Authoring.Core.SiblingIndex, Unity.Authoring.Core",
             "Index": 12
@@ -1774,6 +1796,8 @@
                 "StableTypeHash": 16791256614846730296
             }, {
                 "StableTypeHash": 10423575070729940153
+            }, {
+                "StableTypeHash": 10612203875275220931
             }]
         }]
     }, {
@@ -1892,7 +1916,8 @@
             },
             "blending": 0
         }, {
-            "$type": "black, LineRunner"
+            "$type": "black, LineRunner",
+            "IsCreated": true
         }, {
             "$type": "Unity.Authoring.Core.SiblingIndex, Unity.Authoring.Core",
             "Index": 20
@@ -1962,6 +1987,8 @@
                 "StableTypeHash": 16791256614846730296
             }, {
                 "StableTypeHash": 10423575070729940153
+            }, {
+                "StableTypeHash": 10612203875275220931
             }]
         }]
     }, {
@@ -2181,7 +2208,8 @@
             },
             "blending": 0
         }, {
-            "$type": "black, LineRunner"
+            "$type": "black, LineRunner",
+            "IsCreated": true
         }, {
             "$type": "Unity.Authoring.Core.SiblingIndex, Unity.Authoring.Core",
             "Index": 13
@@ -2251,6 +2279,8 @@
                 "StableTypeHash": 16791256614846730296
             }, {
                 "StableTypeHash": 10423575070729940153
+            }, {
+                "StableTypeHash": 10612203875275220931
             }]
         }]
     }, {
@@ -2267,7 +2297,8 @@
             },
             "blending": 0
         }, {
-            "$type": "black, LineRunner"
+            "$type": "black, LineRunner",
+            "IsCreated": true
         }, {
             "$type": "Unity.Authoring.Core.SiblingIndex, Unity.Authoring.Core",
             "Index": 14
@@ -2337,6 +2368,8 @@
                 "StableTypeHash": 16791256614846730296
             }, {
                 "StableTypeHash": 10423575070729940153
+            }, {
+                "StableTypeHash": 10612203875275220931
             }]
         }]
     }, {
@@ -2367,25 +2400,15 @@
         }, {
             "$type": "blackSegments, LineRunner",
             "Elements": [{
-                "blacks": "f3cfe9f16d5a49aa9cc5361bf5f095ba",
-                "blacksB": "ea79667e8ed04c6c952828bc7eed5e9d",
-                "blacksC": "1838f946ce4b49de97e1b8e521a7cb26"
+                "blacks": "f3cfe9f16d5a49aa9cc5361bf5f095ba"
             }, {
-                "blacks": "9dd7a5950dbd4a769a5578d5bdd4b8d9",
-                "blacksB": "c461ce84ef99476daa1dd7c3ede1f064",
-                "blacksC": "bfa1e37cb901438cb2fca903b6d92f47"
+                "blacks": "9dd7a5950dbd4a769a5578d5bdd4b8d9"
             }, {
-                "blacks": "fb4b5cb02c4e487f9a87a54c34b20857",
-                "blacksB": "de33eb4b20a7484cbb34ea968b110ff9",
-                "blacksC": "19f8e2628ea740989c5bac6f2563ccec"
+                "blacks": "fb4b5cb02c4e487f9a87a54c34b20857"
             }, {
-                "blacks": "f9b08678b9e742e293f51e0a773cba6b",
-                "blacksB": "e3d6fe7c391c443bb9fbba0e1c12e6e0",
-                "blacksC": "0493b8b05082469290e9aa34974c87f4"
+                "blacks": "f9b08678b9e742e293f51e0a773cba6b"
             }, {
-                "blacks": "19e20c409bcd48778c93d6fd5cdba0bd",
-                "blacksB": "73009c2c3673404bbe82f61e14a31553",
-                "blacksC": "ca70694ba8b34d6f98e996b055f19b15"
+                "blacks": "19e20c409bcd48778c93d6fd5cdba0bd"
             }]
         }, {
             "$type": "Unity.Tiny.Core.EntityName, Unity.Tiny.Core",
@@ -2454,7 +2477,8 @@
             },
             "blending": 0
         }, {
-            "$type": "black, LineRunner"
+            "$type": "black, LineRunner",
+            "IsCreated": true
         }, {
             "$type": "Unity.Authoring.Core.SiblingIndex, Unity.Authoring.Core",
             "Index": 11
@@ -2524,6 +2548,8 @@
                 "StableTypeHash": 16791256614846730296
             }, {
                 "StableTypeHash": 10423575070729940153
+            }, {
+                "StableTypeHash": 10612203875275220931
             }]
         }]
     }, {
@@ -2540,7 +2566,8 @@
             },
             "blending": 0
         }, {
-            "$type": "black, LineRunner"
+            "$type": "black, LineRunner",
+            "IsCreated": true
         }, {
             "$type": "Unity.Authoring.Core.SiblingIndex, Unity.Authoring.Core",
             "Index": 6
@@ -2607,6 +2634,8 @@
                 "StableTypeHash": 16791256614846730296
             }, {
                 "StableTypeHash": 10423575070729940153
+            }, {
+                "StableTypeHash": 10612203875275220931
             }]
         }]
     }, {
@@ -2623,7 +2652,8 @@
             },
             "blending": 0
         }, {
-            "$type": "black, LineRunner"
+            "$type": "black, LineRunner",
+            "IsCreated": true
         }, {
             "$type": "Unity.Authoring.Core.SiblingIndex, Unity.Authoring.Core",
             "Index": 9
@@ -2690,6 +2720,8 @@
                 "StableTypeHash": 16791256614846730296
             }, {
                 "StableTypeHash": 10423575070729940153
+            }, {
+                "StableTypeHash": 10612203875275220931
             }]
         }]
     }, {
@@ -2706,7 +2738,8 @@
             },
             "blending": 0
         }, {
-            "$type": "black, LineRunner"
+            "$type": "black, LineRunner",
+            "IsCreated": true
         }, {
             "$type": "Unity.Authoring.Core.SiblingIndex, Unity.Authoring.Core",
             "Index": 8
@@ -2773,6 +2806,8 @@
                 "StableTypeHash": 16791256614846730296
             }, {
                 "StableTypeHash": 10423575070729940153
+            }, {
+                "StableTypeHash": 10612203875275220931
             }]
         }]
     }]
