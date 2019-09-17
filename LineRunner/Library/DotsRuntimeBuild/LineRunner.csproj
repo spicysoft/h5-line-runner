@@ -19,8 +19,14 @@
     <Compile Include="..\..\Assets\LineRunner\Components\black.cs">
       <Link>Components\black.cs</Link>
     </Compile>
+    <Compile Include="..\..\Assets\LineRunner\Components\blackB.cs">
+      <Link>Components\blackB.cs</Link>
+    </Compile>
     <Compile Include="..\..\Assets\LineRunner\Components\blackSegments.cs">
       <Link>Components\blackSegments.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Assets\LineRunner\Components\blackSegmentsB.cs">
+      <Link>Components\blackSegmentsB.cs</Link>
     </Compile>
     <Compile Include="..\..\Assets\LineRunner\Components\ControllerButton.cs">
       <Link>Components\ControllerButton.cs</Link>

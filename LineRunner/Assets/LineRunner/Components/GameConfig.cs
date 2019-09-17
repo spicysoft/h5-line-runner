@@ -19,7 +19,8 @@ namespace LineRunner
         public bool Add;
 
         public SceneReference BlackScene;
-    
+        public SceneReference BlackSceneB;
+
 
     }
 }

@@ -29,6 +29,16 @@ struct VirtFuncInvoker0
 		return ((Func)invokeData)(obj);
 	}
 };
+struct InterfaceActionInvoker0
+{
+	typedef void (*Action)(void*);
+
+	static inline void Invoke (Il2CppMethodSlot slot, TinyType* declaringInterface, RuntimeObject* obj)
+	{
+		const VirtualInvokeData& invokeData = il2cpp_codegen_get_interface_invoke_data(slot, obj, declaringInterface);
+		((Action)invokeData)(obj);
+	}
+};
 
 // System.Byte
 struct Byte_t890F19AC4C0E036E44480A958D52DA1FEBBCA282;
@@ -140,6 +150,7 @@ IL2CPP_EXTERN_C const RuntimeMethod ComponentSystem__ctor_mC248FF25EA55C4B49B251
 IL2CPP_EXTERN_C const RuntimeMethod ComponentSystem_get_Entities_m42D1E50856957781D7B9754EBDC8B324FA21CC95_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod ComponentType_ReadOnly_TisEntityGuid_tD82F7035262247409B45EDF4EBA8D1E84B914381_mFB7E310AE565A796E134AA80544E1351BEDEA8AB_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod ComponentType_ReadOnly_TisEntityReferenceRemap_tC624A5C27F3F52E9743A0B1E60852A98CCAF3B02_mC397F81E631BD11428619B528754EF47B5BE74C3_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeMethod ComponentType_ReadOnly_TisSceneGuid_t3E1CF4AA72552F9C4550A336CEDE563A7B661541_m16B954D5DAF6AAF802043F1815254FD5B798D6A2_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod ComponentType_ReadWrite_TisEntityReferenceRemap_tC624A5C27F3F52E9743A0B1E60852A98CCAF3B02_mA789CD449421A8CA9FA502F9C1D1AF45D8029890_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod ComponentType_ReadWrite_TisSceneData_t367967764B288E992680CD2ED0D7FC92EA9B4D6A_mD7ACA720E00BDB565536D503A3A206263208E14F_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod ComponentType_ReadWrite_TisSceneLoadRequest_tE78F78814052426854F973B1E77F465140FB4313_mA9F7E5DA709DBE7DDDDC57E5C95F07B112119CBA_RuntimeMethod_var;
@@ -164,6 +175,7 @@ IL2CPP_EXTERN_C const RuntimeMethod EntityManager_BeginExclusiveEntityTransactio
 IL2CPP_EXTERN_C const RuntimeMethod EntityManager_CreateEntityQuery_m282126843F12AE482EE9FEB971233370263CF6BC_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod EntityManager_CreateEntityQuery_mFC0B1658B7FD6E4020AEA15022DADA809B883617_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod EntityManager_CreateEntity_m60F17027A1B45A170DF93656DD06CC8B2E432A57_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeMethod EntityManager_DestroyEntity_mEC3A62D0F35A9A1366743A667D6A459F4D661499_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod EntityManager_EndExclusiveEntityTransaction_m66F3C007640B0E1A9F1B4D851B2A243168A67709_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod EntityManager_GetArchetypeChunkEntityType_m71719FAA7EC1BDD36D486A920F473BD216392A17_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod EntityManager_GetComponentDataRawRW_mE4943FFC1813E877E2AD0AE01BD9C7E064EBFFFC_RuntimeMethod_var;
@@ -178,6 +190,7 @@ IL2CPP_EXTERN_C const RuntimeMethod EntityQueryDesc__ctor_m0CF61A8F5463A79344E22
 IL2CPP_EXTERN_C const RuntimeMethod EntityQuery_CalculateLength_m088909B91E683BBFAB5C5FF51958FF344DC18207_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod EntityQuery_CreateArchetypeChunkArray_m30E39D28091EA91338E198EF20830CB0ACA89DC6_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod EntityQuery_Dispose_m0AD1DB3078C234F56A2F36297A54F15807C13E98_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeMethod EntityQuery_SetFilter_TisSceneGuid_t3E1CF4AA72552F9C4550A336CEDE563A7B661541_m972405FCF0B95817693433C14CE6F2AF43654FBD_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod EntityQuery_ToEntityArray_m01E2F243ACFA5144EF6E4BBE42BD362EBB915203_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod Entity_get_Null_m44C01B711EF4A9DC84D0EDDF2D65A97CA8655224_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod Entity_op_Inequality_mDA1DD24B2CA82EEBCA183D4B75FC299FE090E2EC_RuntimeMethod_var;
@@ -214,6 +227,7 @@ IL2CPP_EXTERN_C const RuntimeMethod SceneGuid_GetHashCode_m2A0F17D143657B4BF8661
 IL2CPP_EXTERN_C const RuntimeMethod SceneManager_Create_mE8833E6733C72C58E8457AD37636BF438AEE1CC9_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod SceneService_LoadConfigAsync_m9EA1083D2389D48F1033902261C9E0BA8F2ED701_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod SceneService_LoadSceneAsync_mCCF27D7E7B4AB888691F01491216B1275ACBAE3C_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeMethod SceneService_UnloadAllSceneInstances_mF00D88368A6EB4DFADCFCF3F3820A1412AC04119_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod SceneStreamingSystem_OnUpdate_m97E2E3FCA3893997D83DC30F12326E9B5834173F_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod Scene_Equals_m5A9D7980272DF56C6EEF3653F6C792A366CB1FED_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod Scene_Equals_m796B387BC3961793BEC01D43EE9AE43AAD2346ED_RuntimeMethod_var;
@@ -4247,6 +4261,16 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Entity_t514FBEC5923A575B6549FFCE0A7E0928BBB9F
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void EntityManager_AddComponentData_TisSceneData_t367967764B288E992680CD2ED0D7FC92EA9B4D6A_mDBA178D5D80877530AD4E57C92CBACF75DB86A11 (EntityManager_tD03BBAE8A03BE6E803E142278B44DADB1F999C14 * __this, Entity_t514FBEC5923A575B6549FFCE0A7E0928BBB9F3D8  ___entity0, SceneData_t367967764B288E992680CD2ED0D7FC92EA9B4D6A  ___componentData1);
 // System.Void Unity.Entities.EntityManager::AddComponentData<Unity.Entities.RequestSceneLoaded>(Unity.Entities.Entity,!!0)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void EntityManager_AddComponentData_TisRequestSceneLoaded_tF9B475344A81A9E6E0E438039C92F4836C73BBB5_mFD7F2299F5827C0B0B181E7B3181183588414C68 (EntityManager_tD03BBAE8A03BE6E803E142278B44DADB1F999C14 * __this, Entity_t514FBEC5923A575B6549FFCE0A7E0928BBB9F3D8  ___entity0, RequestSceneLoaded_tF9B475344A81A9E6E0E438039C92F4836C73BBB5  ___componentData1);
+// System.Void Unity.Tiny.Scenes.SceneService::UnloadAllSceneInstances(Unity.Tiny.Scenes.SceneGuid)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SceneService_UnloadAllSceneInstances_mF00D88368A6EB4DFADCFCF3F3820A1412AC04119 (SceneGuid_t3E1CF4AA72552F9C4550A336CEDE563A7B661541  ___sceneGuid0);
+// Unity.Entities.ComponentType Unity.Entities.ComponentType::ReadOnly<Unity.Tiny.Scenes.SceneGuid>()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ComponentType_tC4D03CEDBA5BCBA47001797965E7CF939CFBDAF1  ComponentType_ReadOnly_TisSceneGuid_t3E1CF4AA72552F9C4550A336CEDE563A7B661541_m16B954D5DAF6AAF802043F1815254FD5B798D6A2 ();
+// Unity.Entities.EntityQuery Unity.Entities.EntityManager::CreateEntityQuery(Unity.Entities.ComponentType[])
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR EntityQuery_t76BED15925C813EF17FA4A29A4D9262AB62AD76A * EntityManager_CreateEntityQuery_mFC0B1658B7FD6E4020AEA15022DADA809B883617 (EntityManager_tD03BBAE8A03BE6E803E142278B44DADB1F999C14 * __this, ComponentTypeU5BU5D_t445DBC066E7736B422DBFBBEF7231A59C6E5E528* ___requiredComponents0);
+// System.Void Unity.Entities.EntityQuery::SetFilter<Unity.Tiny.Scenes.SceneGuid>(!!0)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void EntityQuery_SetFilter_TisSceneGuid_t3E1CF4AA72552F9C4550A336CEDE563A7B661541_m972405FCF0B95817693433C14CE6F2AF43654FBD (EntityQuery_t76BED15925C813EF17FA4A29A4D9262AB62AD76A * __this, SceneGuid_t3E1CF4AA72552F9C4550A336CEDE563A7B661541  ___sharedComponent10);
+// System.Void Unity.Entities.EntityManager::DestroyEntity(Unity.Entities.EntityQuery)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void EntityManager_DestroyEntity_mEC3A62D0F35A9A1366743A667D6A459F4D661499 (EntityManager_tD03BBAE8A03BE6E803E142278B44DADB1F999C14 * __this, EntityQuery_t76BED15925C813EF17FA4A29A4D9262AB62AD76A * ___entityQuery0);
 // !!0 Unity.Entities.EntityManager::GetComponentData<Unity.Tiny.Scenes.SceneData>(Unity.Entities.Entity)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR SceneData_t367967764B288E992680CD2ED0D7FC92EA9B4D6A  EntityManager_GetComponentData_TisSceneData_t367967764B288E992680CD2ED0D7FC92EA9B4D6A_mBFEC0E471D7D07B5941CC0C6E31F8CFD9495CC7A (EntityManager_tD03BBAE8A03BE6E803E142278B44DADB1F999C14 * __this, Entity_t514FBEC5923A575B6549FFCE0A7E0928BBB9F3D8  ___entity0);
 // System.Void Unity.Entities.World::.ctor(System.String)
@@ -4255,8 +4279,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void World__ctor_mDDE78D2BBDAFCFB1E24C5803EDD
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ComponentType_tC4D03CEDBA5BCBA47001797965E7CF939CFBDAF1  ComponentType_ReadWrite_TisSceneData_t367967764B288E992680CD2ED0D7FC92EA9B4D6A_mD7ACA720E00BDB565536D503A3A206263208E14F ();
 // Unity.Entities.ComponentType Unity.Entities.ComponentType::ReadWrite<Unity.Tiny.Scenes.SceneLoadRequest>()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ComponentType_tC4D03CEDBA5BCBA47001797965E7CF939CFBDAF1  ComponentType_ReadWrite_TisSceneLoadRequest_tE78F78814052426854F973B1E77F465140FB4313_mA9F7E5DA709DBE7DDDDC57E5C95F07B112119CBA ();
-// Unity.Entities.EntityQuery Unity.Entities.EntityManager::CreateEntityQuery(Unity.Entities.ComponentType[])
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR EntityQuery_t76BED15925C813EF17FA4A29A4D9262AB62AD76A * EntityManager_CreateEntityQuery_mFC0B1658B7FD6E4020AEA15022DADA809B883617 (EntityManager_tD03BBAE8A03BE6E803E142278B44DADB1F999C14 * __this, ComponentTypeU5BU5D_t445DBC066E7736B422DBFBBEF7231A59C6E5E528* ___requiredComponents0);
 // System.Void Unity.Entities.World::Dispose()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void World_Dispose_mC2E7D0871CE15C08B05E6CCC69425890586AD96D (World_tEEA075348FAEC96EE224554FCDED78254768804E * __this);
 // System.Void Unity.Entities.EntityQuery::Dispose()
@@ -5734,6 +5756,97 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Entity_t514FBEC5923A575B6549FFCE0A7E0928BBB9F
 		return L_15;
 	}
 }
+// System.Void Unity.Tiny.Scenes.SceneService::UnloadAllSceneInstances(Unity.Tiny.Scenes.SceneReference)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SceneService_UnloadAllSceneInstances_mEA54997D966A8DDBB42F489D733E174E1EBE0F40 (SceneReference_t0B4C9E0797D70A367BBE9339DFD0D054570B09A8  ___sceneReference0)
+{
+	SceneGuid_t3E1CF4AA72552F9C4550A336CEDE563A7B661541  V_0;
+	il2cpp::utils::MemoryUtils::MemorySet((&V_0), 0, sizeof(V_0));
+	{
+		// UnloadAllSceneInstances(new SceneGuid() { Guid = sceneReference.SceneGuid });
+		il2cpp_codegen_initobj((&V_0), sizeof(SceneGuid_t3E1CF4AA72552F9C4550A336CEDE563A7B661541 ));
+		SceneReference_t0B4C9E0797D70A367BBE9339DFD0D054570B09A8  L_0 = ___sceneReference0;
+		Guid_t  L_1 = L_0.get_SceneGuid_1();
+		(&V_0)->set_Guid_0(L_1);
+		SceneGuid_t3E1CF4AA72552F9C4550A336CEDE563A7B661541  L_2 = V_0;
+		SceneService_UnloadAllSceneInstances_mF00D88368A6EB4DFADCFCF3F3820A1412AC04119(L_2);
+		// }
+		return;
+	}
+}
+// System.Void Unity.Tiny.Scenes.SceneService::UnloadAllSceneInstances(Unity.Tiny.Scenes.SceneGuid)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SceneService_UnloadAllSceneInstances_mF00D88368A6EB4DFADCFCF3F3820A1412AC04119 (SceneGuid_t3E1CF4AA72552F9C4550A336CEDE563A7B661541  ___sceneGuid0)
+{
+	EntityQuery_t76BED15925C813EF17FA4A29A4D9262AB62AD76A * V_0 = NULL;
+	Exception_t * __last_unhandled_exception = 0;
+	NO_UNUSED_WARNING (__last_unhandled_exception);
+	Exception_t * __exception_local = 0;
+	NO_UNUSED_WARNING (__exception_local);
+	void* __leave_targets_storage = alloca(sizeof(int32_t) * 1);
+	il2cpp::utils::LeaveTargetStack __leave_targets(__leave_targets_storage);
+	NO_UNUSED_WARNING (__leave_targets);
+	{
+		World_tEEA075348FAEC96EE224554FCDED78254768804E * L_0 = ((World_tEEA075348FAEC96EE224554FCDED78254768804E_StaticFields*)World_tEEA075348FAEC96EE224554FCDED78254768804E_StaticFields_Storage)->get_U3CActiveU3Ek__BackingField_0();
+		EntityManager_tD03BBAE8A03BE6E803E142278B44DADB1F999C14 * L_1 = L_0->get_m_EntityManager_4();
+		ComponentTypeU5BU5D_t445DBC066E7736B422DBFBBEF7231A59C6E5E528* L_2 = (ComponentTypeU5BU5D_t445DBC066E7736B422DBFBBEF7231A59C6E5E528*)(ComponentTypeU5BU5D_t445DBC066E7736B422DBFBBEF7231A59C6E5E528*)SZArrayNew<ComponentTypeU5BU5D_t445DBC066E7736B422DBFBBEF7231A59C6E5E528*>(LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 1076 : 2152), sizeof(ComponentType_tC4D03CEDBA5BCBA47001797965E7CF939CFBDAF1 ), (uint32_t)1);
+		ComponentTypeU5BU5D_t445DBC066E7736B422DBFBBEF7231A59C6E5E528* L_3 = L_2;
+		ComponentType_tC4D03CEDBA5BCBA47001797965E7CF939CFBDAF1  L_4 = ComponentType_ReadOnly_TisSceneGuid_t3E1CF4AA72552F9C4550A336CEDE563A7B661541_m16B954D5DAF6AAF802043F1815254FD5B798D6A2();
+		(L_3)->SetAt(static_cast<il2cpp_array_size_t>(0), (ComponentType_tC4D03CEDBA5BCBA47001797965E7CF939CFBDAF1 )L_4);
+		EntityQuery_t76BED15925C813EF17FA4A29A4D9262AB62AD76A * L_5 = EntityManager_CreateEntityQuery_mFC0B1658B7FD6E4020AEA15022DADA809B883617(L_1, L_3);
+		V_0 = L_5;
+	}
+
+IL_0023:
+	//try - Try blocks are not supported with the DOPS profile
+	{ // begin try (depth: 1)
+		EntityQuery_t76BED15925C813EF17FA4A29A4D9262AB62AD76A * L_6 = V_0;
+		SceneGuid_t3E1CF4AA72552F9C4550A336CEDE563A7B661541  L_7 = ___sceneGuid0;
+		EntityQuery_SetFilter_TisSceneGuid_t3E1CF4AA72552F9C4550A336CEDE563A7B661541_m972405FCF0B95817693433C14CE6F2AF43654FBD(L_6, L_7);
+		World_tEEA075348FAEC96EE224554FCDED78254768804E * L_8 = ((World_tEEA075348FAEC96EE224554FCDED78254768804E_StaticFields*)World_tEEA075348FAEC96EE224554FCDED78254768804E_StaticFields_Storage)->get_U3CActiveU3Ek__BackingField_0();
+		EntityManager_tD03BBAE8A03BE6E803E142278B44DADB1F999C14 * L_9 = L_8->get_m_EntityManager_4();
+		EntityQuery_t76BED15925C813EF17FA4A29A4D9262AB62AD76A * L_10 = V_0;
+		EntityManager_DestroyEntity_mEC3A62D0F35A9A1366743A667D6A459F4D661499(L_9, L_10);
+		IL2CPP_LEAVE(0x4B, FINALLY_0040);
+	} // end try (depth: 1)
+	/* Catch blocks are not supported with the Tiny profile
+	catch(Il2CppExceptionWrapper& e)
+	{
+		__last_unhandled_exception = (Exception_t *)e.ex;
+		goto FINALLY_0040;
+	}
+	*/
+
+FINALLY_0040:
+	{ // begin finally (depth: 1)
+		{
+			EntityQuery_t76BED15925C813EF17FA4A29A4D9262AB62AD76A * L_11 = V_0;
+			if (!L_11)
+			{
+				goto IL_004a;
+			}
+		}
+
+IL_0043:
+		{
+			EntityQuery_t76BED15925C813EF17FA4A29A4D9262AB62AD76A * L_12 = V_0;
+			InterfaceActionInvoker0::Invoke(0 /* System.Void System.IDisposable::Dispose() */, LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 1236 : 2472), L_12);
+		}
+
+IL_004a:
+		{
+			IL2CPP_END_FINALLY(64)
+		}
+	} // end finally (depth: 1)
+	IL2CPP_CLEANUP(64)
+	{
+		IL2CPP_JUMP_TBL(0x4B, IL_004b)
+		IL2CPP_RETHROW_IF_UNHANDLED(Exception_t *)
+	}
+
+IL_004b:
+	{
+		return;
+	}
+}
 // Unity.Tiny.Scenes.SceneStatus Unity.Tiny.Scenes.SceneService::GetSceneStatus(Unity.Entities.Entity)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t SceneService_GetSceneStatus_m60DB5D8F7D678EB4866F22DB3F9C1707E84678EB (Entity_t514FBEC5923A575B6549FFCE0A7E0928BBB9F3D8  ___scene0)
 {
@@ -5783,7 +5896,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SceneStreamingSystem_OnCreate_mD0CE54841
 {
 	{
 		__this->set_m_currentRequestTotal_15(0);
-		World_tEEA075348FAEC96EE224554FCDED78254768804E * L_0 = (World_tEEA075348FAEC96EE224554FCDED78254768804E *)il2cpp_codegen_object_new(sizeof(World_tEEA075348FAEC96EE224554FCDED78254768804E), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 1236 : 2472));
+		World_tEEA075348FAEC96EE224554FCDED78254768804E * L_0 = (World_tEEA075348FAEC96EE224554FCDED78254768804E *)il2cpp_codegen_object_new(sizeof(World_tEEA075348FAEC96EE224554FCDED78254768804E), LookupTypeInfoFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 1244 : 2488));
 		World__ctor_mDDE78D2BBDAFCFB1E24C5803EDD611112EAE3C9C(L_0, LookupStringFromCursor(IL2CPP_SIZEOF_VOID_P == 4 ? 2884 : 3080));
 		__this->set_m_LoadingWorld_16(L_0);
 		EntityManager_tD03BBAE8A03BE6E803E142278B44DADB1F999C14 * L_1 = ((ComponentSystemBase_tCD8DDB624FDEBD851B68CF1AA8E38A1ADF583E36 *)__this)->get_m_EntityManager_6();

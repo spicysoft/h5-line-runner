@@ -9,6 +9,9 @@
             "Speed": 2,
             "BlackScene": {
                 "SceneGuid": "bd882d170f884525b37be84458ec7aab"
+            },
+            "BlackSceneB": {
+                "SceneGuid": "00000000000000000000000000000000"
             }
         }, {
             "$type": "Unity.Entities.EntityGuid, Unity.Entities",
@@ -38,6 +41,10 @@
             }, {
                 "SceneReference": {
                     "SceneGuid": "bd882d170f884525b37be84458ec7aab"
+                }
+            }, {
+                "SceneReference": {
+                    "SceneGuid": "6cc91a7aad884009b9467604f383168e"
                 }
             }]
         }, {
@@ -77,6 +84,12 @@
                 "StableTypeHash": 8878296530493171744
             }, {
                 "StableTypeHash": 501103472859424516
+            }, {
+                "StableTypeHash": 2451461500719528509
+            }, {
+                "StableTypeHash": 11801290547989723919
+            }, {
+                "StableTypeHash": 16886071299842627747
             }]
         }, {
             "$type": "Unity.Authoring.Core.ConfigurationTag, Unity.Authoring.Core"
