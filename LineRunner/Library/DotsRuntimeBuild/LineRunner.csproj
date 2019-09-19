@@ -22,11 +22,17 @@
     <Compile Include="..\..\Assets\LineRunner\Components\blackB.cs">
       <Link>Components\blackB.cs</Link>
     </Compile>
+    <Compile Include="..\..\Assets\LineRunner\Components\blackC.cs">
+      <Link>Components\blackC.cs</Link>
+    </Compile>
     <Compile Include="..\..\Assets\LineRunner\Components\blackSegments.cs">
       <Link>Components\blackSegments.cs</Link>
     </Compile>
     <Compile Include="..\..\Assets\LineRunner\Components\blackSegmentsB.cs">
       <Link>Components\blackSegmentsB.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Assets\LineRunner\Components\blackSegmentsC.cs">
+      <Link>Components\blackSegmentsC.cs</Link>
     </Compile>
     <Compile Include="..\..\Assets\LineRunner\Components\ControllerButton.cs">
       <Link>Components\ControllerButton.cs</Link>
@@ -61,8 +67,20 @@
     <Compile Include="..\..\Assets\LineRunner\Scripts\BlackMovingSystem.cs">
       <Link>Scripts\BlackMovingSystem.cs</Link>
     </Compile>
+    <Compile Include="..\..\Assets\LineRunner\Scripts\BlackMovingSystemB.cs">
+      <Link>Scripts\BlackMovingSystemB.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Assets\LineRunner\Scripts\BlackMovingSystemC.cs">
+      <Link>Scripts\BlackMovingSystemC.cs</Link>
+    </Compile>
     <Compile Include="..\..\Assets\LineRunner\Scripts\BlackResetSystem.cs">
       <Link>Scripts\BlackResetSystem.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Assets\LineRunner\Scripts\BlackResetSystemB.cs">
+      <Link>Scripts\BlackResetSystemB.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Assets\LineRunner\Scripts\BlackResetSystemC.cs">
+      <Link>Scripts\BlackResetSystemC.cs</Link>
     </Compile>
     <Compile Include="..\..\Assets\LineRunner\Scripts\CollideSystem.cs">
       <Link>Scripts\CollideSystem.cs</Link>
@@ -87,6 +105,12 @@
     </Compile>
     <Compile Include="..\..\Assets\LineRunner\Scripts\SpaceAddSystem.cs">
       <Link>Scripts\SpaceAddSystem.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Assets\LineRunner\Scripts\SpaceAddSystemB.cs">
+      <Link>Scripts\SpaceAddSystemB.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Assets\LineRunner\Scripts\SpaceAddSystemC.cs">
+      <Link>Scripts\SpaceAddSystemC.cs</Link>
     </Compile>
     <Compile Include="..\..\Assets\LineRunner\Scripts\StartButtonSystem.cs">
       <Link>Scripts\StartButtonSystem.cs</Link>

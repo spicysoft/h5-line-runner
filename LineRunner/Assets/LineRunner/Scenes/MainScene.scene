@@ -3,20 +3,22 @@
     "Guid": "68e33dcbf4e343ad98752b3de0b44eea",
     "SerializedVersion": 1,
     "AssetReferences": [
+        { "Guid": "25e5c2b2a9c6e9e4faab2feba67566e8", "FileId": 21300000, "Type": 3},
         { "Guid": "89f56f0e5324e864f9ce24146406730e", "FileId": 11400000, "Type": 2},
         { "Guid": "3ec7b8dc6babde14a934c1cfdff8d5d0", "FileId": 21300000, "Type": 3},
         { "Guid": "eb2f96dff09259d47940d781fe213cde", "FileId": 21300000, "Type": 3},
         { "Guid": "93f5c34f3609d4d41875684bfdd232e4", "FileId": 21300000, "Type": 3},
-        { "Guid": "9a309ec5a1df42142823ce46f82e8ded", "FileId": 21300000, "Type": 3}],
+        { "Guid": "9a309ec5a1df42142823ce46f82e8ded", "FileId": 21300000, "Type": 3},
+        { "Guid": "48274047ec6af71489f817f6345b822a", "FileId": 21300000, "Type": 3}],
     "Entities": [{
         "Components": [{
             "$type": "Unity.Tiny.Core2D.Parent, Unity.Tiny.Core2D",
             "Value": "d277ea09e2d348729b6a4fdc51f09926"
         }, {
             "$type": "Unity.Tiny.Core2D.Sprite2DRenderer, Unity.Tiny.Sprite2D",
+            "sprite": "ed7a8ed081a3d0b75d9423ed09a4a579",
             "color": {
-                "r": 1,
-                "g": 1,
+                "g": 0.5294118,
                 "b": 1,
                 "a": 1
             },
@@ -632,7 +634,8 @@
             "$type": "Unity.Tiny.Core2D.Rotation, Unity.Tiny.Core2D",
             "Value": {
                 "value": {
-                    "w": 1
+                    "z": 0.7071068,
+                    "w": 0.7071068
                 }
             }
         }, {
@@ -1202,10 +1205,10 @@
             "Value": "d277ea09e2d348729b6a4fdc51f09926"
         }, {
             "$type": "Unity.Tiny.Core2D.Sprite2DRenderer, Unity.Tiny.Sprite2D",
+            "sprite": "21eab02ab1b7f7275a6d7bfd7e8e2bfe",
             "color": {
-                "r": 0.4716981,
-                "g": 0.2158241,
-                "b": 0.2158241,
+                "g": 0.5294118,
+                "b": 1,
                 "a": 1
             },
             "blending": 0
@@ -1226,7 +1229,7 @@
             },
             "sizeDelta": {
                 "x": 512,
-                "y": 128
+                "y": 64
             },
             "anchoredPosition": {
                 "y": 100
@@ -1431,6 +1434,9 @@
             "$type": "blackSegmentsB, LineRunner",
             "Elements": []
         }, {
+            "$type": "blackSegmentsC, LineRunner",
+            "Elements": []
+        }, {
             "$type": "Unity.Tiny.Core.EntityName, Unity.Tiny.Core",
             "Elements": [{
                 "c": "b"
@@ -1483,6 +1489,8 @@
                 "StableTypeHash": 14601013598256947486
             }, {
                 "StableTypeHash": 13582576972999309761
+            }, {
+                "StableTypeHash": 16785146768637351068
             }]
         }]
     }]

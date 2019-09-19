@@ -17,10 +17,13 @@ namespace LineRunner
         public bool Retry;
 
         public bool Add;
+        public bool AddB;
+        public bool AddC;
 
         public SceneReference BlackScene;
         public SceneReference BlackSceneB;
-
+        public SceneReference BlackSceneC;
+    
 
     }
 }

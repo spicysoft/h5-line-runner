@@ -11,7 +11,10 @@
                 "SceneGuid": "bd882d170f884525b37be84458ec7aab"
             },
             "BlackSceneB": {
-                "SceneGuid": "00000000000000000000000000000000"
+                "SceneGuid": "6cc91a7aad884009b9467604f383168e"
+            },
+            "BlackSceneC": {
+                "SceneGuid": "876edd35a41442029a43627f285e29af"
             }
         }, {
             "$type": "Unity.Entities.EntityGuid, Unity.Entities",
@@ -45,6 +48,10 @@
             }, {
                 "SceneReference": {
                     "SceneGuid": "6cc91a7aad884009b9467604f383168e"
+                }
+            }, {
+                "SceneReference": {
+                    "SceneGuid": "876edd35a41442029a43627f285e29af"
                 }
             }]
         }, {
@@ -90,6 +97,8 @@
                 "StableTypeHash": 11801290547989723919
             }, {
                 "StableTypeHash": 16886071299842627747
+            }, {
+                "StableTypeHash": 9068965259717130036
             }]
         }, {
             "$type": "Unity.Authoring.Core.ConfigurationTag, Unity.Authoring.Core"
