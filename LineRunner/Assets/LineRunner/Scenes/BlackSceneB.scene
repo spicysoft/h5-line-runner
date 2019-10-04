@@ -1,0 +1,88 @@
+{
+    "FileType": "Scene",
+    "Guid": "6cc91a7aad884009b9467604f383168e",
+    "SerializedVersion": 1,
+    "AssetReferences": [
+        { "Guid": "3ec7b8dc6babde14a934c1cfdff8d5d0", "FileId": 21300000, "Type": 3}],
+    "Entities": [{
+        "Components": [{
+            "$type": "Unity.Tiny.Core2D.Parent, Unity.Tiny.Core2D"
+        }, {
+            "$type": "Unity.Tiny.Core2D.Sprite2DRenderer, Unity.Tiny.Sprite2D",
+            "sprite": "02eea346979cb865c8f97bee209c0c90",
+            "color": {
+                "r": 0.6588235,
+                "g": 0.9058824,
+                "b": 0.9647059,
+                "a": 1
+            },
+            "blending": 0
+        }, {
+            "$type": "blackB, LineRunner"
+        }, {
+            "$type": "Unity.Authoring.Core.SiblingIndex, Unity.Authoring.Core"
+        }, {
+            "$type": "Unity.Entities.EntityGuid, Unity.Entities",
+            "a": 9658726708749091536,
+            "b": 12737713399166650884
+        }, {
+            "$type": "Unity.Tiny.Core2D.Translation, Unity.Tiny.Core2D",
+            "Value": {}
+        }, {
+            "$type": "Unity.Tiny.Core2D.Rotation, Unity.Tiny.Core2D",
+            "Value": {
+                "value": {
+                    "w": 1
+                }
+            }
+        }, {
+            "$type": "Unity.Tiny.Core2D.NonUniformScale, Unity.Tiny.Core2D",
+            "Value": {
+                "x": 0.3,
+                "y": 0.3,
+                "z": 1
+            }
+        }, {
+            "$type": "Unity.Tiny.Core2D.LayerSorting, Unity.Tiny.Core2D",
+            "order": 1
+        }, {
+            "$type": "Unity.Tiny.Core.EntityName, Unity.Tiny.Core",
+            "Elements": [{
+                "c": "b"
+            }, {
+                "c": "l"
+            }, {
+                "c": "a"
+            }, {
+                "c": "c"
+            }, {
+                "c": "k"
+            }]
+        }, {
+            "$type": "Unity.Authoring.Core.ComponentOrder, Unity.Authoring.Core",
+            "Elements": [{
+                "StableTypeHash": 7960064150805274675
+            }, {
+                "StableTypeHash": 793987765392955020
+            }, {
+                "StableTypeHash": 12662904853204722592
+            }, {
+                "StableTypeHash": 266869500686333426
+            }, {
+                "StableTypeHash": 9104342357061045742
+            }, {
+                "StableTypeHash": 17378348762221180850
+            }, {
+                "StableTypeHash": 874803706151837934
+            }, {
+                "StableTypeHash": 12932679046359085526
+            }, {
+                "StableTypeHash": 16791256614846730296
+            }, {
+                "StableTypeHash": 10423575070729940153
+            }, {
+                "StableTypeHash": 4987745021457122205
+            }]
+        }]
+    }]
+}

@@ -7,6 +7,8 @@
         "Components": [{
             "$type": "LineRunner.GameConfig, LineRunner",
             "Speed": 2,
+            "Collide": true,
+            "Retry": true,
             "BlackScene": {
                 "SceneGuid": "bd882d170f884525b37be84458ec7aab"
             },
@@ -32,14 +34,6 @@
             "Elements": [{
                 "SceneReference": {
                     "SceneGuid": "68e33dcbf4e343ad98752b3de0b44eea"
-                }
-            }, {
-                "SceneReference": {
-                    "SceneGuid": "029f282e8ffd441c938ab9f92fc75cf6"
-                }
-            }, {
-                "SceneReference": {
-                    "SceneGuid": "87c8a79bf9774a759bdb56fcd3df37e3"
                 }
             }, {
                 "SceneReference": {
